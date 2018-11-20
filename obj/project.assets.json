@@ -12804,11 +12804,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/dd/NewsBlogCoreMongo/NewsBlogCoreMongo/NewsBlogCoreMongo.csproj",
+      "projectUniqueName": "/home/dd/NewsBlogCoreMongoDb/NewsBlogCoreMongo.csproj",
       "projectName": "NewsBlogCoreMongo",
-      "projectPath": "/home/dd/NewsBlogCoreMongo/NewsBlogCoreMongo/NewsBlogCoreMongo.csproj",
+      "projectPath": "/home/dd/NewsBlogCoreMongoDb/NewsBlogCoreMongo.csproj",
       "packagesPath": "/home/dd/.nuget/packages/",
-      "outputPath": "/home/dd/NewsBlogCoreMongo/NewsBlogCoreMongo/obj/",
+      "outputPath": "/home/dd/NewsBlogCoreMongoDb/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

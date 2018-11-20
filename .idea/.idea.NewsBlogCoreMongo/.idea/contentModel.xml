@@ -2,13 +2,33 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="$USER_HOME$/.Rider2018.2/system/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/.Rider2018.2/system/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_NewsBlogCoreMongo.704280558.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/.Rider2018.2/system/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_NewsBlogCoreMongo.-1864752229.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Controllers" t="Include">
+        <e p="AccountController.cs" t="Include" />
         <e p="HomeController.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
+        <e p="Account" t="Include">
+          <e p="LoginModel.cs" t="Include" />
+          <e p="RegisterModel.cs" t="Include" />
+        </e>
+        <e p="BlogContext.cs" t="Include" />
+        <e p="Comment.cs" t="Include" />
         <e p="ErrorViewModel.cs" t="Include" />
+        <e p="Home" t="Include">
+          <e p="CommentLikeModel.cs" t="Include" />
+          <e p="IndexModel.cs" t="Include" />
+          <e p="NewCommentModel.cs" t="Include" />
+          <e p="NewPostModel.cs" t="Include" />
+          <e p="PostModel.cs" t="Include" />
+        </e>
+        <e p="NewsCategory.cs" t="Include" />
+        <e p="NewsItem.cs" t="Include" />
+        <e p="Post.cs" t="Include" />
+        <e p="Settings.cs" t="Include" />
+        <e p="TagProjection.cs" t="Include" />
+        <e p="User.cs" t="Include" />
       </e>
       <e p="NewsBlogCoreMongo.csproj" t="IncludeRecursive" />
       <e p="NewsBlogCoreMongo.sln" t="IncludeFlat" />
@@ -16,18 +36,31 @@
       <e p="Properties" t="Include">
         <e p="launchSettings.json" t="Include" />
       </e>
+      <e p="README.md" t="Include" />
+      <e p="Repository" t="Include">
+        <e p="BlogRepository.cs" t="Include" />
+        <e p="IBlogRepository.cs" t="Include" />
+      </e>
       <e p="Startup.cs" t="Include" />
       <e p="Views" t="Include">
+        <e p="Account" t="Include">
+          <e p="Login.cshtml" t="Include" />
+          <e p="Register.cshtml" t="Include" />
+        </e>
         <e p="Home" t="Include">
           <e p="About.cshtml" t="Include" />
           <e p="Contact.cshtml" t="Include" />
           <e p="Index.cshtml" t="Include" />
+          <e p="NewPost.cshtml" t="Include" />
+          <e p="Post.cshtml" t="Include" />
+          <e p="Posts.cshtml" t="Include" />
           <e p="Privacy.cshtml" t="Include" />
         </e>
         <e p="Shared" t="Include">
           <e p="Error.cshtml" t="Include" />
           <e p="_CookieConsentPartial.cshtml" t="Include" />
           <e p="_Layout.cshtml" t="Include" />
+          <e p="_LoginPartial.cshtml" t="Include" />
           <e p="_ValidationScriptsPartial.cshtml" t="Include" />
         </e>
         <e p="_ViewImports.cshtml" t="Include" />

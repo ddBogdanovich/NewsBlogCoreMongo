@@ -17,6 +17,13 @@ namespace MongoBlog.Repository
         {
             _context = new BlogContext(settings);
         }
+
+
+
+        #region OldRepo
+
+        
+
         
         public async Task<IEnumerable<Post>> GetPostsAsync()
         {
@@ -37,6 +44,7 @@ namespace MongoBlog.Repository
                 .ToListAsync();
         }
         
+        
         public async Task InsertPostAsync(Post post)
         {
             await _context.Posts.InsertOneAsync(post);
@@ -54,7 +62,19 @@ namespace MongoBlog.Repository
             return await _context.Posts.Find(filter).SortByDescending(x => x.CreatedAtUtc).ToListAsync();
         }
         
- 
-   
+        
+        #endregion
+
+
+
+
+        #region NewRepoMethods
+
+        
+
+        #endregion
+        
+        
+        
     }
 }
