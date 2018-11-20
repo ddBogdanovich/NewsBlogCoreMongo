@@ -1,6 +1,4 @@
-using System;
-
-namespace NewsBlogCoreMongo.Models
+namespace MongoBlog.Models
 {
     public class ErrorViewModel
     {
