@@ -2,41 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b9734f7-7a98-4b15-82a4-1a3662541de4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Models/NewsCategory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/NewsItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/NewsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/NewsListViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/PagingInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/News/List.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NewsBlogCoreMongo/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NewsBlogCoreMongo/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NewsBlogCoreMongo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NewsBlogCoreMongo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/BlogContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/BlogContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsBlogCoreMongo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NewsBlogCoreMongo.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Repository/BlogRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/BlogRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Account/Login.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Account/Login.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Account/Register.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Account/Register.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Home/About.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Home/About.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Home/Contact.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Home/Contact.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Home/NewPost.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Home/NewPost.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Home/Post.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Home/Post.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Home/Posts.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Home/Posts.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Home/Privacy.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Home/Privacy.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Error.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Error.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LoginPartial.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LoginPartial.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_ValidationScriptsPartial.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_ValidationScriptsPartial.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/_ViewImports.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/_ViewImports.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/_ViewStart.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/_ViewStart.g.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/NewsBlogCoreMongo.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/NewsBlogCoreMongo.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/NewsBlogCoreMongo.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/NewsBlogCoreMongo.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/IBlogRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/IBlogRepository.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,29 +43,32 @@
     <session id="1730921897">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="3" />
+          <entry key="cs" value="9" />
+          <entry key="cshtml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="3" />
+          <entry key="C#" value="9" />
+          <entry key="Razor" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="99" />
+          <entry key="cs" value="628" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="99" />
+          <entry key="C#" value="628" />
         </counts>
       </usages-collector>
     </session>
@@ -98,60 +76,139 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appsettings.Development.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appsettings.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Program.cs">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Startup.cs">
+        <entry file="file://$PROJECT_DIR$/Repository/BlogRepository.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="34" column="66" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
+            <state relative-caret-position="369">
+              <caret line="81" column="63" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="63" />
               <folding>
-                <marker date="1542750723862" expanded="false" signature="6:480" ph="..." />
-                <marker date="1542750723862" expanded="true" signature="501:2757" ph="{...}" />
-                <marker date="1542750723862" expanded="true" signature="528:2755" ph="{...}" />
-                <marker date="1542750723862" expanded="true" signature="587:650" ph="{...}" />
-                <marker date="1542750723862" expanded="true" signature="873:1979" ph="{...}" />
-                <marker date="1542750723862" expanded="true" signature="946:1223" ph="{...}" />
-                <marker date="1542750723862" expanded="true" signature="1315:1420" ph="{...}" />
-                <marker date="1542750723862" expanded="true" signature="1605:1839" ph="{...}" />
-                <marker date="1542750723862" expanded="true" signature="2167:2749" ph="{...}" />
-                <marker date="1542750723862" expanded="true" signature="2214:2291" ph="{...}" />
-                <marker date="1542750723862" expanded="true" signature="2308:2423" ph="{...}" />
-                <marker date="1542750723862" expanded="true" signature="2566:2737" ph="{...}" />
+                <marker date="1542835563062" expanded="true" signature="6:315" ph="..." />
+                <marker date="1542835563062" expanded="true" signature="347:2763" ph="{...}" />
+                <marker date="1542835563062" expanded="true" signature="399:2761" ph="{...}" />
+                <marker date="1542835563062" expanded="true" signature="527:597" ph="{...}" />
+                <marker date="1542835563062" expanded="true" signature="609:1907" ph="OldRepo" />
+                <marker date="1542835563062" expanded="false" signature="705:895" ph="{...}" />
+                <marker date="1542835563062" expanded="false" signature="982:1293" ph="{...}" />
+                <marker date="1542835563062" expanded="false" signature="1364:1439" ph="{...}" />
+                <marker date="1542835563062" expanded="false" signature="1517:1622" ph="{...}" />
+                <marker date="1542835563062" expanded="false" signature="1744:1870" ph="{...}" />
+                <marker date="1542835563062" expanded="true" signature="1928:2728" ph="NewRepoMethods" />
+                <marker date="1542835563062" expanded="true" signature="2031:2114" ph="{...}" />
+                <marker date="1542835563062" expanded="true" signature="2238:2699" ph="{...}" />
+                <marker date="1542835563062" expanded="true" signature="2380:2471" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Repository/IBlogRepository.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="23" column="92" selection-start-line="23" selection-start-column="92" selection-end-line="23" selection-end-column="92" />
+              <folding>
+                <marker date="1542835497486" expanded="true" signature="6:172" ph="..." />
+                <marker date="1542835497486" expanded="true" signature="204:717" ph="{...}" />
+                <marker date="1542835497486" expanded="true" signature="243:715" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controllers/HomeController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" selection-start-line="15" selection-end-line="20" selection-end-column="9" />
+              <folding>
+                <marker date="1542750723862" expanded="true" signature="6:278" ph="..." />
+                <marker date="1542750723862" expanded="true" signature="319:5195" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="366:5193" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="493:559" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="625:949" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="819:905" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="1006:1071" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="1159:1742" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="1206:1270" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="1316:1605" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="1817:2261" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="1926:2004" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="2056:2217" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="2152:2203" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="2345:2648" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="2447:2527" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="2742:3399" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="2789:2893" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="2907:3315" ph="/* var comment = new Comment ... */" />
+                <marker date="1542750723862" expanded="true" signature="3495:5187" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="3542:3646" ph="{...}" />
+                <marker date="1542750723862" expanded="true" signature="3660:3848" ph="/* var blogContext = new BlogContext(); ... */" />
+                <marker date="1542750723862" expanded="true" signature="3863:4207" ph="/* var posts = await blogContext.Posts.Find(new BsonDocument()).ToListAsync(); ... */" />
+                <marker date="1542750723862" expanded="true" signature="4220:4395" ph="/* await blogContext.Posts.UpdateOneAsync( ... */" />
+                <marker date="1542750723862" expanded="true" signature="4410:4636" ph="/* var result = await blogContext.Posts.UpdateOneAsync(Builders&lt;BsonDocument&gt;.Filter.Eq(&quot;id&quot;, postId), ... */" />
+                <marker date="1542750723862" expanded="true" signature="4651:5104" ph="/* } ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controllers/NewsController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+              <folding>
+                <marker date="1542835563090" expanded="true" signature="6:371" ph="..." />
+                <marker date="1542835563090" expanded="true" signature="412:1625" ph="{...}" />
+                <marker date="1542835563090" expanded="true" signature="459:1623" ph="{...}" />
+                <marker date="1542835563090" expanded="true" signature="629:695" ph="{...}" />
+                <marker date="1542835563090" expanded="true" signature="789:1581" ph="{...}" />
+                <marker date="1542835563090" expanded="true" signature="927:1018" ph="{...}" />
+                <marker date="1542835563090" expanded="true" signature="1104:1525" ph="{...}" />
+                <marker date="1542835563090" expanded="true" signature="1272:1453" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Repository/BlogRepository.cs">
+        <entry file="file://$PROJECT_DIR$/Views/News/List.cshtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="255">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
-                <marker date="1542752687755" expanded="false" signature="6:222" ph="..." />
-                <marker date="1542752687755" expanded="true" signature="254:1914" ph="{...}" />
-                <marker date="1542752687755" expanded="true" signature="306:1912" ph="{...}" />
-                <marker date="1542752687755" expanded="false" signature="434:504" ph="{...}" />
-                <marker date="1542752687755" expanded="false" signature="516:1814" ph="OldRepo" />
-                <marker date="1542752687755" expanded="false" signature="612:802" ph="{...}" />
-                <marker date="1542752687755" expanded="false" signature="889:1200" ph="{...}" />
-                <marker date="1542752687755" expanded="false" signature="1271:1346" ph="{...}" />
-                <marker date="1542752687755" expanded="false" signature="1424:1529" ph="{...}" />
-                <marker date="1542752687755" expanded="false" signature="1651:1777" ph="{...}" />
-                <marker date="1542752687755" expanded="true" signature="1827:1879" ph="NewRepoMethods" />
+                <marker date="1542835688890" expanded="true" signature="89:172" ph="@..." />
+                <marker date="1542835688890" expanded="true" signature="175:342" ph="@..." />
+                <marker date="1542835688890" expanded="true" signature="205:342" ph="{...}" />
+                <marker date="1542835688890" expanded="true" signature="345:716" ph="&lt;div.../&gt;" />
+                <marker date="1542835688890" expanded="true" signature="374:561" ph="&lt;div.../&gt;" />
+                <marker date="1542835688890" expanded="true" signature="409:550" ph="&lt;ul.../&gt;" />
+                <marker date="1542835688890" expanded="true" signature="596:709" ph="&lt;div.../&gt;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/PagingInfo.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+              <folding>
+                <marker date="1542834608186" expanded="true" signature="49:361" ph="{...}" />
+                <marker date="1542834608186" expanded="true" signature="79:359" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/NewsListViewModel.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="34" />
+              <folding>
+                <marker date="1542833094605" expanded="true" signature="69:281" ph="{...}" />
+                <marker date="1542833094605" expanded="true" signature="106:279" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -163,18 +220,31 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Controllers/NewsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/PagingInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/NewsListViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Repository/BlogRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Repository/IBlogRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/News/List.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Models/NewsItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Models/NewsCategory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/BlogContext.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Models/NewsItem.cs" />
         <option value="$PROJECT_DIR$/Models/NewsCategory.cs" />
+        <option value="$PROJECT_DIR$/Models/NewsListViewModel.cs" />
+        <option value="$PROJECT_DIR$/Models/BlogContext.cs" />
+        <option value="$PROJECT_DIR$/Models/PagingInfo.cs" />
+        <option value="$PROJECT_DIR$/Repository/IBlogRepository.cs" />
         <option value="$PROJECT_DIR$/Repository/BlogRepository.cs" />
+        <option value="$PROJECT_DIR$/Controllers/NewsController.cs" />
+        <option value="$PROJECT_DIR$/Views/News/List.cshtml" />
       </list>
     </option>
   </component>
@@ -198,6 +268,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -214,6 +285,12 @@
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
               <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Controllers" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Models" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
@@ -222,12 +299,24 @@
               <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Repository" type="24d0babc:SolutionExplorerModelNode" />
             </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="News" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -284,11 +373,12 @@
       <updated>1542747127856</updated>
       <workItem from="1542747130953" duration="72000" />
       <workItem from="1542750783255" duration="1682000" />
+      <workItem from="1542832786596" duration="3967000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1754000" />
+    <option name="totallyTimeSpent" value="5721000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -302,10 +392,9 @@
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18960752" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19181868" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Build" weight="0.32928312" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2834728" />
@@ -320,6 +409,7 @@
       <window_info anchor="bottom" id="REST Client" order="11" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="14" weight="0.32928312" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -345,11 +435,19 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/appsettings.Development.json">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/Models/NewsItem.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appsettings.json">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/Models/NewsCategory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Program.cs">
       <provider selected="true" editor-type-id="text-editor" />
@@ -360,7 +458,6 @@
           <caret line="34" column="66" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
           <folding>
             <marker date="1542750723862" expanded="false" signature="6:480" ph="..." />
-            <marker date="1542750723862" expanded="true" signature="501:2757" ph="{...}" />
             <marker date="1542750723862" expanded="true" signature="528:2755" ph="{...}" />
             <marker date="1542750723862" expanded="true" signature="587:650" ph="{...}" />
             <marker date="1542750723862" expanded="true" signature="873:1979" ph="{...}" />
@@ -375,45 +472,148 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/NewsItem.cs">
+    <entry file="file://$PROJECT_DIR$/appsettings.Development.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appsettings.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/BlogContext.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        <state relative-caret-position="532">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
           <folding>
-            <marker date="1542752461183" expanded="true" signature="34:448" ph="{...}" />
-            <marker date="1542752461183" expanded="true" signature="47:116" ph="..." />
-            <marker date="1542752461183" expanded="true" signature="147:446" ph="{...}" />
+            <marker date="1542833678329" expanded="true" signature="6:113" ph="..." />
+            <marker date="1542833678329" expanded="true" signature="149:1249" ph="{...}" />
+            <marker date="1542833678329" expanded="true" signature="180:1247" ph="{...}" />
+            <marker date="1542833678329" expanded="true" signature="396:474" ph="/* This is ok... Normally, they would be put into ... */" />
+            <marker date="1542833678329" expanded="true" signature="625:855" ph="{...}" />
+            <marker date="1542833678329" expanded="true" signature="743:845" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/NewsCategory.cs">
+    <entry file="file://$PROJECT_DIR$/Models/PagingInfo.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="255">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
           <folding>
-            <marker date="1542752590579" expanded="true" signature="34:192" ph="{...}" />
-            <marker date="1542752590579" expanded="true" signature="95:190" ph="{...}" />
+            <marker date="1542834608186" expanded="true" signature="49:361" ph="{...}" />
+            <marker date="1542834608186" expanded="true" signature="79:359" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Repository/BlogRepository.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="369">
+          <caret line="81" column="63" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="63" />
           <folding>
-            <marker date="1542752687755" expanded="false" signature="6:222" ph="..." />
-            <marker date="1542752687755" expanded="true" signature="254:1914" ph="{...}" />
-            <marker date="1542752687755" expanded="true" signature="306:1912" ph="{...}" />
-            <marker date="1542752687755" expanded="false" signature="434:504" ph="{...}" />
-            <marker date="1542752687755" expanded="false" signature="516:1814" ph="OldRepo" />
-            <marker date="1542752687755" expanded="false" signature="612:802" ph="{...}" />
-            <marker date="1542752687755" expanded="false" signature="889:1200" ph="{...}" />
-            <marker date="1542752687755" expanded="false" signature="1271:1346" ph="{...}" />
-            <marker date="1542752687755" expanded="false" signature="1424:1529" ph="{...}" />
-            <marker date="1542752687755" expanded="false" signature="1651:1777" ph="{...}" />
-            <marker date="1542752687755" expanded="true" signature="1827:1879" ph="NewRepoMethods" />
+            <marker date="1542835563062" expanded="true" signature="6:315" ph="..." />
+            <marker date="1542835563062" expanded="true" signature="347:2763" ph="{...}" />
+            <marker date="1542835563062" expanded="true" signature="399:2761" ph="{...}" />
+            <marker date="1542835563062" expanded="true" signature="527:597" ph="{...}" />
+            <marker date="1542835563062" expanded="true" signature="609:1907" ph="OldRepo" />
+            <marker date="1542835563062" expanded="false" signature="705:895" ph="{...}" />
+            <marker date="1542835563062" expanded="false" signature="982:1293" ph="{...}" />
+            <marker date="1542835563062" expanded="false" signature="1364:1439" ph="{...}" />
+            <marker date="1542835563062" expanded="false" signature="1517:1622" ph="{...}" />
+            <marker date="1542835563062" expanded="false" signature="1744:1870" ph="{...}" />
+            <marker date="1542835563062" expanded="true" signature="1928:2728" ph="NewRepoMethods" />
+            <marker date="1542835563062" expanded="true" signature="2031:2114" ph="{...}" />
+            <marker date="1542835563062" expanded="true" signature="2238:2699" ph="{...}" />
+            <marker date="1542835563062" expanded="true" signature="2380:2471" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Repository/IBlogRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="92" selection-start-line="23" selection-start-column="92" selection-end-line="23" selection-end-column="92" />
+          <folding>
+            <marker date="1542835497486" expanded="true" signature="6:172" ph="..." />
+            <marker date="1542835497486" expanded="true" signature="204:717" ph="{...}" />
+            <marker date="1542835497486" expanded="true" signature="243:715" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/HomeController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" selection-start-line="15" selection-end-line="20" selection-end-column="9" />
+          <folding>
+            <marker date="1542750723862" expanded="true" signature="6:278" ph="..." />
+            <marker date="1542750723862" expanded="true" signature="319:5195" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="366:5193" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="493:559" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="625:949" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="819:905" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="1006:1071" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="1159:1742" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="1206:1270" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="1316:1605" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="1817:2261" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="1926:2004" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="2056:2217" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="2152:2203" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="2345:2648" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="2447:2527" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="2742:3399" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="2789:2893" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="2907:3315" ph="/* var comment = new Comment ... */" />
+            <marker date="1542750723862" expanded="true" signature="3495:5187" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="3542:3646" ph="{...}" />
+            <marker date="1542750723862" expanded="true" signature="3660:3848" ph="/* var blogContext = new BlogContext(); ... */" />
+            <marker date="1542750723862" expanded="true" signature="3863:4207" ph="/* var posts = await blogContext.Posts.Find(new BsonDocument()).ToListAsync(); ... */" />
+            <marker date="1542750723862" expanded="true" signature="4220:4395" ph="/* await blogContext.Posts.UpdateOneAsync( ... */" />
+            <marker date="1542750723862" expanded="true" signature="4410:4636" ph="/* var result = await blogContext.Posts.UpdateOneAsync(Builders&lt;BsonDocument&gt;.Filter.Eq(&quot;id&quot;, postId), ... */" />
+            <marker date="1542750723862" expanded="true" signature="4651:5104" ph="/* } ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/NewsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+          <folding>
+            <marker date="1542835563090" expanded="true" signature="6:371" ph="..." />
+            <marker date="1542835563090" expanded="true" signature="412:1625" ph="{...}" />
+            <marker date="1542835563090" expanded="true" signature="459:1623" ph="{...}" />
+            <marker date="1542835563090" expanded="true" signature="629:695" ph="{...}" />
+            <marker date="1542835563090" expanded="true" signature="789:1581" ph="{...}" />
+            <marker date="1542835563090" expanded="true" signature="927:1018" ph="{...}" />
+            <marker date="1542835563090" expanded="true" signature="1104:1525" ph="{...}" />
+            <marker date="1542835563090" expanded="true" signature="1272:1453" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/NewsListViewModel.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="34" />
+          <folding>
+            <marker date="1542833094605" expanded="true" signature="69:281" ph="{...}" />
+            <marker date="1542833094605" expanded="true" signature="106:279" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/News/List.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <marker date="1542835688890" expanded="true" signature="89:172" ph="@..." />
+            <marker date="1542835688890" expanded="true" signature="175:342" ph="@..." />
+            <marker date="1542835688890" expanded="true" signature="205:342" ph="{...}" />
+            <marker date="1542835688890" expanded="true" signature="345:716" ph="&lt;div.../&gt;" />
+            <marker date="1542835688890" expanded="true" signature="374:561" ph="&lt;div.../&gt;" />
+            <marker date="1542835688890" expanded="true" signature="409:550" ph="&lt;ul.../&gt;" />
+            <marker date="1542835688890" expanded="true" signature="596:709" ph="&lt;div.../&gt;" />
           </folding>
         </state>
       </provider>

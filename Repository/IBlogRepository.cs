@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using M101DotNet.WebApp.Models;
+using NewsBlogCoreMongo.Models;
 
 namespace MongoBlog.Repository
 {
@@ -18,5 +19,8 @@ namespace MongoBlog.Repository
 
         Task<IEnumerable<Post>> GetPostsFilteredAsync(Expression<Func<Post, bool>> filter);
 
+        Task<long> GetNewsCount(Expression<Func<NewsItem, bool>> filter);
+
+        Task<IEnumerable<NewsItem>> GetNewsFilered(int page, int pageSize, string category);
     }
 }

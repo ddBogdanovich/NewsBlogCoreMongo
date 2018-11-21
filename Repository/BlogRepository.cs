@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using M101DotNet.WebApp.Models;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.Options;
 using MongoBlog.Models;
 using MongoDB.Driver;
+using NewsBlogCoreMongo.Models;
 
 namespace MongoBlog.Repository
 {
@@ -65,11 +67,33 @@ namespace MongoBlog.Repository
         
         #endregion
 
-
+        
 
 
         #region NewRepoMethods
 
+        public Task<long> GetNewsCount(Expression<Func<NewsItem, bool>> filter)
+        {
+            return  _context.News.CountDocumentsAsync(filter);
+        }
+
+        
+        
+        public async Task<IEnumerable<NewsItem>> GetNewsFilered(int page, int pageSize, string category)
+        {
+            Expression<Func<NewsItem, bool>> filter = x => true;
+            
+            if (!string.IsNullOrWhiteSpace(category))
+            {
+                filter = x => x.Categories.Contains(category);
+            }
+
+            return await _context.News.Find(filter)
+                .SortByDescending(x => x.CreatedAtUtc)
+                .Skip((page - 1) * pageSize)
+                .Limit(pageSize)
+                .ToListAsync();
+        }
         
 
         #endregion

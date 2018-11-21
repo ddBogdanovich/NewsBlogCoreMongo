@@ -7,6 +7,7 @@
       <e p="Controllers" t="Include">
         <e p="AccountController.cs" t="Include" />
         <e p="HomeController.cs" t="Include" />
+        <e p="NewsController.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
         <e p="Account" t="Include">
@@ -25,6 +26,8 @@
         </e>
         <e p="NewsCategory.cs" t="Include" />
         <e p="NewsItem.cs" t="Include" />
+        <e p="NewsListViewModel.cs" t="Include" />
+        <e p="PagingInfo.cs" t="Include" />
         <e p="Post.cs" t="Include" />
         <e p="Settings.cs" t="Include" />
         <e p="TagProjection.cs" t="Include" />
@@ -55,6 +58,9 @@
           <e p="Post.cshtml" t="Include" />
           <e p="Posts.cshtml" t="Include" />
           <e p="Privacy.cshtml" t="Include" />
+        </e>
+        <e p="News" t="Include">
+          <e p="List.cshtml" t="Include" />
         </e>
         <e p="Shared" t="Include">
           <e p="Error.cshtml" t="Include" />
