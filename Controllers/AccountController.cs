@@ -101,5 +101,13 @@ namespace M101DotNet.WebApp.Controllers
 
             return returnUrl;
         }
+        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LogOff()
+        {
+          //  AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            return  RedirectToAction("List", "News");
+        }
     }
 }

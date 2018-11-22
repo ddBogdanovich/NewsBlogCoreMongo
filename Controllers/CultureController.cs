@@ -11,12 +11,6 @@ namespace M101DotNet.WebApp.Controllers
         
         private readonly List<string> cultures = new List<string>() { "ru", "en" };
         
-        public ActionResult LangLinks()
-        {
-            return View();
-        }
-
-
 
         public ActionResult ChangeCulture(string lang)
         {

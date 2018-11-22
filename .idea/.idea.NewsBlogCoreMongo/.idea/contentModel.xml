@@ -111,9 +111,28 @@
         </e>
         <e p="favicon.ico" t="Include" />
         <e p="images" t="Include">
+          <e p="NoPhoto.jpg" t="Include" />
+          <e p="arrow-right.png" t="Include" />
           <e p="banner1.svg" t="Include" />
           <e p="banner2.svg" t="Include" />
           <e p="banner3.svg" t="Include" />
+          <e p="body-bg3.png" t="Include" />
+          <e p="facebook.png" t="Include" />
+          <e p="fancybox_overlay.png" t="Include" />
+          <e p="fancybox_sprite.png" t="Include" />
+          <e p="google+.png" t="Include" />
+          <e p="large-button-overlay.png" t="Include" />
+          <e p="likes.png" t="Include" />
+          <e p="link.png" t="Include" />
+          <e p="linkedin.png" t="Include" />
+          <e p="menu-arrow.png" t="Include" />
+          <e p="r-blog.png" t="Include" />
+          <e p="ru.png" t="Include" />
+          <e p="search.png" t="Include" />
+          <e p="social-icons.png" t="Include" />
+          <e p="twitter.png" t="Include" />
+          <e p="uk.png" t="Include" />
+          <e p="views.png" t="Include" />
         </e>
         <e p="js" t="Include">
           <e p="site.js" t="Include" />
