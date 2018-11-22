@@ -74,3 +74,10 @@
 /home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.dll
 /home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.pdb
 /home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.csproj.CopyComplete
+/home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.Resources.Shared.Resource.resources
+/home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.Resources.Shared.Resource.ru.resources
+/home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.csproj.GenerateResource.cache
+/home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/ru/NewsBlogCoreMongo.resources.cs
+/home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/ru/NewsBlogCoreMongo.resources.dll
+/home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/Razor/Views/News/List.g.cshtml.cs
+/home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_HeaderLayout.g.cshtml.cs

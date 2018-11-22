@@ -1,0 +1,65 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@using NewsBlogCoreMongo.Models
+@inject IViewLocalizer Localizer
+
+<div class="header">
+    <div class="header_top" style="margin-bottom: 15px;">
+        <div class="wrap">
+            <div class="header-top-left">
+                <div class="logo">
+                    <a asp-action="List" asp-controller="News">
+                        <h1>NEWS</h1>
+                        <h2>Blog</h2>
+                    </a>
+                </div>
+
+                <div class="menu">
+                    <ul class="menu bounce">
+                        <li><a asp-action="List" asp-controller="News">@Localizer["Home"]</a></li>
+                        <li><a asp-action="Demo" asp-controller="News">@Localizer["About"]</a></li>
+                        <li><a asp-action="Demo" asp-controller="News">@Localizer["Support"]</a></li>
+                        <li><a asp-action="Contact" asp-controller="News">@Localizer["Contact"]</a></li>
+
+                        @if (User.IsInRole("Administrator") || User.IsInRole("Moderator"))
+                        {
+                            <li><a asp-action="List" asp-controller="NewsItems">Admin Tools</a></li>
+                        }
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+
+            <div class="header-top-right">
+
+                <div class="social-icons">
+                    @Html.Action("LangLinks", "Culture")
+
+                    @if (Request.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <span style="font-weight: bold; margin-top: 20px"> </span>
+                            <h5 style="display: inline">Hello, @User.Identity.Name </h5>
+                            <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-sm btn-danger">Log off</a>
+                            <hr>
+                        }
+                    }
+                    else
+                    {
+                        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                    }
+                    <div class="clear"></div>
+
+
+                </div>
+
+                </div>
+
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

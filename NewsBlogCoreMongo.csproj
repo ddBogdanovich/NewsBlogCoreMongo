@@ -26,4 +26,9 @@
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Components" />
+      <Folder Include="Views\Shared\Components" />
+    </ItemGroup>
+
 </Project>

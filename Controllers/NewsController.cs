@@ -53,6 +53,16 @@ namespace M101DotNet.WebApp.Controllers
         }
         
         
+        public ActionResult Demo()
+        {
+            return View("DemoPage");
+        }
+        
+        
+        public ActionResult Contact()
+        {
+            return View();
+        }
         
         
     }
