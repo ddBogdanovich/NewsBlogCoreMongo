@@ -30,6 +30,10 @@
           "target": "Package",
           "version": "[3.1.5, )"
         },
+        "LigerShark.WebOptimizer.Core": {
+          "target": "Package",
+          "version": "[1.0.215, )"
+        },
         "Microsoft.AspNetCore.App": {
           "suppressParent": "All",
           "target": "Package",

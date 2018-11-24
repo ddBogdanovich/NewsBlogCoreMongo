@@ -4,7 +4,9 @@
     <e p="$USER_HOME$/.Rider2018.2/system/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/.Rider2018.2/system/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_NewsBlogCoreMongo.-1864752229.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
-      <e p="Components" t="Include" />
+      <e p="Components" t="Include">
+        <e p="CategoryListViewComponent.cs" t="Include" />
+      </e>
       <e p="Controllers" t="Include">
         <e p="AccountController.cs" t="Include" />
         <e p="CultureController.cs" t="Include" />
@@ -61,9 +63,7 @@
           <e p="Login.cshtml" t="Include" />
           <e p="Register.cshtml" t="Include" />
         </e>
-        <e p="Culture" t="Include">
-          <e p="LangLinks.cshtml" t="Include" />
-        </e>
+        <e p="Culture" t="Include" />
         <e p="Home" t="Include">
           <e p="About.cshtml" t="Include" />
           <e p="Contact.cshtml" t="Include" />
@@ -82,10 +82,16 @@
           <e p="List.cshtml" t="Include" />
         </e>
         <e p="Shared" t="Include">
-          <e p="Components" t="Include" />
+          <e p="Components" t="Include">
+            <e p="CategoryList" t="Include">
+              <e p="Default.cshtml" t="Include" />
+            </e>
+          </e>
           <e p="Error.cshtml" t="Include" />
+          <e p="NewsItem.cshtml" t="Include" />
           <e p="_CookieConsentPartial.cshtml" t="Include" />
           <e p="_HeaderLayout.cshtml" t="Include" />
+          <e p="_LangLinks.cshtml" t="Include" />
           <e p="_Layout.cshtml" t="Include" />
           <e p="_LoginPartial.cshtml" t="Include" />
           <e p="_ValidationScriptsPartial.cshtml" t="Include" />
@@ -388,12 +394,16 @@
             <e p="bower.json" t="Include" />
             <e p="dist" t="Include">
               <e p="core.js" t="Include" />
+              <e p="jquery.bxslider.js" t="Include" />
+              <e p="jquery.fancybox.js" t="Include" />
               <e p="jquery.js" t="Include" />
               <e p="jquery.min.js" t="Include" />
               <e p="jquery.min.map" t="Include" />
+              <e p="jquery.mousewheel-3.0.6.pack.js" t="Include" />
               <e p="jquery.slim.js" t="Include" />
               <e p="jquery.slim.min.js" t="Include" />
               <e p="jquery.slim.min.map" t="Include" />
+              <e p="respond.min.js" t="Include" />
             </e>
             <e p="external" t="Include">
               <e p="sizzle" t="Include">

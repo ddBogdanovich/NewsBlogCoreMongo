@@ -43,6 +43,31 @@
           "lib/netstandard1.3/DnsClient.dll": {}
         }
       },
+      "LigerShark.WebOptimizer.Analyzers/1.0.6": {
+        "type": "package"
+      },
+      "LigerShark.WebOptimizer.Core/1.0.215": {
+        "type": "package",
+        "dependencies": {
+          "LigerShark.WebOptimizer.Analyzers": "1.0.6",
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.0.0",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.0",
+          "Microsoft.AspNetCore.Mvc.TagHelpers": "2.0.0",
+          "Microsoft.AspNetCore.Razor.Runtime": "2.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "2.0.0",
+          "NUglify": "1.5.10"
+        },
+        "compile": {
+          "lib/netstandard2.0/WebOptimizer.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebOptimizer.Core.dll": {}
+        },
+        "build": {
+          "build/LigerShark.WebOptimizer.Core.props": {},
+          "build/LigerShark.WebOptimizer.Core.targets": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -2794,6 +2819,19 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "NUglify/1.5.10": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.Security.Cryptography.Algorithms": "4.2.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/NUglify.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/NUglify.dll": {}
+        }
+      },
       "Owin/1.0.0": {
         "type": "package",
         "compile": {
@@ -4888,6 +4926,32 @@
         "lib/net45/DnsClient.xml",
         "lib/netstandard1.3/DnsClient.dll",
         "lib/netstandard1.3/DnsClient.xml"
+      ]
+    },
+    "LigerShark.WebOptimizer.Analyzers/1.0.6": {
+      "sha512": "Qe5UuBBl0U3l335flvpnHke7pok8EBWMyxHX+2ahtLHGmRnsrsUamRgD9pyBI86n8GLQOTgpTVf6/Y5MaLy1vw==",
+      "type": "package",
+      "path": "ligershark.weboptimizer.analyzers/1.0.6",
+      "files": [
+        "analyzers/dotnet/cs/WebOptimizer.Analyzers.dll",
+        "ligershark.weboptimizer.analyzers.1.0.6.nupkg.sha512",
+        "ligershark.weboptimizer.analyzers.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "LigerShark.WebOptimizer.Core/1.0.215": {
+      "sha512": "YjxEgixT5E1UxQo2lABkC0GSL2qix6z6SoN3UqGS2R2hLeLcw5oXzj6vFhWyZNwBYRh80Ewbx0IXO7FPnWJLwg==",
+      "type": "package",
+      "path": "ligershark.weboptimizer.core/1.0.215",
+      "files": [
+        ".signature.p7s",
+        "build/LigerShark.WebOptimizer.Core.props",
+        "build/LigerShark.WebOptimizer.Core.targets",
+        "lib/netstandard2.0/WebOptimizer.Core.dll",
+        "lib/netstandard2.0/WebOptimizer.Core.xml",
+        "ligershark.weboptimizer.core.1.0.215.nupkg.sha512",
+        "ligershark.weboptimizer.core.nuspec"
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -7615,6 +7679,22 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "NUglify/1.5.10": {
+      "sha512": "3zk0u8S1U1jYcj89xQI1tv1ZfTyy1b+anEVvavxHRLxFhB3WUftzKEIHn1DlNJF0Fhro+H0OcnfGFcuk3VC2gA==",
+      "type": "package",
+      "path": "nuglify/1.5.10",
+      "files": [
+        ".signature.p7s",
+        "lib/net35/NUglify.dll",
+        "lib/net35/NUglify.xml",
+        "lib/net40/NUglify.dll",
+        "lib/net40/NUglify.xml",
+        "lib/netstandard1.3/NUglify.dll",
+        "lib/netstandard1.3/NUglify.xml",
+        "nuglify.1.5.10.nupkg.sha512",
+        "nuglify.nuspec"
       ]
     },
     "Owin/1.0.0": {
@@ -12788,6 +12868,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "AspNetCore.Identity.Mongo >= 3.1.5",
+      "LigerShark.WebOptimizer.Core >= 1.0.215",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.Owin >= 4.0.0",
@@ -12839,6 +12920,10 @@
           "AspNetCore.Identity.Mongo": {
             "target": "Package",
             "version": "[3.1.5, )"
+          },
+          "LigerShark.WebOptimizer.Core": {
+            "target": "Package",
+            "version": "[1.0.215, )"
           },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoBlog.Models;
@@ -49,9 +50,25 @@ namespace MongoBlog
                 options.Database = Configuration.GetSection("MongoConnection:Database").Value;
             });
             
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services
+                .AddLocalization(options => options.ResourcesPath = "Resources");
             
             
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
+            
+            
+            services.AddWebOptimizer(pipeline =>
+                pipeline.AddJavaScriptBundle("~/js/scripts.js", 
+                    "~/lib/bootstrap/dist/js/bootstrap.js",
+                    "~/lib/jquery/dist/respond.min.js",
+                    "~/lib/jquery/dist/jquery.fancybox.js",
+                    "~/lib/jquery/dist/jquery.mousewheel-3.0.6.pack.js",
+                    "~/lib/jquery/dist/jquery.bxslider.js")                                     
+                );
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,9 +85,11 @@ namespace MongoBlog
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+
             app.UseCookiePolicy();
 
+            app.UseWebOptimizer();
+            app.UseStaticFiles();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

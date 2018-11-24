@@ -24,7 +24,7 @@
             @RenderBody()
         </div>
 
-        @Html.Action("CategoryList", "Category")
+        @await Component.InvokeAsync("CategoryList")
 
     </div>
 </div>
@@ -38,9 +38,9 @@
     </div>
 
 </div>
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/scripts.js"></script>
 
-@Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
-@Scripts.Render("~/bundles/bootstrap")
 @RenderSection("scripts", required: false)
 
 <script type="text/javascript">

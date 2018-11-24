@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Mime;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.IdentityModel.Protocols;
@@ -35,19 +36,20 @@ namespace M101DotNet.WebApp.Controllers
         }*/
 
 
-/*        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(string id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return BadRequest();
             }
-            NewsItem newsItem = repository.FindNewsItem(id);
+            var newsItem = await _blogRepository.FindNewsItem(id);
+            
             if (newsItem == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
             return View(newsItem);
-        }*/
+        }
 
 
 /*        public ActionResult Create()

@@ -37,7 +37,7 @@ namespace M101DotNet.WebApp.Controllers
             
             NewsListViewModel model = new NewsListViewModel
             {
-                News = await _blogRepository.GetNewsFilered(page, Pagesize, category),
+                News = await _blogRepository.GetNewsFiltered(page, Pagesize, category),
                   
                 PagingInfo = new PagingInfo
                 {

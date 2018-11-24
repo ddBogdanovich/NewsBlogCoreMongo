@@ -21,6 +21,10 @@ namespace MongoBlog.Repository
 
         Task<long> GetNewsCount(Expression<Func<NewsItem, bool>> filter);
 
-        Task<IEnumerable<NewsItem>> GetNewsFilered(int page, int pageSize, string category);
+        Task<IEnumerable<NewsItem>> GetNewsFiltered(int page, int pageSize, string category);
+
+        Task<IEnumerable<NewsCategory>> GetActualCategories();
+
+        Task<NewsItem> FindNewsItem(string id);
     }
 }

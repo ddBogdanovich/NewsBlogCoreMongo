@@ -2,7 +2,7 @@
 @model NewsBlogCoreMongo.Models.NewsListViewModel
 @{
 
-    Layout = "~/Views/Shared/MyNewLayout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "List";
 }
 
@@ -20,7 +20,7 @@
 <div class="page_links">
     <div class="page_numbers">
         <ul>
-            @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))
+            @*@Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))*@
         </ul>
     </div>
     <div class="clear"></div>

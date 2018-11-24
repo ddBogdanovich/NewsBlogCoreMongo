@@ -1,12 +1,16 @@
+
+
 namespace NewsBlogCoreMongo.Models
 {
     using System;
     using System.Collections.Generic;
     using MongoDB.Bson;
+    using MongoDB.Bson.Serialization.Attributes;
     
     public class NewsItem
     {
-        public ObjectId Id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
         
         public string Headline { get; set; }
 

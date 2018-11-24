@@ -79,7 +79,7 @@ namespace MongoBlog.Repository
 
         
         
-        public async Task<IEnumerable<NewsItem>> GetNewsFilered(int page, int pageSize, string category)
+        public async Task<IEnumerable<NewsItem>> GetNewsFiltered(int page, int pageSize, string category)
         {
             Expression<Func<NewsItem, bool>> filter = x => true;
             
@@ -94,8 +94,19 @@ namespace MongoBlog.Repository
                 .Limit(pageSize)
                 .ToListAsync();
         }
-        
 
+
+        public async Task<IEnumerable<NewsCategory>> GetActualCategories()
+        {
+            return await _context.Categories.Find(x => true).ToListAsync();
+        }
+
+
+        public async Task<NewsItem> FindNewsItem(string id)
+        {
+            return await _context.News.Find(x => x.Id == id).SingleOrDefaultAsync();
+        }
+        
         #endregion
         
         

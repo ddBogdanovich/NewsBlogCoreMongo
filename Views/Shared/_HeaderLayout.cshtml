@@ -33,11 +33,11 @@
             <div class="header-top-right">
 
                 <div class="social-icons">
-                    {@await Html.PartialAsync("~/Views/Culture/LangLinks.cshtml")} 
+                    @{ await Html.RenderPartialAsync("_LangLinks");}
 
                     @*@if (Request.IsAuthenticated)
-                    {*@
-                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                    {
+                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
                         {
                             @Html.AntiForgeryToken()
 
@@ -46,7 +46,7 @@
                             <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-sm btn-danger">Log off</a>
                             <hr>
                         }
-                    @*}
+                    }
                     else
                     {
                         @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
