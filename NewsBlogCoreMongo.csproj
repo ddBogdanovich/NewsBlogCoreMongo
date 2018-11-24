@@ -31,6 +31,7 @@
 
     <ItemGroup>
       <Folder Include="Views\Culture" />
+      <Folder Include="wwwroot\bundles" />
     </ItemGroup>
 
 </Project>

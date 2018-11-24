@@ -102,6 +102,7 @@
       <e p="appsettings.Development.json" t="Include" />
       <e p="appsettings.json" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
+      <e p="bundleconfig.json" t="Include" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
           <e p="netcoreapp2.1" t="Include">
@@ -111,9 +112,17 @@
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="wwwroot" t="Include">
+        <e p="bundles" t="Include" />
         <e p="css" t="Include">
           <e p="site.css" t="Include" />
           <e p="site.min.css" t="Include" />
+        </e>
+        <e p="css_" t="Include">
+          <e p="Site.css" t="Include" />
+          <e p="jquery.bxslider.css" t="Include" />
+          <e p="jquery.fancybox.css" t="Include" />
+          <e p="style.css" t="Include" />
+          <e p="zocial.css" t="Include" />
         </e>
         <e p="favicon.ico" t="Include" />
         <e p="images" t="Include">

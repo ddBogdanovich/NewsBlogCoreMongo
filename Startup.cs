@@ -58,17 +58,27 @@ namespace MongoBlog
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
             
-            
             services.AddWebOptimizer(pipeline =>
-                pipeline.AddJavaScriptBundle("~/js/scripts.js", 
-                    "~/lib/bootstrap/dist/js/bootstrap.js",
-                    "~/lib/jquery/dist/respond.min.js",
-                    "~/lib/jquery/dist/jquery.fancybox.js",
-                    "~/lib/jquery/dist/jquery.mousewheel-3.0.6.pack.js",
-                    "~/lib/jquery/dist/jquery.bxslider.js")                                     
+            {
+                pipeline.AddJavaScriptBundle("/bundles/bootstrapBundle.min.js", 
+                    
+                    "js/site.js",                   
+                    "lib/bootstrap/dist/js/bootstrap.js",                   
+                    "lib/jquery/dist/respond.min.js",
+                    "lib/jquery/dist/jquery.fancybox.js",
+                    "lib/jquery/dist/jquery.mousewheel-3.0.6.pack.js",
+                    "lib/jquery/dist/jquery.bxslider.js");
+
+                pipeline.AddCssBundle("/bundles/content.css",
+                    "lib/bootstrap/dist/css/bootstrap.css",
+                    "css_/zocial.css",
+                    "css_/style.css",
+                    "css_/Site.css",
+                    "css_/jquery.fancybox.css",
+                    "css_/jquery.bxslider.css"
                 );
-
-
+            });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -87,14 +97,37 @@ namespace MongoBlog
             app.UseHttpsRedirection();
 
             app.UseCookiePolicy();
-
             app.UseWebOptimizer();
             app.UseStaticFiles();
             app.UseMvc(routes =>
             {
+                routes.MapRoute(name: "Error", template: "Error",
+                    defaults: new { controller = "Error", action = "Error" });
+
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    name: null,
+                    template: "{category}/Page{productPage:int}",
+                    defaults: new { controller = "News", action = "List" }
+                );
+
+                routes.MapRoute(
+                    name: null,
+                    template: "Page{productPage:int}",
+                    defaults: new { controller = "News", action = "List", productPage = 1 }
+                );
+
+                routes.MapRoute(
+                    name: null,
+                    template: "{category}",
+                    defaults: new { controller = "News", action = "List", productPage = 1 }
+                );
+
+                routes.MapRoute(
+                    name: null,
+                    template: "",
+                    defaults: new { controller = "News", action = "List", productPage = 1 });
+
+                routes.MapRoute(name: null, template: "{controller}/{action}/{id?}");
             });
         }
     }
