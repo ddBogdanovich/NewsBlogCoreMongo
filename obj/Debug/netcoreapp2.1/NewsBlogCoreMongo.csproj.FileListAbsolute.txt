@@ -85,6 +85,8 @@
 /home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/Razor/Views/News/DemoPage.g.cshtml.cs
 /home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/Razor/Views/NewsItems/List.g.cshtml.cs
 /home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Components/CategoryList/Default.g.cshtml.cs
-/home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/Razor/Views/Shared/NewsItem.g.cshtml.cs
 /home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LangLinks.g.cshtml.cs
 /home/dd/NewsBlogCoreMongoDb/bin/Debug/netcoreapp2.1/ru/NewsBlogCoreMongo.resources.dll
+/home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Components/NewsItem/Default.g.cshtml.cs
+/home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/Razor/Views/NewsItems/Details.g.cshtml.cs
+/home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/Razor/Views/News/Details.g.cshtml.cs

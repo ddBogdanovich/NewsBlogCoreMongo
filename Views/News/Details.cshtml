@@ -1,0 +1,58 @@
+@using System.Configuration
+@model NewsBlogCoreMongo.Models.NewsItemViewModel
+
+
+<h3>@Model.newsItem.Headline</h3>
+<span>Created: @Model.newsItem.CreatedAtUtc.ToShortDateString()</span>
+
+@{
+    var pic = System.IO.Path.Combine(Model.uploadsFolder, Model.blankImageName);
+    var uploadDir = ConfigurationManager.AppSettings["FilePath"].ToString();
+    if (Model.Image.Any())
+    {
+
+        <ul class="bxslider">
+
+            @foreach (var image in @Model.Image)
+            {
+               
+                var imagePath = Path.Combine(Server.MapPath(uploadDir), image.Id + image.Extension);
+                if (System.IO.File.Exists(imagePath))
+                {
+                    pic = uploadDir + image.Id + image.Extension;
+                    <li>
+                        <img src="@Url.Content(@pic)" alt="picture"/>
+                    </li>
+                }
+            }
+        </ul>
+
+    }
+
+
+    else
+    {
+        <ul>
+            <li>
+            <img src="@Url.Content(@pic)" alt="picture" />
+            <li>
+        </ul>
+    }
+
+}
+
+
+
+<div class="box1">
+    <div class="data">
+        <p>@Model.Body</p>
+    </div>
+    <div class="clear"></div>
+    <span style="font-size: 13px;">@Html.ActionLink("<<< Back to News", "List", null, new { style = "color: #EB7F1A" })</span>
+</div>
+
+
+@section scripts{
+
+    <script src="~/Scripts/bxsliderHelper.js"></script>
+}

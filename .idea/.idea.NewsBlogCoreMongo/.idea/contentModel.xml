@@ -4,8 +4,12 @@
     <e p="$USER_HOME$/.Rider2018.2/system/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/.Rider2018.2/system/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_NewsBlogCoreMongo.-1864752229.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Automapper" t="Include">
+        <e p="AutomapperProfile.cs" t="Include" />
+      </e>
       <e p="Components" t="Include">
         <e p="CategoryListViewComponent.cs" t="Include" />
+        <e p="NewsItemViewComponent.cs" t="Include" />
       </e>
       <e p="Controllers" t="Include">
         <e p="AccountController.cs" t="Include" />
@@ -29,8 +33,10 @@
           <e p="NewPostModel.cs" t="Include" />
           <e p="PostModel.cs" t="Include" />
         </e>
+        <e p="Image.cs" t="Include" />
         <e p="NewsCategory.cs" t="Include" />
         <e p="NewsItem.cs" t="Include" />
+        <e p="NewsItemViewModel.cs" t="Include" />
         <e p="NewsListViewModel.cs" t="Include" />
         <e p="PagingInfo.cs" t="Include" />
         <e p="Post.cs" t="Include" />
@@ -76,9 +82,11 @@
         <e p="News" t="Include">
           <e p="Contact.cshtml" t="Include" />
           <e p="DemoPage.cshtml" t="Include" />
+          <e p="Details.cshtml" t="Include" />
           <e p="List.cshtml" t="Include" />
         </e>
         <e p="NewsItems" t="Include">
+          <e p="Details.cshtml" t="Include" />
           <e p="List.cshtml" t="Include" />
         </e>
         <e p="Shared" t="Include">
@@ -86,9 +94,11 @@
             <e p="CategoryList" t="Include">
               <e p="Default.cshtml" t="Include" />
             </e>
+            <e p="NewsItem" t="Include">
+              <e p="Default.cshtml" t="Include" />
+            </e>
           </e>
           <e p="Error.cshtml" t="Include" />
-          <e p="NewsItem.cshtml" t="Include" />
           <e p="_CookieConsentPartial.cshtml" t="Include" />
           <e p="_HeaderLayout.cshtml" t="Include" />
           <e p="_LangLinks.cshtml" t="Include" />
@@ -112,6 +122,39 @@
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="wwwroot" t="Include">
+        <e p="Uploads" t="Include">
+          <e p="00ccd15b-0507-4f51-b5e3-9b9d58ff4eae.jpg" t="Include" />
+          <e p="0bdaecc6-5ae5-4e7a-9ed3-35b87bbbf3b1.jpg" t="Include" />
+          <e p="0d344d49-79ef-4899-86cb-3b58f704f42d.jpg" t="Include" />
+          <e p="24127700-ed76-4c68-8d9c-d62f88c1e9c1.jpg" t="Include" />
+          <e p="5bf485af42151d0fa6a9de96.jpg" t="Include" />
+          <e p="5bf9db81de6ece27038e5444.jpg" t="Include" />
+          <e p="5bf9dbd0de6ece27038e5445.png" t="Include" />
+          <e p="5bf9dc1ede6ece27038e5446.png" t="Include" />
+          <e p="5bf9dc6ede6ece27038e5447.jpg" t="Include" />
+          <e p="5bf9dcdfde6ece27038e5448.png" t="Include" />
+          <e p="5bf9dd28de6ece27038e5449.png" t="Include" />
+          <e p="5bf9dd7ede6ece27038e544a.png" t="Include" />
+          <e p="5bf9ddcfde6ece27038e544b.png" t="Include" />
+          <e p="5f192cef-5e8b-4e24-87ad-140d89019578.jpg" t="Include" />
+          <e p="6661412c-d044-4153-90f8-3c2e5f6f26ab.jpg" t="Include" />
+          <e p="68c815e7-f50d-4696-a1a5-0fad4798cc1e.jpg" t="Include" />
+          <e p="68cd1cd1-08d6-45f4-8e4e-68a572dac143.jpg" t="Include" />
+          <e p="8f461d75-1b85-4bae-ae47-42bfe8c3e50a.jpg" t="Include" />
+          <e p="NoPhoto.jpg" t="Include" />
+          <e p="a6ff8057-0558-4969-bb4a-252d896af09b.jpg" t="Include" />
+          <e p="b47f8cf9-114a-4578-99bd-4203bdfe4e6d.jpg" t="Include" />
+          <e p="b605e143-f5ea-46f8-9874-393934b71b4f.jpg" t="Include" />
+          <e p="c857b3c9-5d8d-46d2-8d37-127f2510f0c1.jpg" t="Include" />
+          <e p="c97f5b2d-de7e-447d-ad52-508c13220069.jpg" t="Include" />
+          <e p="ced8d163-2f5f-4dd7-a59f-142735eb75dd.jpg" t="Include" />
+          <e p="d3e07225-2478-4795-a8c2-4c307aecb1a4.jpg" t="Include" />
+          <e p="dcb073c4-eb24-4cca-bac1-76672364416b.jpg" t="Include" />
+          <e p="e078ac7b-94a9-4734-b470-54a1522a1599.jpg" t="Include" />
+          <e p="e4622ab0-7973-4231-bc61-a0e4fc9dda93.jpg" t="Include" />
+          <e p="e9a74f29-03c1-461c-aad1-85411dea3c54.jpg" t="Include" />
+          <e p="f1b45d99-3846-4268-a959-1826c58a24de.jpg" t="Include" />
+        </e>
         <e p="bundles" t="Include" />
         <e p="css" t="Include">
           <e p="site.css" t="Include" />

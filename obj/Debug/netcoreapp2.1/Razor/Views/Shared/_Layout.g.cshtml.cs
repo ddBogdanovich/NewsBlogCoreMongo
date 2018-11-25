@@ -54,7 +54,7 @@ using MongoBlog.Models;
             WriteLiteral("\n<!DOCTYPE HTML>\n<html>\n");
             EndContext();
             BeginContext(24, 548, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "88724e95f33f43f8ad838124594fa278", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94e90c26462449bc903f6ffd8fb6bb28", async() => {
                 BeginContext(30, 535, true);
                 WriteLiteral(@"
    
@@ -87,7 +87,7 @@ using MongoBlog.Models;
             WriteLiteral("\n\n");
             EndContext();
             BeginContext(574, 699, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d45302a3af43429ba47a4201fa5db8aa", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cce33790415b45e7ac93fde9655bcde6", async() => {
                 BeginContext(580, 1, true);
                 WriteLiteral("\n");
                 EndContext();

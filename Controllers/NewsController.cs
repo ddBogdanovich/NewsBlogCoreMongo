@@ -59,7 +59,26 @@ namespace M101DotNet.WebApp.Controllers
         }
         
         
-        public ActionResult Contact()
+        public ActionResult Details(string id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
+            NewsItem newsItem = _blogRepository.FindNewsItem(id).Result;
+
+            if (newsItem == null)
+            {
+                return NotFound();
+            }
+            return View(newsItem);
+        }
+        
+        
+        
+        
+        public ActionResult Contact() 
         {
             return View();
         }

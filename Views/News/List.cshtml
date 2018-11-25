@@ -1,8 +1,5 @@
-@using System.Text.RegularExpressions;
 @model NewsBlogCoreMongo.Models.NewsListViewModel
 @{
-
-    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "List";
 }
 
@@ -11,11 +8,11 @@
 {
    
     var resizedBody = p.Body.Split(' ').Take(150);
-    p.Body = string.Join(" ", resizedBody);
-    @Html.Partial("NewsItem", p)
+    p.Body = string.Join(" ", resizedBody);  
+   @(await Component.InvokeAsync("NewsItem", p)) 
 
 }
-
+<div>hallo!</div>
 
 <div class="page_links">
     <div class="page_numbers">

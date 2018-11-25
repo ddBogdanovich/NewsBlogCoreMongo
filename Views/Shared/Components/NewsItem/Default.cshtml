@@ -1,0 +1,41 @@
+@model NewsBlogCoreMongo.Models.NewsItemViewModel
+@using System.IO  
+
+@{
+    var pic = System.IO.Path.Combine(Model.uploadsFolder, Model.blankImageName);
+
+    if (Model.newsItem.Images.Any())
+    {
+        var image = Model.newsItem.Images.FirstOrDefault();
+        var imagePath = System.IO.Path.Combine(Model.uploadsFolder, image.Id + image.Extension);
+        var fullImagePath = Model.wwwRootPath + imagePath;
+        
+     
+        if (File.Exists(fullImagePath))
+        {
+            pic = imagePath;
+        }
+    }
+}
+
+<div class="box1">
+    <h3 style="font-weight:bolder">@Html.ActionLink(@Model.newsItem.Headline, "Details", "News", new { id = @Model.newsItem.Id })</h3>
+    <span style="font-size:smaller">@Model.newsItem.CreatedAtUtc.ToShortDateString()</span>
+    <br>
+    <div class="view">
+
+        <a href="@Url.Action("Details", "News", new { id = @Model.newsItem.Id })"><img src="~@pic" alt="picture" asp-append-version="true" /></a>
+
+    </div>
+    <div class="data">
+        <p>
+        @Model.newsItem.Body...  <p>
+            
+            <span style="font-size: 13px">
+                @Html.ActionLink("Continue reading >>>", "Details", "News", new {id = @Model.newsItem.Id})
+            </span>
+        </p>
+        <p>
+    </div>
+    <div class="clear"></div>
+</div>

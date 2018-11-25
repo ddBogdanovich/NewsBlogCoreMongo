@@ -3699,7 +3699,7 @@
     "LigerShark.WebOptimizer.Analyzers/1.0.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Qe5UuBBl0U3l335flvpnHke7pok8EBWMyxHX+2ahtLHGmRnsrsUamRgD9pyBI86n8GLQOTgpTVf6/Y5MaLy1vw==",
+      "sha512": "sha512-xR7KfJvf+GR+yEDSZZQ+gdXb1MYh3s4HhCmPaLwp/Ubrd2YKznuHRyMBG8zE5fFtGa9o9k1AnAdN6OCMRCv1Cg==",
       "path": "ligershark.weboptimizer.analyzers/1.0.6",
       "hashPath": "ligershark.weboptimizer.analyzers.1.0.6.nupkg.sha512"
     },

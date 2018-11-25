@@ -1,9 +1,8 @@
 namespace MongoBlog.Components
 {
     using Microsoft.AspNetCore.Mvc;
-    using MongoBlog.Repository;
+    using Repository;
     using System.Linq;
-    using System.Threading.Tasks;
     
     public class CategoryListViewComponent : ViewComponent
     {

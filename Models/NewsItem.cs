@@ -19,6 +19,8 @@ namespace NewsBlogCoreMongo.Models
         public string Title { get; set; }
 
         public List<string> Categories { get; set; }
+        
+        public List<Image> Images { get; set; }
 
         public DateTime CreatedAtUtc { get; set; }
 
