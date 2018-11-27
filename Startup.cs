@@ -57,12 +57,28 @@ namespace MongoBlog
             {
                 pipeline.AddJavaScriptBundle("/bundles/bootstrapBundle.min.js", 
                     
-                    "js/site.js",                   
+                    "js/site.js",
+                    "lib/tether/dist/js/tether.min.js",
                     "lib/bootstrap/dist/js/bootstrap.js",                   
                     "lib/jquery/dist/respond.min.js",
                     "lib/jquery/dist/jquery.fancybox.js",
                     "lib/jquery/dist/jquery.mousewheel-3.0.6.pack.js",
                     "lib/jquery/dist/jquery.bxslider.js");
+
+                pipeline.AddJavaScriptBundle("/bundles/jsElements.js",
+
+                    "lib/Scripts/moment.js",
+                    "lib/Scripts/daterangepicker.js",
+                    "lib/Scripts/fileinput.js"
+                );
+
+                pipeline.AddCssBundle("/bundles/jsElements.css",
+                    "css_/jsElementsCss/daterangepicker.css",
+                    "css_/jsElementsCss/bootstrap-fileinput/css/fileinput.css"
+                );
+                
+                
+                
 
                 pipeline.AddCssBundle("/bundles/content.css",
                     "lib/bootstrap/dist/css/bootstrap.css",

@@ -13,7 +13,7 @@ namespace MongoBlog.Components
         private IConfiguration _configuration { get; }
         private IHostingEnvironment _env;
 
-        public NewsItemViewComponent( IConfiguration configuration, IHostingEnvironment env)
+        public NewsItemViewComponent(IConfiguration configuration, IHostingEnvironment env)
         {
             _configuration = configuration;
             _env = env;

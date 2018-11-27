@@ -18,6 +18,9 @@
         <e p="NewsController.cs" t="Include" />
         <e p="NewsItemsController.cs" t="Include" />
       </e>
+      <e p="HtmlHelpers" t="Include">
+        <e p="PagingHelper.cs" t="Include" />
+      </e>
       <e p="Models" t="Include">
         <e p="Account" t="Include">
           <e p="LoginModel.cs" t="Include" />
@@ -161,9 +164,61 @@
           <e p="site.min.css" t="Include" />
         </e>
         <e p="css_" t="Include">
+          <e p="CSSimages" t="Include">
+            <e p="bx_loader.gif" t="Include" />
+            <e p="controls.png" t="Include" />
+          </e>
           <e p="Site.css" t="Include" />
+          <e p="images" t="Include">
+            <e p="NoPhoto.jpg" t="Include" />
+            <e p="arrow-right.png" t="Include" />
+            <e p="banner1.svg" t="Include" />
+            <e p="banner2.svg" t="Include" />
+            <e p="banner3.svg" t="Include" />
+            <e p="body-bg3.png" t="Include" />
+            <e p="facebook.png" t="Include" />
+            <e p="fancybox_overlay.png" t="Include" />
+            <e p="fancybox_sprite.png" t="Include" />
+            <e p="google+.png" t="Include" />
+            <e p="large-button-overlay.png" t="Include" />
+            <e p="likes.png" t="Include" />
+            <e p="link.png" t="Include" />
+            <e p="linkedin.png" t="Include" />
+            <e p="menu-arrow.png" t="Include" />
+            <e p="r-blog.png" t="Include" />
+            <e p="ru.png" t="Include" />
+            <e p="search.png" t="Include" />
+            <e p="social-icons.png" t="Include" />
+            <e p="twitter.png" t="Include" />
+            <e p="uk.png" t="Include" />
+            <e p="views.png" t="Include" />
+          </e>
           <e p="jquery.bxslider.css" t="Include" />
           <e p="jquery.fancybox.css" t="Include" />
+          <e p="jsElementsCss" t="Include">
+            <e p="bootstrap-fileinput" t="Include">
+              <e p="css" t="Include">
+                <e p="fileinput.css" t="Include" />
+                <e p="fileinput.min.css" t="Include" />
+              </e>
+              <e p="img" t="Include">
+                <e p="loading-sm.gif" t="Include" />
+                <e p="loading.gif" t="Include" />
+              </e>
+              <e p="sass" t="Include">
+                <e p="fileinput.scss" t="Include" />
+              </e>
+              <e p="themes" t="Include">
+                <e p="fa" t="Include">
+                  <e p="theme.js" t="Include" />
+                </e>
+                <e p="gly" t="Include">
+                  <e p="theme.js" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="daterangepicker.css" t="Include" />
+          </e>
           <e p="style.css" t="Include" />
           <e p="zocial.css" t="Include" />
         </e>
@@ -197,6 +252,83 @@
           <e p="site.min.js" t="Include" />
         </e>
         <e p="lib" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="_references.js" t="Include" />
+            <e p="bootstrap.js" t="Include" />
+            <e p="bootstrap.min.js" t="Include" />
+            <e p="bxsliderHelper.js" t="Include" />
+            <e p="daterangeHelper.js" t="Include" />
+            <e p="daterangepicker.js" t="Include" />
+            <e p="fileinput.js" t="Include" />
+            <e p="fileinput.min.js" t="Include" />
+            <e p="fileinputHelper.js" t="Include" />
+            <e p="jquery-1.10.2.intellisense.js" t="Include" />
+            <e p="jquery-1.10.2.js" t="Include" />
+            <e p="jquery-1.10.2.min.js" t="Include" />
+            <e p="jquery-1.10.2.min.map" t="Include" />
+            <e p="jquery-3.1.1.intellisense.js" t="Include" />
+            <e p="jquery-3.1.1.js" t="Include" />
+            <e p="jquery-3.1.1.min.js" t="Include" />
+            <e p="jquery-3.1.1.min.map" t="Include" />
+            <e p="jquery-3.1.1.slim.js" t="Include" />
+            <e p="jquery-3.1.1.slim.min.js" t="Include" />
+            <e p="jquery-3.1.1.slim.min.map" t="Include" />
+            <e p="jquery.bxslider.js" t="Include" />
+            <e p="jquery.fancybox.js" t="Include" />
+            <e p="jquery.mousewheel-3.0.6.pack.js" t="Include" />
+            <e p="jquery.validate-vsdoc.js" t="Include" />
+            <e p="jquery.validate.js" t="Include" />
+            <e p="jquery.validate.min.js" t="Include" />
+            <e p="jquery.validate.unobtrusive.js" t="Include" />
+            <e p="jquery.validate.unobtrusive.min.js" t="Include" />
+            <e p="locales" t="Include">
+              <e p="LANG.js" t="Include" />
+              <e p="ar.js" t="Include" />
+              <e p="bg.js" t="Include" />
+              <e p="ca.js" t="Include" />
+              <e p="cr.js" t="Include" />
+              <e p="cz.js" t="Include" />
+              <e p="da.js" t="Include" />
+              <e p="de.js" t="Include" />
+              <e p="el.js" t="Include" />
+              <e p="es.js" t="Include" />
+              <e p="fa.js" t="Include" />
+              <e p="fi.js" t="Include" />
+              <e p="fr.js" t="Include" />
+              <e p="hu.js" t="Include" />
+              <e p="id.js" t="Include" />
+              <e p="it.js" t="Include" />
+              <e p="ja.js" t="Include" />
+              <e p="nl.js" t="Include" />
+              <e p="pl.js" t="Include" />
+              <e p="pt-BR.js" t="Include" />
+              <e p="pt.js" t="Include" />
+              <e p="ro.js" t="Include" />
+              <e p="ru.js" t="Include" />
+              <e p="sk.js" t="Include" />
+              <e p="th.js" t="Include" />
+              <e p="tr.js" t="Include" />
+              <e p="uk.js" t="Include" />
+              <e p="zh-TW.js" t="Include" />
+              <e p="zh.js" t="Include" />
+            </e>
+            <e p="modernizr-2.6.2.js" t="Include" />
+            <e p="modernizr-2.8.3.js" t="Include" />
+            <e p="moment-with-locales.js" t="Include" />
+            <e p="moment-with-locales.min.js" t="Include" />
+            <e p="moment.js" t="Include" />
+            <e p="moment.min.js" t="Include" />
+            <e p="plugins" t="Include">
+              <e p="canvas-to-blob.js" t="Include" />
+              <e p="canvas-to-blob.min.js" t="Include" />
+              <e p="purify.js" t="Include" />
+              <e p="purify.min.js" t="Include" />
+              <e p="sortable.js" t="Include" />
+              <e p="sortable.min.js" t="Include" />
+            </e>
+            <e p="respond.js" t="Include" />
+            <e p="respond.min.js" t="Include" />
+          </e>
           <e p="bootstrap" t="Include">
             <e p=".bower.json" t="Include" />
             <e p="CHANGELOG.md" t="Include" />
@@ -387,6 +519,7 @@
               </e>
             </e>
           </e>
+          <e p="bxsliderHelper.js" t="Include" />
           <e p="fontawesome" t="Include">
             <e p=".bower.json" t="Include" />
             <e p=".npmignore" t="Include" />

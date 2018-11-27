@@ -6,10 +6,12 @@ using MongoDB.Driver;
 using M101DotNet.WebApp.Models;
 using M101DotNet.WebApp.Models.Home;
 using System.Linq.Expressions;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MongoBlog.Repository;
 using NewsBlogCoreMongo.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace M101DotNet.WebApp.Controllers
 {
@@ -18,10 +20,14 @@ namespace M101DotNet.WebApp.Controllers
         private readonly IBlogRepository _blogRepository;
         
         private int Pagesize = 5;
+        private IConfiguration _configuration { get; }
+        private IHostingEnvironment _env;
 
-        public NewsController(IBlogRepository blogRepository)
+        public NewsController(IBlogRepository blogRepository, IConfiguration configuration, IHostingEnvironment env)
         {
             _blogRepository = blogRepository;
+            _configuration = configuration;
+            _env = env;
         }
         
         
@@ -72,7 +78,17 @@ namespace M101DotNet.WebApp.Controllers
             {
                 return NotFound();
             }
-            return View(newsItem);
+
+            NewsItemViewModel model = new NewsItemViewModel()
+            {
+                newsItem = newsItem,
+                uploadsFolder = _configuration.GetSection("UploadsFolder").Value,
+                blankImageName = _configuration.GetSection("BlankImageName").Value,
+                wwwRootPath = _env.WebRootPath
+
+            };
+            
+            return View(model);
         }
         
         

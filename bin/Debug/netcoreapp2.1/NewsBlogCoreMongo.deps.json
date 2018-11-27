@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "affd1835bb054944ca479248ad7413d70bd172da"
+    "signature": "69dbfb415951aa5095002b45ae19f9c1445d2a10"
   },
   "compilationOptions": {
     "defines": [
@@ -25,6 +25,7 @@
       "NewsBlogCoreMongo/1.0.0": {
         "dependencies": {
           "AspNetCore.Identity.Mongo": "3.1.5",
+          "AutoMapper": "8.0.0",
           "LigerShark.WebOptimizer.Core": "1.0.215",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
@@ -60,6 +61,21 @@
         },
         "compile": {
           "lib/netcoreapp2.0/AspNetCore.Identity.Mongo.dll": {}
+        }
+      },
+      "AutoMapper/8.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
         }
       },
       "DnsClient/1.0.7": {
@@ -3688,6 +3704,13 @@
       "sha512": "sha512-a/519INC97Y69iZdVZXs8tjiHeVNaKuqEfVY4kF6Zv/UgR089qZS/AL1k2veqhT+7GelgZ96BWnKBi3GOhJwhw==",
       "path": "aspnetcore.identity.mongo/3.1.5",
       "hashPath": "aspnetcore.identity.mongo.3.1.5.nupkg.sha512"
+    },
+    "AutoMapper/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kcbje0Y71XkvzPn8k6OROZGOn2SKaWimon3Bu1WUTVoV5GTJVym+k+zQuKApyyFVRfk7bisumj/qUX4xIIXS+Q==",
+      "path": "automapper/8.0.0",
+      "hashPath": "automapper.8.0.0.nupkg.sha512"
     },
     "DnsClient/1.0.7": {
       "type": "package",

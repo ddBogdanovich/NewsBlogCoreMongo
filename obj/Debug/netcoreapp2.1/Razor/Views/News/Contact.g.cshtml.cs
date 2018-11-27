@@ -79,7 +79,7 @@ using MongoBlog.Models;
                     ");
             EndContext();
             BeginContext(1877, 968, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6ed346d9c4584ac79423cfb43d692d82", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1884c8f80e904bf9984792ad147fe753", async() => {
                 BeginContext(1883, 955, true);
                 WriteLiteral(@"
                         <div>

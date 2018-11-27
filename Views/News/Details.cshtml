@@ -1,4 +1,3 @@
-@using System.Configuration
 @model NewsBlogCoreMongo.Models.NewsItemViewModel
 
 
@@ -7,45 +6,40 @@
 
 @{
     var pic = System.IO.Path.Combine(Model.uploadsFolder, Model.blankImageName);
-    var uploadDir = ConfigurationManager.AppSettings["FilePath"].ToString();
-    if (Model.Image.Any())
+    if (Model.newsItem.Images.Any())
     {
-
         <ul class="bxslider">
 
-            @foreach (var image in @Model.Image)
+            @foreach (var image in @Model.newsItem.Images)
             {
-               
-                var imagePath = Path.Combine(Server.MapPath(uploadDir), image.Id + image.Extension);
-                if (System.IO.File.Exists(imagePath))
+
+                var imagePath = System.IO.Path.Combine(Model.uploadsFolder, image.Id + image.Extension);
+                var fullImagePath = Model.wwwRootPath + imagePath;
+                
+                if (System.IO.File.Exists(fullImagePath))
                 {
-                    pic = uploadDir + image.Id + image.Extension;
+                    pic = imagePath;
                     <li>
-                        <img src="@Url.Content(@pic)" alt="picture"/>
+                        <img src="~@pic" alt="picture"  asp-append-version="true"/>
                     </li>
                 }
             }
         </ul>
-
     }
-
-
     else
     {
         <ul>
             <li>
-            <img src="@Url.Content(@pic)" alt="picture" />
+            <img src="~@pic" alt="picture" />
             <li>
         </ul>
     }
 
 }
 
-
-
 <div class="box1">
     <div class="data">
-        <p>@Model.Body</p>
+        <p>@Model.newsItem.Body</p>
     </div>
     <div class="clear"></div>
     <span style="font-size: 13px;">@Html.ActionLink("<<< Back to News", "List", null, new { style = "color: #EB7F1A" })</span>
@@ -54,5 +48,5 @@
 
 @section scripts{
 
-    <script src="~/Scripts/bxsliderHelper.js"></script>
+    <script src="~/lib/bxsliderHelper.js"></script>
 }
