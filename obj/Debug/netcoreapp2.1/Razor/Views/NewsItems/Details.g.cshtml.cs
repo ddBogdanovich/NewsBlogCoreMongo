@@ -23,8 +23,13 @@ using MongoBlog.Models;
 
 #line default
 #line hidden
+#line 3 "/home/dd/NewsBlogCoreMongoDb/Views/_ViewImports.cshtml"
+using MongoBlog.HtmlHelpers;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5e11e941641ea1b04d58e2c1c1deb74096ffc2a4", @"/Views/NewsItems/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"35d942b7d973c7624871be7071b92618f82163cf", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cd488d45478e2cb930100d126b1602d0832f7310", @"/Views/_ViewImports.cshtml")]
     public class Views_NewsItems_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #line hidden
@@ -54,7 +59,7 @@ using MongoBlog.Models;
             WriteLiteral("<!DOCTYPE html>\n\n<html>\n");
             EndContext();
             BeginContext(24, 39, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8081ae9a69fa489c84bd26ca9c51a13e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "397a12900312448c81520a40d89ec20c", async() => {
                 BeginContext(30, 26, true);
                 WriteLiteral("\n    <title>title</title>\n");
                 EndContext();
@@ -74,7 +79,7 @@ using MongoBlog.Models;
             WriteLiteral("\n");
             EndContext();
             BeginContext(64, 34, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "96f1e7892a9d46a18dece90219103348", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4a83c5b9c97045efa9ba3970d687892d", async() => {
                 BeginContext(70, 21, true);
                 WriteLiteral("\n<div>\n      \n</div>\n");
                 EndContext();

@@ -1,0 +1,193 @@
+@using System.Configuration
+@model NewsBlogCoreMongo.Models.NewsItem
+
+
+<div class="wrap">
+    <div class="main">
+        <div class="section group">
+
+            <div class="col span_2_of_3">
+                <div class="contact-form">
+                    <h3>Edit News item</h3>
+                    @using (Html.BeginForm("Edit", "NewsItems", null, FormMethod.Post, false, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Id)
+
+
+                        <div class="row">
+                            <span>@Html.LabelFor(model => model.Headline)</span>
+                            <span>@Html.EditorFor(model => model.Headline)</span>
+                            @Html.ValidationMessageFor(model => model.Headline, "", new { @class = "text-danger" })
+                        </div>
+
+
+                        <div class="row">
+                            <span>@Html.LabelFor(model => model.Body)</span>
+                            <span>@Html.EditorFor(model => model.Body)</span>
+                            @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
+                        </div>
+
+
+                        <div class="row">
+                            <hr>
+                            <div class="col-md-4">
+                                <span>@Html.LabelFor(model => model.CreatedAtUtc)</span>
+                                @{ ViewContext.ClientValidationEnabled = false; }
+                                <span class="my-date-time">@Html.EditorFor(model => model.CreatedAtUtc)</span>
+                                @{ ViewContext.ClientValidationEnabled = true; }
+                                @Html.ValidationMessageFor(model => model.CreatedAtUtc, "", new { @class = "text-danger" })
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+                            <hr>
+                            @*<div class="col-md-2">
+                                <span>@Html.LabelFor(model => model.Categories.FirstOrDefault())</span>
+                                <span> @Html.DropDownList("NewsCategoryID", null, new { @class = "form-control" })</span>
+                                @Html.ValidationMessageFor(model => model.Categories.FirstOrDefault(), "", new { @class = "text-danger" })
+
+
+                            </div>*@
+
+                        </div>
+
+
+                        <div class="row">
+                            <hr>
+                            <span>Images:</span>
+
+
+                            <div class="editor-label">
+
+
+                                @*
+                                @if (Model.Images != null && Model.Images.Count > 0)
+                                {
+                                    var uploadDir = ConfigurationManager.AppSettings["FilePath"].ToString();
+                                    foreach (var item in Model.Image)
+                                    {
+
+
+                                        var imagePath = Path.Combine(Server.MapPath(uploadDir), item.Id + item.Extension);
+                                        if (System.IO.File.Exists(imagePath))
+                                        {
+                                            var pic = uploadDir + item.Id + item.Extension;
+                                            <div class="col-lg-3">
+                                                <a href="/NewsItems/Download/?p=@(item.Id + item.Extension)&d=@item.ImageName"><img src="@Url.Content(@pic)" alt="picture" style="width: 200px; height: 150px;"/></a>
+
+                                                <p>
+                                                    <a href="javascript:void(0);" data-id="@item.Id" class="deleteItem btn btn-sm btn-danger" style="position: relative">Delete</a>
+                                                </p>
+                                            </div>
+                                        }
+                                    }
+
+                                }*@
+                                else
+                                {
+                                    <span style="font-weight: bold">No Images</span>
+                                }
+
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="row">
+                            <hr>
+
+                            <label class="control-label">Select File</label>
+                            <div class="col-md-12">
+                                <input id="input-44" name="upload" type="file" multiple class="file-loading">
+                                <div id="errorBlock" class="help-block"></div>
+                            </div>
+                        </div>
+
+
+
+                        <div>
+                            <span><input type="submit" value="Save"></span>
+                        </div>
+                                    }
+                    <div class="clear"></div>
+                    <span style="font-size: 13px;">@Html.ActionLink("<<< Back to List", "List", null, new { style = "color: #EB7F1A" })</span>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts
+    {
+    <script src="~/Scripts/daterangeHelper.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#input-44").fileinput({
+                uploadUrl: 'asdf/adf',
+                showCaption: true,
+                maxFilePreviewSize: 10240,
+                maxFileCount: 5,
+                allowedFileExtensions: ["jpg", "gif", "png"],
+                elErrorContainer: "#errorBlock",
+                showUpload: false,
+                layoutTemplates: {
+                    main1: "{preview}\n" +
+                    "<div class=\'input-group {class}\' style=\"position: inherit\">\n" +
+                    "   <div class=\'input-group-btn\'>\n" +
+                    "       {browse}\n" +
+                    "       {remove}\n" +
+                    "   </div>\n" +
+                    "   {caption}\n" +
+                    "</div>",
+                    actions: '<div class="file-actions">\n' +
+                    '    <div class="file-footer-buttons">\n' +
+                    '        {delete} {zoom}' +
+                    '    </div>\n' +
+                    '    {drag}\n' +
+                    '    <div class="file-upload-indicator" title="{indicatorTitle}">{indicator}</div>\n' +
+                    '    <div class="clearfix"></div>\n' +
+                    '</div>',
+
+                }
+            });
+
+            $('.deleteItem').click(function (e) {
+                e.preventDefault();
+                var $ctrl = $(this);
+                if (confirm('Do you really want to delete this file?')) {
+                    $.ajax({
+                        url: '@Url.Action("DeleteFile")',
+                        type: 'POST',
+                        data: { id: $(this).data('id') }
+                    }).done(function (data) {
+                        if (data.Result == "OK") {
+                            $ctrl.closest('li').remove();
+                            $ctrl.closest('div').remove();
+                        }
+                        else if (data.Result.Message) {
+                            alert(data.Result.Message);
+                        }
+                    }).fail(function () {
+                        alert("There is something wrong. Please try again.");
+                    })
+
+                }
+            });
+        }
+    )
+    </script>
+
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+}

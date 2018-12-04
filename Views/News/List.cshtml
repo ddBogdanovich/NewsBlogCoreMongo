@@ -1,4 +1,5 @@
 @model NewsBlogCoreMongo.Models.NewsListViewModel
+
 @{
     ViewBag.Title = "List";
 }
@@ -12,16 +13,18 @@
    @(await Component.InvokeAsync("NewsItem", p)) 
 
 }
-<div>hallo!</div>
 
 <div class="page_links">
-    <div class="page_numbers">
-        <ul>
-            @*@Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))*@
-        </ul>
-    </div>
+        
+        <page-link page-model="@Model.PagingInfo" page-action="List" page-url-category="@Model.CurrentCategory"></page-link>
+        
+
     <div class="clear"></div>
     <div class="page_bottom">
         <p>Back To : <a href="#">Top</a> |  <a href="News/List">Home</a></p>
     </div>
 </div>
+
+
+
+

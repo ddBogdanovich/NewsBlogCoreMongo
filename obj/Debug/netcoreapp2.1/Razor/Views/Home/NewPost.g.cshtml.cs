@@ -23,8 +23,13 @@ using MongoBlog.Models;
 
 #line default
 #line hidden
+#line 3 "/home/dd/NewsBlogCoreMongoDb/Views/_ViewImports.cshtml"
+using MongoBlog.HtmlHelpers;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fbf98981dde3a709281b84e86b8c203470407416", @"/Views/Home/NewPost.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"35d942b7d973c7624871be7071b92618f82163cf", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cd488d45478e2cb930100d126b1602d0832f7310", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_NewPost : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

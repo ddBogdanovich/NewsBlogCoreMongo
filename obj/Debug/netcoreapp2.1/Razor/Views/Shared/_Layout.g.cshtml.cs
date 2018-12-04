@@ -23,8 +23,13 @@ using MongoBlog.Models;
 
 #line default
 #line hidden
+#line 3 "/home/dd/NewsBlogCoreMongoDb/Views/_ViewImports.cshtml"
+using MongoBlog.HtmlHelpers;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"41cfff9570eca0c979c4b2759c0adfd861ba31ba", @"/Views/Shared/_Layout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"35d942b7d973c7624871be7071b92618f82163cf", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cd488d45478e2cb930100d126b1602d0832f7310", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__Layout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #line hidden
@@ -54,7 +59,7 @@ using MongoBlog.Models;
             WriteLiteral("\n<!DOCTYPE HTML>\n<html>\n");
             EndContext();
             BeginContext(24, 746, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f23000ae97054fdcb1142eaa61164b47", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "550b9bd261bd49579211cf21b3c67dcc", async() => {
                 BeginContext(30, 733, true);
                 WriteLiteral(@"
    
@@ -89,7 +94,7 @@ using MongoBlog.Models;
             WriteLiteral("\n\n");
             EndContext();
             BeginContext(772, 692, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68bcfb20dcda46cea27bbd0df4532ef1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "35eee399f51440138390a18e98461c22", async() => {
                 BeginContext(778, 1, true);
                 WriteLiteral("\n");
                 EndContext();

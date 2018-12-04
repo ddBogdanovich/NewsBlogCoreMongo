@@ -38,7 +38,7 @@ namespace M101DotNet.WebApp.Controllers
 
             if (!string.IsNullOrWhiteSpace(category))
             {
-                filter = x => x.Categories.Contains(category);
+                filter = x => x.Category == category;
             }
             
             NewsListViewModel model = new NewsListViewModel

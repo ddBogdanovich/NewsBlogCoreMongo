@@ -19,7 +19,7 @@ namespace MongoBlog.Components
 
             var categories = _repository.GetActualCategories().Result; 
 
-            return View(categories.Select(x => x.Name).ToList());
+            return View(categories);
         }        
     }
 }

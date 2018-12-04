@@ -1,0 +1,43 @@
+@model NewsBlogCoreMongo.Models.NewsCategory
+
+
+<div class="wrap">
+    <div class="main">
+        <div class="section group">
+            <div class="col span_2_of_3">
+
+                <div class="contact-form">
+                    <h3>Edit @Model.Name category</h3>
+
+                    @using (Html.BeginForm("Edit", "Category", null, FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary()
+
+                        @Html.HiddenFor(model => model.Id)
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>@Html.LabelFor(model => model.Name)</h4>
+                                <span style="font-size: medium">@Html.EditorFor(model => model.Name)</span>
+                                <span>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })</span>
+
+
+                                <div class="form-group">
+                                    <span><input type="submit" style="position: relative" value="Update"></span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    }
+
+                </div>
+                <span style="font-size: 13px;">@Html.ActionLink("<<< Back to List", "List", "NewsItems", null, new { style = "color: #EB7F1A" })</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

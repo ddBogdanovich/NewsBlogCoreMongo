@@ -23,8 +23,22 @@ namespace MongoBlog.Repository
 
         Task<IEnumerable<NewsItem>> GetNewsFiltered(int page, int pageSize, string category);
 
-        Task<IEnumerable<NewsCategory>> GetActualCategories();
+        Task<IList<NewsCategory>> GetExistingCategories();
 
         Task<NewsItem> FindNewsItem(string id);
+
+        Task<IEnumerable<NewsItem>> GetNews();
+
+        Task InsertNewsItemAsync(NewsItem item);
+
+        Task<List<string>> GetActualCategories();
+
+        Task SaveCategoryItem(NewsCategory newsCategory);
+
+        Task<NewsCategory> GetCategory(string id);
+
+        Task UpdateCategoryItem(NewsCategory newsCategory);
+
+        Task DeleteCategoryItem(string id);
     }
 }

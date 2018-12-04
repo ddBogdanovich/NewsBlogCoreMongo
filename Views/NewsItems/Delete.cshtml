@@ -1,0 +1,71 @@
+@using System.Configuration
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+@model NewsBlogCoreMongo.Models.NewsItemViewModel
+
+@{
+   
+    var resizedBody = @Model.newsItem.Body.Split(' ').Take(150);
+    Model.newsItem.Body = string.Join(" ", resizedBody);
+}
+
+
+
+<h3 style="color: crimson">Are you sure you want to delete this?</h3>
+<div>
+
+    <table class="table table-bordered table-condensed table-hover brd">
+
+
+        <tr>
+
+            <td>
+                <span style="font-weight: bolder"> @Html.DisplayFor(modelItem => @Model.newsItem.Headline)</span>
+                <hr>
+                @Model.newsItem.Body.ToString();
+                <hr>
+
+                @if (@Model.newsItem.Images != null && @Model.newsItem.Images.Count() > 0)
+                {
+                    @*var uploadDir = ConfigurationManager.AppSettings["FilePath"].ToString();
+                    foreach (var it in @Model.Image)
+                    {
+                        var imagePath = Path.Combine(Server.MapPath(uploadDir), it.Id + it.Extension);
+                        if (System.IO.File.Exists(imagePath))
+                        {
+                            var pic = uploadDir + it.Id + it.Extension;
+                            <img src="@Url.Content(@pic)" alt="picture" style="width: 120px; height: 100px;" />
+
+                        }*@
+                        
+                    }
+                }
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @Model.newsItem.CreatedAtUtc)
+            </td>
+            <td>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-danger" style="float: inherit" />
+                    </div>
+                }
+            </td>
+        </tr>
+
+
+    </table>
+
+   
+
+
+    <div class="clear"></div>
+    <span style="font-size: 13px;">@Html.ActionLink("<<< Back to List", "List", null, new { style = "color: #EB7F1A" })</span>
+
+
+
+</div>

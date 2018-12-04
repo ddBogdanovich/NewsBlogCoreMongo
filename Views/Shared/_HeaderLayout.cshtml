@@ -20,10 +20,10 @@
                         <li><a asp-action="Demo" asp-controller="News">@Localizer["Support"]</a></li>
                         <li><a asp-action="Contact" asp-controller="News">@Localizer["Contact"]</a></li>
 
-                        @if (User.IsInRole("Administrator") || User.IsInRole("Moderator"))
-                        {
+                      @*@if (User.IsInRole("Administrator") || User.IsInRole("Moderator"))
+                        {*@
                             <li><a asp-action="List" asp-controller="NewsItems">Admin Tools</a></li>
-                        }
+                        @*}*@
                     </ul>
                 </div>
                 <div class="clear"></div>

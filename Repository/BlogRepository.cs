@@ -6,6 +6,7 @@ using M101DotNet.WebApp.Models;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.Options;
 using MongoBlog.Models;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using NewsBlogCoreMongo.Models;
 
@@ -76,7 +77,13 @@ namespace MongoBlog.Repository
         {
             return  _context.News.CountDocumentsAsync(filter);
         }
-
+        
+        
+        
+        public async Task<IEnumerable<NewsItem>> GetNews()
+        {
+            return await _context.News.Find(x => true).ToListAsync();
+        }
         
         
         public async Task<IEnumerable<NewsItem>> GetNewsFiltered(int page, int pageSize, string category)
@@ -85,7 +92,7 @@ namespace MongoBlog.Repository
             
             if (!string.IsNullOrWhiteSpace(category))
             {
-                filter = x => x.Categories.Contains(category);
+                filter = x => x.Category == category;
             }
 
             return await _context.News.Find(filter)
@@ -96,9 +103,9 @@ namespace MongoBlog.Repository
         }
 
 
-        public async Task<IEnumerable<NewsCategory>> GetActualCategories()
+        public async Task<IList<NewsCategory>> GetExistingCategories()
         {
-            return await _context.Categories.Find(x => true).ToListAsync();
+            return await _context.Categories.Find(x => true).SortBy(x => x.Name).ToListAsync();
         }
 
 
@@ -107,8 +114,52 @@ namespace MongoBlog.Repository
             return await _context.News.Find(x => x.Id == id).SingleOrDefaultAsync();
         }
         
+        
+        public async Task InsertNewsItemAsync(NewsItem item)
+        {
+            await _context.News.InsertOneAsync(item);
+        }
+        
         #endregion
         
+        #region Categories
+
+        public async Task<List<string>> GetActualCategories()
+        {
+            return await _context.News.Distinct<string>("Category", "{}").ToListAsync();
+
+        }
+
+
+
+
+        public async Task SaveCategoryItem(NewsCategory newsCategory)
+        {
+             await _context.Categories.InsertOneAsync(newsCategory);
+        }
+
+
+        public async Task UpdateCategoryItem(NewsCategory newsCategory)
+        {
+            var filter = new BsonDocument("Id", newsCategory.Id);
+            var update = Builders<NewsCategory>.Update.Set("Name", newsCategory.Name);
+            
+            var result = await _context.Categories.FindOneAndUpdateAsync<BsonDocument>(filter, update);
+        }
+        
+        public async Task DeleteCategoryItem(string id)
+        {     
+            var result = await _context.Categories.DeleteOneAsync(x => x.Id == id);
+        }
+        
+        
+        public async Task<NewsCategory> GetCategory(string id)
+        {
+            return await _context.Categories.Find(x => x.Id == id).SingleOrDefaultAsync();
+        }
+        
+        
+        #endregion
         
         
     }
