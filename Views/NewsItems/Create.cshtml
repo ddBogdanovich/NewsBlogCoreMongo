@@ -1,7 +1,4 @@
 @model NewsBlogCoreMongo.Models.NewsItemViewModel
-@{
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
 
 <div class="wrap">
     <div class="main">
@@ -89,7 +86,7 @@
 
 @section scripts
     {
-    <script src="~/Scripts/daterangeHelper.js"></script>
+    <script src="/lib/Scripts/daterangeHelper.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
 
@@ -148,7 +145,7 @@
     )
     </script>
 
-    @*@Scripts.Render("~/bundles/jqueryval")*@
+    <script src="/bundles/jqval.js"></script>
 }
 
 

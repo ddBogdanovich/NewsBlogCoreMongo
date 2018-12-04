@@ -17,6 +17,7 @@ namespace MongoBlog.HtmlHelpers
 
         public PageLinkTagHelper(IUrlHelperFactory helperFactory)
         {
+
             urlHelperFactory = helperFactory;
         }
 

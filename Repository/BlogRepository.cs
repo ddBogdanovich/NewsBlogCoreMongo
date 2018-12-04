@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using MongoBlog.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 using NewsBlogCoreMongo.Models;
 
 namespace MongoBlog.Repository
@@ -126,7 +127,8 @@ namespace MongoBlog.Repository
 
         public async Task<List<string>> GetActualCategories()
         {
-            return await _context.News.Distinct<string>("Category", "{}").ToListAsync();
+           
+            return await _context.News.AsQueryable<NewsItem>().Select(x => x.Category).Distinct().ToListAsync();
 
         }
 

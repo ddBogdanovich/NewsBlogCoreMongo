@@ -12916,11 +12916,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/dd/NewsBlogCoreMongoDb/NewsBlogCoreMongo.csproj",
+      "projectUniqueName": "/home/dd/NewsBlogASPCoreMongo/NewsBlogCoreMongo.csproj",
       "projectName": "NewsBlogCoreMongo",
-      "projectPath": "/home/dd/NewsBlogCoreMongoDb/NewsBlogCoreMongo.csproj",
+      "projectPath": "/home/dd/NewsBlogASPCoreMongo/NewsBlogCoreMongo.csproj",
       "packagesPath": "/home/dd/.nuget/packages/",
-      "outputPath": "/home/dd/NewsBlogCoreMongoDb/obj/",
+      "outputPath": "/home/dd/NewsBlogASPCoreMongo/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

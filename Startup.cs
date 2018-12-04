@@ -72,16 +72,23 @@ namespace MongoBlog
                     "lib/Scripts/fileinput.js"
                 );
 
-                pipeline.AddCssBundle("/bundles/jsElements.css",
-                    "css_/jsElementsCss/daterangepicker.css",
-                    "css_/jsElementsCss/bootstrap-fileinput/css/fileinput.css"
+                pipeline.AddJavaScriptBundle("/bundles/jqval.js",
+
+                    "lib/Scripts/jquery.validate.js"
                 );
                 
                 
                 
+                
+                pipeline.AddCssBundle("/bundles/jsElements.css",
+                    "css_/jsElementsCss/daterangepicker.css",
+                    "css_/jsElementsCss/bootstrap-fileinput/css/fileinput.css"
+                );     
+                
+                
 
                 pipeline.AddCssBundle("/bundles/content.css",
-                    "lib/bootstrap/dist/css/bootstrap.css",
+                    "css_/bootstrap.css",
                     "css_/zocial.css",
                     "css_/style.css",
                     "css_/Site.css",
