@@ -44,8 +44,8 @@
 
                         if (System.IO.File.Exists(fullImagePath))
                         {
-                            pic = imagePath;
-                            <img src="~@pic" alt="picture" style="width: 120px; height: 100px;" />
+                            pic = "~" + imagePath;
+                            <img src="@Url.Content(@pic)" alt="picture" style="width: 120px; height: 100px;" />
                         }
 
                     }

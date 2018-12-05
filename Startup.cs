@@ -56,14 +56,13 @@ namespace MongoBlog
             services.AddWebOptimizer(pipeline =>
             {
                 pipeline.AddJavaScriptBundle("/bundles/bootstrapBundle.min.js", 
-                    
                     "js/site.js",
-                    "lib/tether/dist/js/tether.min.js",
-                    "lib/bootstrap/dist/js/bootstrap.js",                   
-                    "lib/jquery/dist/respond.min.js",
-                    "lib/jquery/dist/jquery.fancybox.js",
-                    "lib/jquery/dist/jquery.mousewheel-3.0.6.pack.js",
-                    "lib/jquery/dist/jquery.bxslider.js");
+                    "lib/Scripts/bootstrap.js", 
+                    "lib/Scripts/respond.js",
+                    "lib/tether/dist/js/tether.min.js",                
+                    "lib/Scripts/jquery.fancybox.js",
+                    "lib/Scripts/jquery.mousewheel-3.0.6.pack.js",
+                    "lib/Scripts/jquery.bxslider.js");
 
                 pipeline.AddJavaScriptBundle("/bundles/jsElements.js",
 
@@ -77,7 +76,10 @@ namespace MongoBlog
                     "lib/Scripts/jquery.validate.js"
                 );
                 
-                
+                pipeline.AddJavaScriptBundle("/bundles/modernizr.js",
+
+                    "lib/Scripts/modernizr-2.8.3.js"
+                );
                 
                 
                 pipeline.AddCssBundle("/bundles/jsElements.css",

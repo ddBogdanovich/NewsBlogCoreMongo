@@ -73,7 +73,7 @@ using NewsBlogCoreMongo.Models;
             WriteLiteral("\r\n<div class=\"header\">\r\n    <div class=\"header_top\" style=\"margin-bottom: 15px;\">\r\n        <div class=\"wrap\">\r\n            <div class=\"header-top-left\">\r\n                <div class=\"logo\">\r\n                    ");
             EndContext();
             BeginContext(323, 147, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a15922aa6f274e55811d9ea8988bc604", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6ad3ab67a9b5405d9a8e617a1f8b09bb", async() => {
                 BeginContext(366, 100, true);
                 WriteLiteral("\r\n                        <h1>NEWS</h1>\r\n                        <h2>Blog</h2>\r\n                    ");
                 EndContext();
@@ -97,7 +97,7 @@ using NewsBlogCoreMongo.Models;
             WriteLiteral("\r\n                </div>\r\n\r\n                <div class=\"menu\">\r\n                    <ul class=\"menu bounce\">\r\n                        <li>");
             EndContext();
             BeginContext(608, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9ed3a7a1d80d4f7ebb72cb437a1ff1e9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a13cc000d41e4e8eb3a9eb81890dbb56", async() => {
                 BeginContext(652, 17, false);
 #line 18 "/home/dd/NewsBlogASPCoreMongo/Views/Shared/_HeaderLayout.cshtml"
                                                                   Write(Localizer["Home"]);
@@ -125,7 +125,7 @@ using NewsBlogCoreMongo.Models;
             WriteLiteral("</li>\r\n                        <li>");
             EndContext();
             BeginContext(708, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16ee044d718a408f92fc17b6efb53761", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f205c56ff4b64203ae46b0cd428e9092", async() => {
                 BeginContext(752, 18, false);
 #line 19 "/home/dd/NewsBlogASPCoreMongo/Views/Shared/_HeaderLayout.cshtml"
                                                                   Write(Localizer["About"]);
@@ -153,7 +153,7 @@ using NewsBlogCoreMongo.Models;
             WriteLiteral("</li>\r\n                        <li>");
             EndContext();
             BeginContext(809, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e1e23999a66447449362f35060625bec", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "141018b11f2b4ac39bc3b848770a749e", async() => {
                 BeginContext(853, 20, false);
 #line 20 "/home/dd/NewsBlogASPCoreMongo/Views/Shared/_HeaderLayout.cshtml"
                                                                   Write(Localizer["Support"]);
@@ -181,7 +181,7 @@ using NewsBlogCoreMongo.Models;
             WriteLiteral("</li>\r\n                        <li>");
             EndContext();
             BeginContext(912, 71, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9a9692dc8fc84216abb009ca386e5d8f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87bfdb97ee444837802157a8e35ab87f", async() => {
                 BeginContext(959, 20, false);
 #line 21 "/home/dd/NewsBlogASPCoreMongo/Views/Shared/_HeaderLayout.cshtml"
                                                                      Write(Localizer["Contact"]);
@@ -212,7 +212,7 @@ using NewsBlogCoreMongo.Models;
             WriteLiteral("                            <li>");
             EndContext();
             BeginContext(1145, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "022bc36b225f46e3a16b7f3be5123754", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "47c38ffa77564fe6b922afa8a6f257e0", async() => {
                 BeginContext(1193, 11, true);
                 WriteLiteral("Admin Tools");
                 EndContext();
