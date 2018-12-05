@@ -42,18 +42,19 @@
                                 </div>
 
                             </div>
+                      
+                        
+                        <div class="row">
+                            <hr>
+                            <div class="col-md-2">
+                                <span>@Html.LabelFor(model => model.newsItem.Category)</span>
+                                <select asp-for="newsItem.Category" class="form-control"
+                                        asp-items="@((SelectList)ViewData["Category"])"></select>
+                                @Html.ValidationMessageFor(model => model.newsItem.Category, "", new { @class = "text-danger" })
 
+                            </div>
 
-                            @*<div class="row">
-                                <hr>
-                                <div class="col-md-2">
-                                    <span>@Html.LabelFor(model => model.newsItem.Categories.FirstOrDefault())</span>
-                                    <span> @Html.DropDownList("NewsCategoryID", null, new { @class = "form-control" })</span>
-                                    @Html.ValidationMessageFor(model => model.NewsCategoryID, "", new { @class = "text-danger" })
-
-                                </div>
-
-                            </div>*@
+                        </div>
 
 
 
@@ -62,7 +63,7 @@
 
                                 <label class="control-label">Select File</label>
                                 <div class="col-md-12">
-                                    <input id="input-44" name="upload" type="file" multiple class="file-loading">
+                                    <input id="input-44" name="files" type="file" multiple class="file-loading">
                                     <div id="errorBlock" class="help-block"></div>
                                 </div>
                             </div>

@@ -16,8 +16,6 @@ namespace NewsBlogCoreMongo.Models
 
         public string Body { get; set; }
 
-        public string Title { get; set; }
-
         public string Category { get; set; }
         
         public List<Image> Images { get; set; }

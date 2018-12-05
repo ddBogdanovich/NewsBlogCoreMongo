@@ -79,8 +79,8 @@ namespace M101DotNet.WebApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async  Task<IActionResult> Create([Bind("ID,Headline,Body,Created,NewsCategoryID")] NewsItem newsItem, 
-            IList<IFormFile> files)
+        public async  Task<IActionResult> Create([Bind("Id,Headline,Body,CreatedAtUtc,Category")]
+            NewsItem newsItem, IList<IFormFile> files)
         {
             try
             {
@@ -93,7 +93,7 @@ namespace M101DotNet.WebApp.Controllers
                     if (files.Count(file => file != null) > 0)
                     {
                         var uploadDir = _configuration.GetSection("UploadsFolder").Value;
-                        var absolutePath = Path.Combine(_env.WebRootPath, uploadDir);
+                        var absolutePath = _env.WebRootPath + uploadDir;
 
                         if (!Directory.Exists(absolutePath))
                         {
@@ -149,60 +149,70 @@ namespace M101DotNet.WebApp.Controllers
                 return NotFound();
             }
             PopulateCategoriesDropDownList(newsItem.Category);
-            return View(newsItem);
+            
+            var model = new NewsItemViewModel()
+            {
+                newsItem = newsItem,
+                uploadsFolder = _configuration.GetSection("UploadsFolder").Value,
+                blankImageName = _configuration.GetSection("BlankImageName").Value,
+                wwwRootPath = _env.WebRootPath
+
+            };
+            return View(model);
         }
 
 
-        /*[HttpPost]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Headline,Body,Created,NewsCategoryID")] NewsItem newsItem, IEnumerable<HttpPostedFileBase> upload)
+        public async Task<IActionResult> Edit(NewsItem newsItem, IList<IFormFile> files)
         {
+            var imagesList = new List<Image>();
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var uploadDir = ConfigurationManager.AppSettings["FilePath"].ToString();
-                    var absolutePath = this.HttpContext.Server.MapPath(uploadDir);
 
-                    if (upload.Count(file => file != null) > 0)
+                    if (files.Count(file => file != null) > 0)
                     {
+                        var uploadDir = _configuration.GetSection("UploadsFolder").Value;
+                        var absolutePath = Path.Combine(_env.WebRootPath, uploadDir);
                         if (Directory.Exists(absolutePath))
                         {
-                            foreach (var file in upload)
+                            foreach (var file in files)
                             {
-
 
                                 var imageName = Path.GetFileName(file.FileName);
 
-                                var newImage = new MediaTypeNames.Image
+                                var newImage = new Image
                                 {
-                                    Id = Guid.NewGuid(),
                                     ImageName = imageName,
-                                    Extension = Path.GetExtension(imageName),
-                                    NewsItemId = newsItem.ID
+                                    Extension = Path.GetExtension(imageName)
 
                                 };
 
-                                var imagePath = Path.Combine(Server.MapPath(uploadDir), newImage.Id + newImage.Extension);
-                                file.SaveAs(imagePath);
-                                repository.SaveImage(newImage);
+                                imagesList.Add(newImage);
+                                var imagePath = Path.Combine(absolutePath, newImage.Id + newImage.Extension);
+
+                                using (var fileStream = new FileStream(imagePath, FileMode.Create))
+                                {
+                                    await file.CopyToAsync(fileStream);
+                                }
                             }
                         }
+
                     }
-
-
-                    repository.SaveNewsItem(newsItem);
+                    newsItem.Images = imagesList;
+                    await _blogRepository.UpdateNewsItemAsync(newsItem);
                     return RedirectToAction("List");
                 }
-
             }
             catch
             {
                 ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
-            PopulateCategoriesDropDownList(newsItem.NewsCategoryID);
+            PopulateCategoriesDropDownList(newsItem.Category);
             return View(newsItem);
-        }*/
+        }
 
 
         /*[HttpPost]
@@ -259,17 +269,28 @@ namespace M101DotNet.WebApp.Controllers
             {
                 return NotFound();
             }
-            return View(newsItem);
+            
+            NewsItemViewModel model = new NewsItemViewModel()
+            {
+                newsItem = newsItem,
+                uploadsFolder = _configuration.GetSection("UploadsFolder").Value,
+                blankImageName = _configuration.GetSection("BlankImageName").Value,
+                wwwRootPath = _env.WebRootPath
+
+            };
+            
+            
+            return View(model);
         }
 
 
-/*        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
             try
             {
-                repository.DeleteNewsItem(id);
+                _blogRepository.DeleteNewsItem(id);
             }
             catch
             {
@@ -278,13 +299,13 @@ namespace M101DotNet.WebApp.Controllers
             }
 
             return RedirectToAction("List");
-        }*/
+        }
 
 
         private async void  PopulateCategoriesDropDownList(object selectedCategory = null)
         {
-            var categoriesQuery = await _blogRepository.GetActualCategories();
-            ViewBag.NewsCategoryID = new SelectList(categoriesQuery, "Name", "Name", selectedCategory);
+            var categoriesQuery = await _blogRepository.GetExistingCategories();
+            ViewData["Category"] = new SelectList(categoriesQuery, "Name", "Name", selectedCategory);
         }
 
 

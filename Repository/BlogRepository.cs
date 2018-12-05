@@ -120,6 +120,21 @@ namespace MongoBlog.Repository
         {
             await _context.News.InsertOneAsync(item);
         }
+
+
+        public async Task DeleteNewsItem(string id)
+        {
+            var result = _context.News.DeleteOneAsync(x => x.Id == id);
+        }
+
+        public async Task UpdateNewsItemAsync(NewsItem item)
+        {
+            var filter = Builders<NewsItem>.Filter.Eq(x => x.Id, item.Id);
+            var result = await _context.News.ReplaceOneAsync(filter, item);
+        }
+        
+        
+        
         
         #endregion
         

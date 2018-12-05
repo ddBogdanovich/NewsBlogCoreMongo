@@ -1,7 +1,3 @@
-@using System.Configuration
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
 @model NewsBlogCoreMongo.Models.NewsItemViewModel
 
 @{
@@ -26,20 +22,21 @@ using System.Web.Mvc;
                 @Model.newsItem.Body.ToString();
                 <hr>
 
-                @if (@Model.newsItem.Images != null && @Model.newsItem.Images.Count() > 0)
+                @if (@Model.newsItem.Images != null && @Model.newsItem.Images.Any())
                 {
-                    @*var uploadDir = ConfigurationManager.AppSettings["FilePath"].ToString();
-                    foreach (var it in @Model.Image)
+                    foreach (var image in @Model.newsItem.Images)
                     {
-                        var imagePath = Path.Combine(Server.MapPath(uploadDir), it.Id + it.Extension);
-                        if (System.IO.File.Exists(imagePath))
-                        {
-                            var pic = uploadDir + it.Id + it.Extension;
-                            <img src="@Url.Content(@pic)" alt="picture" style="width: 120px; height: 100px;" />
+                        var imagePath = System.IO.Path.Combine(@Model.uploadsFolder, image.Id + image.Extension);
+                        var fullImagePath = @Model.wwwRootPath + imagePath;
 
-                        }*@
-                        
+                        if (System.IO.File.Exists(fullImagePath))
+                        {
+                            var pic = "~" + imagePath;
+                            <img src="@Url.Content(@pic)" alt="picture" style="width: 120px; height: 100px;" />
+                        }
+
                     }
+                    
                 }
 
             </td>

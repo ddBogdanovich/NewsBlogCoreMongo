@@ -40,5 +40,9 @@ namespace MongoBlog.Repository
         Task UpdateCategoryItem(NewsCategory newsCategory);
 
         Task DeleteCategoryItem(string id);
+
+        Task DeleteNewsItem(string id);
+
+        Task UpdateNewsItemAsync(NewsItem item);
     }
 }

@@ -116,7 +116,7 @@ WriteAttributeValue("", 823, Url.Action("Details", "News", new { id = @Model.new
             WriteLiteral(">");
             EndContext();
             BeginContext(888, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b5aa34d7269c4f07ad862e8471e43068", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "453d039e07ff49afa99e20bfda223082", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_ImageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ImageTagHelper>();
