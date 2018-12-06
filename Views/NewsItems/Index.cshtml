@@ -1,8 +1,12 @@
 @model IEnumerable<NewsBlogCoreMongo.Models.NewsItemViewModel>
 
+@{
+    Layout = "_AdminLayout";
+}
+
 <hr>
 <p class="btn-create-new">
-    @Html.ActionLink("Create New + ", "Create", null, new { @class = "btn btn-success btn-md" })
+    @Html.ActionLink("Create New + ", "Create", "NewsItems", null, new { @class = "btn btn-success btn-md" })
 </p>
 
 <table class="table table-bordered table-condensed table-hover brd">
@@ -39,7 +43,7 @@
                 
                     foreach (var image in item.newsItem.Images)
                     {
-                        var imagePath = System.IO.Path.Combine(item.uploadsFolder, image.Id + image.Extension);
+                        var imagePath = System.IO.Path.Combine(item.uploadsFolder, image.FileId + image.Extension);
                         var fullImagePath = item.wwwRootPath + imagePath;
 
                         if (System.IO.File.Exists(fullImagePath))

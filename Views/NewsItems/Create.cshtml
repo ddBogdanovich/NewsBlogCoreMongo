@@ -1,4 +1,7 @@
 @model NewsBlogCoreMongo.Models.NewsItemViewModel
+@{
+    Layout = "_AdminLayout";
+}
 
 <div class="wrap">
     <div class="main">
@@ -36,7 +39,9 @@
                                 <div class="col-md-4">
                                     <span>@Html.LabelFor(model => model.newsItem.CreatedAtUtc)</span>
                                     @{ ViewContext.ClientValidationEnabled = false; }
-                                    <span class="my-date-time">@Html.EditorFor(model => model.newsItem.CreatedAtUtc)</span>
+                                    <span class="my-date-time">                                       
+                                        <input asp-for="newsItem.CreatedAtUtc" name="Created" type="datetime"/>
+                                    </span>
                                     @{ ViewContext.ClientValidationEnabled = true; }
                                     @Html.ValidationMessageFor(model => model.newsItem.CreatedAtUtc, "", new { @class = "text-danger" })
                                 </div>

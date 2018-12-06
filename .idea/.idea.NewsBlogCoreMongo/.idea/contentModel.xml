@@ -15,7 +15,6 @@
         <e p="AccountController.cs" t="Include" />
         <e p="CategoryController.cs" t="Include" />
         <e p="CultureController.cs" t="Include" />
-        <e p="HomeController.cs" t="Include" />
         <e p="NewsController.cs" t="Include" />
         <e p="NewsItemsController.cs" t="Include" />
       </e>
@@ -23,29 +22,14 @@
         <e p="PagingHelper.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
-        <e p="Account" t="Include">
-          <e p="LoginModel.cs" t="Include" />
-          <e p="RegisterModel.cs" t="Include" />
-        </e>
         <e p="BlogContext.cs" t="Include" />
-        <e p="Comment.cs" t="Include" />
-        <e p="ErrorViewModel.cs" t="Include" />
-        <e p="Home" t="Include">
-          <e p="CommentLikeModel.cs" t="Include" />
-          <e p="IndexModel.cs" t="Include" />
-          <e p="NewCommentModel.cs" t="Include" />
-          <e p="NewPostModel.cs" t="Include" />
-          <e p="PostModel.cs" t="Include" />
-        </e>
         <e p="Image.cs" t="Include" />
         <e p="NewsCategory.cs" t="Include" />
         <e p="NewsItem.cs" t="Include" />
         <e p="NewsItemViewModel.cs" t="Include" />
         <e p="NewsListViewModel.cs" t="Include" />
         <e p="PagingInfo.cs" t="Include" />
-        <e p="Post.cs" t="Include" />
         <e p="Settings.cs" t="Include" />
-        <e p="TagProjection.cs" t="Include" />
         <e p="User.cs" t="Include" />
       </e>
       <e p="NewsBlogCoreMongo.csproj" t="IncludeRecursive" />
@@ -81,15 +65,6 @@
           <e p="Main.cshtml" t="Include" />
         </e>
         <e p="Culture" t="Include" />
-        <e p="Home" t="Include">
-          <e p="About.cshtml" t="Include" />
-          <e p="Contact.cshtml" t="Include" />
-          <e p="Index.cshtml" t="Include" />
-          <e p="NewPost.cshtml" t="Include" />
-          <e p="Post.cshtml" t="Include" />
-          <e p="Posts.cshtml" t="Include" />
-          <e p="Privacy.cshtml" t="Include" />
-        </e>
         <e p="News" t="Include">
           <e p="Contact.cshtml" t="Include" />
           <e p="DemoPage.cshtml" t="Include" />
@@ -115,12 +90,9 @@
           </e>
           <e p="Error.cshtml" t="Include" />
           <e p="_AdminLayout.cshtml" t="Include" />
-          <e p="_CookieConsentPartial.cshtml" t="Include" />
           <e p="_HeaderLayout.cshtml" t="Include" />
           <e p="_LangLinks.cshtml" t="Include" />
           <e p="_Layout.cshtml" t="Include" />
-          <e p="_LoginPartial.cshtml" t="Include" />
-          <e p="_ValidationScriptsPartial.cshtml" t="Include" />
         </e>
         <e p="_ViewImports.cshtml" t="Include" />
         <e p="_ViewStart.cshtml" t="Include" />
@@ -128,7 +100,6 @@
       <e p="appsettings.Development.json" t="Include" />
       <e p="appsettings.json" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
-      <e p="bundleconfig.json" t="Include" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
           <e p="netcoreapp2.1" t="Include">
@@ -139,31 +110,35 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="wwwroot" t="Include">
         <e p="Uploads" t="Include">
+          <e p=".jpg" t="Include" />
           <e p="00ccd15b-0507-4f51-b5e3-9b9d58ff4eae.jpg" t="Include" />
           <e p="0bdaecc6-5ae5-4e7a-9ed3-35b87bbbf3b1.jpg" t="Include" />
           <e p="0d344d49-79ef-4899-86cb-3b58f704f42d.jpg" t="Include" />
+          <e p="1386731c-3bfb-40a0-a99a-bd755382a619.png" t="Include" />
           <e p="24127700-ed76-4c68-8d9c-d62f88c1e9c1.jpg" t="Include" />
+          <e p="2b441317-3ce6-4335-a14c-86438a53914a.jpg" t="Include" />
+          <e p="3c643535-90d8-4017-be71-ef9248efc219.jpg" t="Include" />
+          <e p="46a3bed4-e3fc-48bf-a582-4406d27c1567.png" t="Include" />
+          <e p="4a725d8c-1949-4a63-9b58-7a8b25b742d8.png" t="Include" />
           <e p="5bf485af42151d0fa6a9de96.jpg" t="Include" />
-          <e p="5bf9db81de6ece27038e5444.jpg" t="Include" />
-          <e p="5bf9dbd0de6ece27038e5445.png" t="Include" />
-          <e p="5bf9dc1ede6ece27038e5446.png" t="Include" />
-          <e p="5bf9dc6ede6ece27038e5447.jpg" t="Include" />
-          <e p="5bf9dcdfde6ece27038e5448.png" t="Include" />
-          <e p="5bf9dd28de6ece27038e5449.png" t="Include" />
-          <e p="5bf9dd7ede6ece27038e544a.png" t="Include" />
-          <e p="5bf9ddcfde6ece27038e544b.png" t="Include" />
           <e p="5f192cef-5e8b-4e24-87ad-140d89019578.jpg" t="Include" />
           <e p="6661412c-d044-4153-90f8-3c2e5f6f26ab.jpg" t="Include" />
           <e p="68c815e7-f50d-4696-a1a5-0fad4798cc1e.jpg" t="Include" />
           <e p="68cd1cd1-08d6-45f4-8e4e-68a572dac143.jpg" t="Include" />
+          <e p="86be1ee2-5fe2-4de9-a62e-170a369692e2.png" t="Include" />
           <e p="8f461d75-1b85-4bae-ae47-42bfe8c3e50a.jpg" t="Include" />
+          <e p="8f795b97-6591-4c21-9a76-f2ad8561f99d.jpg" t="Include" />
           <e p="NoPhoto.jpg" t="Include" />
+          <e p="a495d70d-45e0-4924-9fc1-ca88b7ec1ba0.png" t="Include" />
           <e p="a6ff8057-0558-4969-bb4a-252d896af09b.jpg" t="Include" />
+          <e p="b0499e94-5237-40dd-84dd-86eef364fa75.jpg" t="Include" />
           <e p="b47f8cf9-114a-4578-99bd-4203bdfe4e6d.jpg" t="Include" />
           <e p="b605e143-f5ea-46f8-9874-393934b71b4f.jpg" t="Include" />
+          <e p="ba555854-010d-4e64-ad25-30f1f1056e73.png" t="Include" />
           <e p="c857b3c9-5d8d-46d2-8d37-127f2510f0c1.jpg" t="Include" />
           <e p="c97f5b2d-de7e-447d-ad52-508c13220069.jpg" t="Include" />
           <e p="ced8d163-2f5f-4dd7-a59f-142735eb75dd.jpg" t="Include" />
+          <e p="d09e9f2b-b3e9-45e9-8513-d07447d48fda.jpg" t="Include" />
           <e p="d3e07225-2478-4795-a8c2-4c307aecb1a4.jpg" t="Include" />
           <e p="dcb073c4-eb24-4cca-bac1-76672364416b.jpg" t="Include" />
           <e p="e078ac7b-94a9-4734-b470-54a1522a1599.jpg" t="Include" />

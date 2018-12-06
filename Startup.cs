@@ -56,7 +56,6 @@ namespace MongoBlog
             services.AddWebOptimizer(pipeline =>
             {
                 pipeline.AddJavaScriptBundle("/bundles/bootstrapBundle.min.js", 
-                    "js/site.js",
                     "lib/Scripts/bootstrap.js", 
                     "lib/Scripts/respond.js",
                     "lib/tether/dist/js/tether.min.js",                

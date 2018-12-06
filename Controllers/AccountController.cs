@@ -1,4 +1,4 @@
-using System.Security.Claims;
+/*using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using MongoDB.Driver;
@@ -30,7 +30,7 @@ namespace M101DotNet.WebApp.Controllers
             if (!ModelState.IsValid)
             {
                 return View(model);
-            }
+            }*/
 
             //  var blogContext = new BlogContext();
             //   var user = await blogContext.Users.Find(x => x.Email == model.Email).SingleOrDefaultAsync();
@@ -54,7 +54,7 @@ namespace M101DotNet.WebApp.Controllers
            // authManager.SignInAsync(identity);
 
 
-            return Redirect(GetRedirectUrl(model.ReturnUrl));
+/*            return Redirect(GetRedirectUrl(model.ReturnUrl));
         }
 
         [HttpPost]
@@ -110,4 +110,4 @@ namespace M101DotNet.WebApp.Controllers
             return  RedirectToAction("List", "News");
         }
     }
-}
+}*/

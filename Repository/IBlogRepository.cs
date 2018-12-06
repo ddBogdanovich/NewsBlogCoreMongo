@@ -9,15 +9,6 @@ namespace MongoBlog.Repository
 {
     public interface IBlogRepository
     {
-        Task<IEnumerable<Post>> GetPostsAsync();
-
-        Task<IEnumerable<TagProjection>> GetTagsAsync();
-
-        Task InsertPostAsync(Post post);
-
-        Task<Post> GetPostByIdAsync(string id);
-
-        Task<IEnumerable<Post>> GetPostsFilteredAsync(Expression<Func<Post, bool>> filter);
 
         Task<long> GetNewsCount(Expression<Func<NewsItem, bool>> filter);
 
@@ -44,5 +35,9 @@ namespace MongoBlog.Repository
         Task DeleteNewsItem(string id);
 
         Task UpdateNewsItemAsync(NewsItem item);
+
+        Task<Image> GetImage(string id);
+
+        Task DeleteImage(string id);
     }
 }

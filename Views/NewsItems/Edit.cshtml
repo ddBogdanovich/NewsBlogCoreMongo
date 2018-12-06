@@ -75,16 +75,16 @@
                                     foreach (var image in @Model.newsItem.Images)
                                     {
 
-                                        var imagePath = System.IO.Path.Combine(@Model.uploadsFolder, image.Id + image.Extension);
+                                        var imagePath = System.IO.Path.Combine(@Model.uploadsFolder, image.FileId + image.Extension);
                                         var fullImagePath = @Model.wwwRootPath + imagePath;
                                         if (System.IO.File.Exists(fullImagePath))
                                         {
                                             var pic = "~" + imagePath;
                                             <div class="col-lg-3">
-                                                <a href="/NewsItems/Download/?p=@(image.Id + image.Extension)&d=@image.ImageName"><img src="@Url.Content(@pic)" alt="picture" style="width: 200px; height: 150px;"/></a>
+                                                <a href="/NewsItems/Download/?p=@(image.FileId + image.Extension)&d=@image.OriginalFileName"><img src="@Url.Content(@pic)" alt="picture" style="width: 200px; height: 150px;"/></a>
 
                                                 <p>
-                                                    <a href="javascript:void(0);" data-id="@image.Id" class="deleteItem btn btn-sm btn-danger" style="position: relative">Delete</a>
+                                                    <a href="javascript:void(0);" data-id="@image.FileId" class="deleteItem btn btn-sm btn-danger" style="position: relative">Delete</a>
                                                 </p>
                                             </div>
                                         }
@@ -107,7 +107,7 @@
 
                             <label class="control-label">Select File</label>
                             <div class="col-md-12">
-                                <input id="input-44" name="upload" type="file" multiple class="file-loading">
+                                <input id="input-44" name="files" type="file" multiple class="file-loading">
                                 <div id="errorBlock" class="help-block"></div>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
 
 @section scripts
     {
-    <script src="~/Scripts/daterangeHelper.js"></script>
+    <script src="/lib/Scripts/daterangeHelper.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
 
@@ -175,12 +175,16 @@
                         type: 'POST',
                         data: { id: $(this).data('id') }
                     }).done(function (data) {
-                        if (data.Result == "OK") {
+
+                        if (data.result == "OK") {
+                            
+                            alert('result ok');
                             $ctrl.closest('li').remove();
                             $ctrl.closest('div').remove();
                         }
-                        else if (data.Result.Message) {
-                            alert(data.Result.Message);
+                        else if (data.result.Message) {
+                            alert('message');
+                            alert(data.result.Message);
                         }
                     }).fail(function () {
                         alert("There is something wrong. Please try again.");

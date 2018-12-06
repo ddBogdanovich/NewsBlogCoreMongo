@@ -107,13 +107,14 @@ namespace M101DotNet.WebApp.Controllers
 
                             var newImage = new Image
                             {
-                                ImageName = imageName,
+                                FileId = Guid.NewGuid().ToString(),
+                                OriginalFileName = imageName,
                                 Extension = Path.GetExtension(imageName)
 
                             };
 
                             imagesList.Add(newImage);
-                            var imagePath = Path.Combine(absolutePath, newImage.Id + newImage.Extension);
+                            var imagePath = Path.Combine(absolutePath, newImage.FileId + newImage.Extension);
                             
                             using (var fileStream = new FileStream(imagePath, FileMode.Create)) {
                                 await file.CopyToAsync(fileStream);
@@ -175,7 +176,7 @@ namespace M101DotNet.WebApp.Controllers
                     if (files.Count(file => file != null) > 0)
                     {
                         var uploadDir = _configuration.GetSection("UploadsFolder").Value;
-                        var absolutePath = Path.Combine(_env.WebRootPath, uploadDir);
+                        var absolutePath = _env.WebRootPath + uploadDir;
                         if (Directory.Exists(absolutePath))
                         {
                             foreach (var file in files)
@@ -185,13 +186,14 @@ namespace M101DotNet.WebApp.Controllers
 
                                 var newImage = new Image
                                 {
-                                    ImageName = imageName,
+                                    FileId = Guid.NewGuid().ToString(),
+                                    OriginalFileName = imageName,
                                     Extension = Path.GetExtension(imageName)
 
                                 };
 
                                 imagesList.Add(newImage);
-                                var imagePath = Path.Combine(absolutePath, newImage.Id + newImage.Extension);
+                                var imagePath = Path.Combine(absolutePath, newImage.FileId + newImage.Extension);
 
                                 using (var fileStream = new FileStream(imagePath, FileMode.Create))
                                 {
@@ -215,8 +217,8 @@ namespace M101DotNet.WebApp.Controllers
         }
 
 
-        /*[HttpPost]
-        public JsonResult DeleteFile(string id)
+        [HttpPost]
+        public async Task<JsonResult> DeleteFile(string id)
         {
             if (String.IsNullOrEmpty(id))
             {
@@ -225,22 +227,24 @@ namespace M101DotNet.WebApp.Controllers
             }
             try
             {
-                Guid guid = new Guid(id);
-                MediaTypeNames.Image image = repository.FindImage(guid);
+
+                Image image = await _blogRepository.GetImage(id);
+                
                 if (image == null)
                 {
                     Response.StatusCode = (int)HttpStatusCode.NotFound;
                     return Json(new { Result = "Error" });
                 }
 
-                repository.DeleteImage(image);
+                await _blogRepository.DeleteImage(image.FileId);
 
-                var uploadDir = ConfigurationManager.AppSettings["FilePath"].ToString();
-                var path = Path.Combine(Server.MapPath(uploadDir), image.Id + image.Extension);
 
-                if (System.IO.File.Exists(path))
+                var uploadDir = _configuration.GetSection("UploadsFolder").Value;
+                var absolutePath = _env.WebRootPath + uploadDir + image.FileId + image.Extension;
+
+                if (System.IO.File.Exists(absolutePath))
                 {
-                    System.IO.File.Delete(path);
+                    System.IO.File.Delete(absolutePath);
                 }
                 return Json(new { Result = "OK" });
             }
@@ -248,13 +252,15 @@ namespace M101DotNet.WebApp.Controllers
             {
                 return Json(new { Result = "ERROR", Message = ex.Message });
             }
-        }*/
+        }
 
-        /*public FileResult Download(String p, String d)
+         public FileResult Download(String p, String d)
         {
-            var uploadDir = ConfigurationManager.AppSettings["FilePath"].ToString();
-            return File(Path.Combine(Server.MapPath(uploadDir), p), System.Net.Mime.MediaTypeNames.Application.Octet, d);
-        }*/
+            var uploadDir = _configuration.GetSection("UploadsFolder").Value;
+            var absolutePath = _env.WebRootPath;
+            var imagePath = absolutePath + uploadDir + p;
+            return File((imagePath), System.Net.Mime.MediaTypeNames.Application.Octet, d);
+        }
 
 
 

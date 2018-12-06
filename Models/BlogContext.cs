@@ -29,8 +29,6 @@ namespace M101DotNet.WebApp.Models
 
         public IMongoClient Client => _client;
 
-        public IMongoCollection<Post> Posts => _database.GetCollection<Post>(POSTS_COLLECTION_NAME);
-
         public IMongoCollection<NewsItem> News => _database.GetCollection<NewsItem>(NEWS_COLLECTION_NAME);
 
         public IMongoCollection<NewsCategory> Categories => _database.GetCollection<NewsCategory>(CATEGORIES_COLLECTION_NAME);

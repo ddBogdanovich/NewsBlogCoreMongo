@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using M101DotNet.WebApp.Models;
@@ -7,6 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.Options;
 using MongoBlog.Models;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 using NewsBlogCoreMongo.Models;
@@ -22,57 +24,7 @@ namespace MongoBlog.Repository
             _context = new BlogContext(settings);
         }
 
-
-
-        #region OldRepo
-
-        
-
-        
-        public async Task<IEnumerable<Post>> GetPostsAsync()
-        {
-            return await _context.Posts.Find(x => true)
-                .SortByDescending(x => x.CreatedAtUtc)
-                .Limit(10)
-                .ToListAsync();
-        }
-        
-        
-        public async Task<IEnumerable<TagProjection>> GetTagsAsync()
-        {
-            return await _context.Posts.Aggregate()
-                .Project(x => new { _id = x.Id, Tags = x.Tags })
-                .Unwind(x => x.Tags)
-                .Group<TagProjection>("{ _id: '$Tags', Count: { $sum: 1 } }")
-                .Limit(10)
-                .ToListAsync();
-        }
-        
-        
-        public async Task InsertPostAsync(Post post)
-        {
-            await _context.Posts.InsertOneAsync(post);
-        }
-        
-        
-        public async Task<Post> GetPostByIdAsync(string id)
-        {
-           return await _context.Posts.Find(x => x.Id == id).SingleOrDefaultAsync();
-        }
-        
-        
-        public async Task<IEnumerable<Post>> GetPostsFilteredAsync(Expression<Func<Post, bool>> filter)
-        {
-            return await _context.Posts.Find(filter).SortByDescending(x => x.CreatedAtUtc).ToListAsync();
-        }
-        
-        
-        #endregion
-
-        
-
-
-        #region NewRepoMethods
+  #region NewRepoMethods
 
         public Task<long> GetNewsCount(Expression<Func<NewsItem, bool>> filter)
         {
@@ -132,7 +84,32 @@ namespace MongoBlog.Repository
             var filter = Builders<NewsItem>.Filter.Eq(x => x.Id, item.Id);
             var result = await _context.News.ReplaceOneAsync(filter, item);
         }
-        
+
+        public async Task<Image> GetImage(string id)
+        {
+            var filter = Builders<NewsItem>.Filter.Eq("Images.FileId", id);
+           // var projection = Builders<NewsItem>.Projection.Include("Images.$").Exclude("_id");
+
+            var result = await _context.News.Find(filter).SingleOrDefaultAsync();
+
+
+            var a = result.Images.FirstOrDefault(x => x.FileId == id);
+
+            return a;
+        }
+
+
+        async Task IBlogRepository.DeleteImage(string id)
+        {
+            var filter = Builders<NewsItem>.Filter.Eq("Images.FileId", id);
+            var NewsItem = await _context.News.Find(filter).SingleOrDefaultAsync();
+            
+            
+            var pull = Builders<NewsItem>.Update.PullFilter(x => x.Images, a => a.FileId == id);
+            var filter1 = Builders<NewsItem>.Filter.And(Builders<NewsItem>.Filter.Eq(a => a.Id, NewsItem.Id), 
+                Builders<NewsItem>.Filter.ElemMatch(q => q.Images, t => t.FileId == id));
+            await _context.News.UpdateOneAsync(filter1, pull);
+        }
         
         
         

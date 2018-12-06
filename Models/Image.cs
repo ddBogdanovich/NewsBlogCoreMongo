@@ -1,5 +1,7 @@
 
 
+using System;
+
 namespace NewsBlogCoreMongo.Models
 {
     using MongoDB.Bson;
@@ -9,8 +11,10 @@ namespace NewsBlogCoreMongo.Models
     {
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
+        
+        public string FileId { get; set; }
 
-        public string ImageName { get; set; }
+        public string OriginalFileName { get; set; }
 
         public string Extension { get; set; }
 

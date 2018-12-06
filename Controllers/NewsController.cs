@@ -1,14 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using MongoDB.Driver;
-using M101DotNet.WebApp.Models;
-using M101DotNet.WebApp.Models.Home;
 using System.Linq.Expressions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MongoBlog.Repository;
 using NewsBlogCoreMongo.Models;
 using Microsoft.Extensions.Configuration;

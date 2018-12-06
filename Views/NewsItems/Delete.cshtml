@@ -26,7 +26,7 @@
                 {
                     foreach (var image in @Model.newsItem.Images)
                     {
-                        var imagePath = System.IO.Path.Combine(@Model.uploadsFolder, image.Id + image.Extension);
+                        var imagePath = System.IO.Path.Combine(@Model.uploadsFolder, image.FileId + image.Extension);
                         var fullImagePath = @Model.wwwRootPath + imagePath;
 
                         if (System.IO.File.Exists(fullImagePath))

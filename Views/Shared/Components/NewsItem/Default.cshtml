@@ -7,7 +7,7 @@
     if (Model.newsItem.Images.Any())
     {
         var image = Model.newsItem.Images.FirstOrDefault();
-        var imagePath = System.IO.Path.Combine(Model.uploadsFolder, image.Id + image.Extension);
+        var imagePath = System.IO.Path.Combine(Model.uploadsFolder, image.FileId + image.Extension);
         var fullImagePath = Model.wwwRootPath + imagePath;
         
      
