@@ -129,7 +129,6 @@
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Category/Create.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Category/Delete.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Category/Edit.g.cshtml.cs
-/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Category/Index.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Category/Main.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/News/Contact.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/News/DemoPage.g.cshtml.cs
@@ -139,7 +138,6 @@
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/NewsItems/Delete.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/NewsItems/Details.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/NewsItems/Edit.g.cshtml.cs
-/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/NewsItems/Index.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/NewsItems/List.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Components/CategoryList/Default.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Components/NewsItem/Default.g.cshtml.cs
@@ -154,3 +152,5 @@
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.RazorTargetAssemblyInfo.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.Views.pdb
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.csproj.CopyComplete
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Components/NewsItemEditList/Default.g.cshtml.cs
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Components/CategoryEditList/Default.g.cshtml.cs

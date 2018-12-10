@@ -8,20 +8,18 @@
 
 @foreach (var p in Model.News)
 {
-   
     var resizedBody = p.Body.Split(' ').Take(150);
-    p.Body = string.Join(" ", resizedBody);  
-   @(await Component.InvokeAsync("NewsItem", p)) 
-
+    p.Body = string.Join(" ", resizedBody);
+    @(await Component.InvokeAsync("NewsItem", p)) //change to renderpartial async
 }
 
 <div class="page_links">
-        
-        <page-link page-model="@Model.PagingInfo" page-action="List" page-url-category="@Model.CurrentCategory"></page-link>
-        
+
+    <page-link page-model="@Model.PagingInfo" page-action="List" page-url-category="@Model.CurrentCategory"></page-link>
+
 
     <div class="clear"></div>
     <div class="page_bottom">
-        <p>Back To : <a href="#">Top</a> |  <a href="News/List">Home</a></p>
+        <p>Back To : <a href="#">Top</a> | <a href="News/List">Home</a></p>
     </div>
 </div>

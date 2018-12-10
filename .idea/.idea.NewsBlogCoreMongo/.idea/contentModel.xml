@@ -8,7 +8,9 @@
         <e p="AutomapperProfile.cs" t="Include" />
       </e>
       <e p="Components" t="Include">
+        <e p="CategoryEditListViewComponent.cs" t="Include" />
         <e p="CategoryListViewComponent.cs" t="Include" />
+        <e p="NewsItemEditListViewComponent.cs" t="Include" />
         <e p="NewsItemViewComponent.cs" t="Include" />
       </e>
       <e p="Controllers" t="Include">
@@ -18,7 +20,14 @@
         <e p="NewsController.cs" t="Include" />
         <e p="NewsItemsController.cs" t="Include" />
       </e>
+      <e p="Core" t="Include">
+        <e p="FileSystemImageStorage.cs" t="Include" />
+        <e p="IImageService.cs" t="Include" />
+        <e p="IImageStorage.cs" t="Include" />
+        <e p="PhotoService.cs" t="Include" />
+      </e>
       <e p="HtmlHelpers" t="Include">
+        <e p="ImageHelper.cs" t="Include" />
         <e p="PagingHelper.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
@@ -61,7 +70,6 @@
           <e p="Create.cshtml" t="Include" />
           <e p="Delete.cshtml" t="Include" />
           <e p="Edit.cshtml" t="Include" />
-          <e p="Index.cshtml" t="Include" />
           <e p="Main.cshtml" t="Include" />
         </e>
         <e p="Culture" t="Include" />
@@ -76,15 +84,20 @@
           <e p="Delete.cshtml" t="Include" />
           <e p="Details.cshtml" t="Include" />
           <e p="Edit.cshtml" t="Include" />
-          <e p="Index.cshtml" t="Include" />
           <e p="List.cshtml" t="Include" />
         </e>
         <e p="Shared" t="Include">
           <e p="Components" t="Include">
+            <e p="CategoryEditList" t="Include">
+              <e p="Default.cshtml" t="Include" />
+            </e>
             <e p="CategoryList" t="Include">
               <e p="Default.cshtml" t="Include" />
             </e>
             <e p="NewsItem" t="Include">
+              <e p="Default.cshtml" t="Include" />
+            </e>
+            <e p="NewsItemEditList" t="Include">
               <e p="Default.cshtml" t="Include" />
             </e>
           </e>
@@ -110,7 +123,6 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="wwwroot" t="Include">
         <e p="Uploads" t="Include">
-          <e p=".jpg" t="Include" />
           <e p="00ccd15b-0507-4f51-b5e3-9b9d58ff4eae.jpg" t="Include" />
           <e p="0bdaecc6-5ae5-4e7a-9ed3-35b87bbbf3b1.jpg" t="Include" />
           <e p="0d344d49-79ef-4899-86cb-3b58f704f42d.jpg" t="Include" />

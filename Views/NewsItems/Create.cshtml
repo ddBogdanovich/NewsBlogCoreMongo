@@ -10,83 +10,94 @@
             <div class="col span_2_of_3">
                 <div class="contact-form">
                     <h3>Create News item</h3>
-                    @using (Html.BeginForm("Create", "NewsItems", null, FormMethod.Post, true, new { enctype = "multipart/form-data" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <hr />
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+
+                    <form asp-controller="NewsItems" asp-action="Create" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="All" class="danger"></div>
+
+                        <div class="row">
+                            <span>
+                                <label asp-for="newsItem.Headline"></label>
+                            </span>
+                            <span>
+                                <input asp-for="newsItem.Headline"/>
+                            </span>
+                            <span asp-validation-for="newsItem.Headline" class="text-danger"></span>
+                        </div>
 
 
                         <div class="row">
-                           
-                                <span><label>@Html.LabelFor(model => model.newsItem.Headline)</label></span>
-                                <span>@Html.EditorFor(model => model.newsItem.Headline)</span>
-                                @Html.ValidationMessageFor(model => model.newsItem.Headline, "", new { @class = "text-danger" })
-                           
+                            <span>
+                                <label asp-for="newsItem.Body"></label>
+                            </span>
+                            <span>
+                                <input asp-for="newsItem.Body"/>
+                            </span>
+                            <span asp-validation-for="newsItem.Body" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="row">
+                            <hr/>
+                            <div class="col-md-4">
+                                <span>
+                                    <label asp-for="newsItem.CreatedAtUtc"></label>
+                                </span>
+                                @{ ViewContext.ClientValidationEnabled = false; }
+                                <span class="my-date-time">
+                                    <input asp-for="newsItem.CreatedAtUtc" name="Created" type="datetime"/>
+                                </span>
+                                @{ ViewContext.ClientValidationEnabled = true; }
+                                <span asp-validation-for="newsItem.CreatedAtUtc" class="text-danger"></span>
                             </div>
 
-
-                            <div class="row">
-                                <span>@Html.LabelFor(model => model.newsItem.Body)</span>
-                                <span>@Html.EditorFor(model => model.newsItem.Body)</span>
-                                @Html.ValidationMessageFor(model => model.newsItem.Body, "", new { @class = "text-danger" })
-                            </div>
+                        </div>
 
 
-                            <div class="row">
-                                <hr>
-                                <div class="col-md-4">
-                                    <span>@Html.LabelFor(model => model.newsItem.CreatedAtUtc)</span>
-                                    @{ ViewContext.ClientValidationEnabled = false; }
-                                    <span class="my-date-time">                                       
-                                        <input asp-for="newsItem.CreatedAtUtc" name="Created" type="datetime"/>
-                                    </span>
-                                    @{ ViewContext.ClientValidationEnabled = true; }
-                                    @Html.ValidationMessageFor(model => model.newsItem.CreatedAtUtc, "", new { @class = "text-danger" })
-                                </div>
-
-                            </div>
-                      
-                        
                         <div class="row">
                             <hr>
                             <div class="col-md-2">
-                                <span>@Html.LabelFor(model => model.newsItem.Category)</span>
+                                <span>
+                                    <label asp-for="newsItem.Category"></label>
+                                </span>
                                 <select asp-for="newsItem.Category" class="form-control"
-                                        asp-items="@((SelectList)ViewData["Category"])"></select>
-                                @Html.ValidationMessageFor(model => model.newsItem.Category, "", new { @class = "text-danger" })
+                                        asp-items="@((SelectList) ViewData["Category"])">
+                                </select>
+                                <span asp-validation-for="newsItem.Category" class="text-danger"></span>
 
                             </div>
 
                         </div>
 
 
+                        <div class="row">
+                            <hr>
 
-                            <div class="row">
-                                <hr>
-
-                                <label class="control-label">Select File</label>
-                                <div class="col-md-12">
-                                    <input id="input-44" name="files" type="file" multiple class="file-loading">
-                                    <div id="errorBlock" class="help-block"></div>
-                                </div>
+                            <label class="control-label">Select File</label>
+                            <div class="col-md-12">
+                                <input id="input-44" name="files" type="file" multiple class="file-loading">
+                                <div id="errorBlock" class="help-block"></div>
                             </div>
+                        </div>
 
 
+                        <div>
+                            <span>
+                                <input type="submit" value="Save">
+                            </span>
+                        </div>
 
-                            <div>
-                                <span><input type="submit" value="Save"></span>
-                            </div>
-                    }
+                    </form>
+
+
                     <div class="clear"></div>
-                    <span style="font-size: 13px;">@Html.ActionLink("<<< Back to List", "List", null, new { style = "color: #EB7F1A" })</span>
+                    <span style="font-size: 13px;"><a asp-controller="NewsItems" asp-action="List" style="color: #EB7F1A"><<< Back to List</a></span>
                 </div>
 
-                </div>
             </div>
         </div>
     </div>
+</div>
 
 
 

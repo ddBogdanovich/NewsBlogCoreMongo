@@ -16,9 +16,9 @@ namespace MongoBlog.Components
         {
             ViewBag.SelectedCategory = category;
 
-            var categories = _repository.GetActualCategories().Result; 
+            var categories = _repository.GetActualCategories().Result;
 
             return View(categories);
-        }        
+        }
     }
 }

@@ -1,0 +1,39 @@
+@model IEnumerable<NewsBlogCoreMongo.Models.NewsCategory>
+
+<hr>
+<p class="btn btn-create-new">
+    <a asp-controller="Category" asp-action="Create" class="btn btn-success btn-md">Create New + </a>
+</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <table class="table table-bordered table-condensed table-hover brd">
+            <tr>
+                <th style="text-align: center;">
+                    <span style="font-weight: bold"> @Html.DisplayNameFor(model => model.Name)</span>
+                </th>
+                <th style="text-align: center;">
+                    <span style="font-weight: bold">Actions</span>
+                </th>
+            </tr>
+
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>
+                        @category.Name
+                    </td>
+                    <td style="text-align: center">
+                        <span class="btn-create-new">
+                            <a asp-controller="Category" asp-action="Edit" asp-route-id="@category.Id" class="btn btn-primary btn-sm">Edit</a>
+                        </span>
+                        <span>
+                            <a asp-controller="Category" asp-action="Delete" asp-route-id="@category.Id" class="btn btn-danger btn-sm">Delete</a>
+                        </span>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

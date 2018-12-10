@@ -6,8 +6,8 @@
         <h3>News Categories</h3>
         <div class="sidebar_top_list">
             <ul>
-         
-                @foreach(var link in Model)
+
+                @foreach (var link in Model)
                 {
                     <li>
                         @Html.RouteLink(link,
@@ -17,8 +17,8 @@
                                 action = "List",
                                 category = link,
                                 Page = 1,
-                            }, new { @class = "category-name" + (link == ViewBag.SelectedCategory ? " chosen_category" : " category") })
-                          
+                            }, new {@class = "category-name" + (link == ViewBag.SelectedCategory ? " chosen_category" : " category")})
+
                     </li>
                 }
 

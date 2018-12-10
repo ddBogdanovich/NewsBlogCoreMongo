@@ -1,38 +1,23 @@
 @model NewsBlogCoreMongo.Models.NewsItemViewModel
-@using System.IO  
-
-@{
-    var pic = System.IO.Path.Combine(Model.uploadsFolder, Model.blankImageName);
-
-    if (Model.newsItem.Images.Any())
-    {
-        var image = Model.newsItem.Images.FirstOrDefault();
-        var imagePath = System.IO.Path.Combine(Model.uploadsFolder, image.FileId + image.Extension);
-        var fullImagePath = Model.wwwRootPath + imagePath;
-        
-     
-        if (File.Exists(fullImagePath))
-        {
-            pic = imagePath;
-        }
-    }
-}
 
 <div class="box1">
-    <h3 style="font-weight:bolder">@Html.ActionLink(@Model.newsItem.Headline, "Details", "News", new { id = @Model.newsItem.Id })</h3>
-    <span style="font-size:smaller">@Model.newsItem.CreatedAtUtc.ToShortDateString()</span>
+    <h3 style="font-weight: bolder"><a asp-controller="News" asp-action="Details" asp-route-id="@Model.newsItem.Id">@Model.newsItem.Headline</a>
+        </h3>
+    <span style="font-size: smaller">@Model.newsItem.CreatedAtUtc.ToShortDateString()</span>
     <br>
     <div class="view">
 
-        <a href="@Url.Action("Details", "News", new { id = @Model.newsItem.Id })"><img src="~@pic" alt="picture" asp-append-version="true" /></a>
+        <a asp-controller="News" asp-action="Details" asp-route-id="@Model.newsItem.Id">
+            <image-link model="@Model"></image-link>
+        </a>
 
     </div>
     <div class="data">
         <p>
-        @Model.newsItem.Body...  <p>
-            
+        @Model.newsItem.Body...
+        <p>
             <span style="font-size: 13px">
-                @Html.ActionLink("Continue reading >>>", "Details", "News", new {id = @Model.newsItem.Id})
+                <a asp-controller="News" asp-action="Details" asp-route-id="@Model.newsItem.Id">Continue reading >>></a>
             </span>
         </p>
         <p>

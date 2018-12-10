@@ -1,11 +1,10 @@
 @model NewsBlogCoreMongo.Models.NewsItemViewModel
 
 @{
-   
+
     var resizedBody = @Model.newsItem.Body.Split(' ').Take(150);
     Model.newsItem.Body = string.Join(" ", resizedBody);
 }
-
 
 
 <h3 style="color: crimson">Are you sure you want to delete this?</h3>
@@ -19,50 +18,33 @@
             <td>
                 <span style="font-weight: bolder"> @Html.DisplayFor(modelItem => @Model.newsItem.Headline)</span>
                 <hr>
-                @Model.newsItem.Body.ToString();
+                @Model.newsItem.Body;
                 <hr>
 
-                @if (@Model.newsItem.Images != null && @Model.newsItem.Images.Any())
-                {
-                    foreach (var image in @Model.newsItem.Images)
-                    {
-                        var imagePath = System.IO.Path.Combine(@Model.uploadsFolder, image.FileId + image.Extension);
-                        var fullImagePath = @Model.wwwRootPath + imagePath;
-
-                        if (System.IO.File.Exists(fullImagePath))
-                        {
-                            var pic = "~" + imagePath;
-                            <img src="@Url.Content(@pic)" alt="picture" style="width: 120px; height: 100px;" />
-                        }
-
-                    }
-                    
-                }
+                <image-link model="@Model" style-attribute="width: 120px; height: 100px; margin-right: 5px"></image-link>
 
             </td>
             <td>
-                @Html.DisplayFor(modelItem => @Model.newsItem.CreatedAtUtc)
+                <label asp-for="newsItem.CreatedAtUtc"></label>
             </td>
             <td>
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
+                <form asp-action="Delete" method="post">
                     <div class="form-actions no-color">
-                        <input type="submit" value="Delete" class="btn btn-danger" style="float: inherit" />
+                        <input type="submit" value="Delete" class="btn btn-danger" style="float: inherit"/>
                     </div>
-                }
+                </form>
             </td>
         </tr>
 
 
     </table>
 
-   
-
 
     <div class="clear"></div>
-    <span style="font-size: 13px;">@Html.ActionLink("<<< Back to List", "List", null, new { style = "color: #EB7F1A" })</span>
 
+    <span style="font-size: 13px;">
+        <a asp-controller="NewsItems" asp-action="List" style="color: #EB7F1A"><<< Back to List</a>
+    </span>
 
 
 </div>

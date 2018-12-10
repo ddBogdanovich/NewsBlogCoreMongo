@@ -49,6 +49,8 @@ namespace MongoBlog.HtmlHelpers
                 TagBuilder link = new TagBuilder("a");
                 PageUrlValues["page"] = i;
                 link.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
+                
+                
                 if (i == PageModel.CurrentPage)
                 {
                     item.AddCssClass("active");

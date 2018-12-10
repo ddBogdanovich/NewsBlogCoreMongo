@@ -31,11 +31,7 @@ namespace M101DotNet.WebApp.Controllers
         }
 
 
-        /*[Authorize(Roles = "Administrator, Moderator")]*/
-        public async Task<IActionResult> Index()
-        {
-            return View(await _blogRepository.GetExistingCategories());
-        }
+
 
         /*[Authorize(Roles = "Administrator, Moderator")]*/
         public ActionResult Create()

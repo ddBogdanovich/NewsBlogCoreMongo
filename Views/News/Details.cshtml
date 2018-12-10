@@ -5,36 +5,18 @@
 <span>Created: @Model.newsItem.CreatedAtUtc.ToShortDateString()</span>
 
 @{
-    var pic = System.IO.Path.Combine(Model.uploadsFolder, Model.blankImageName);
     if (Model.newsItem.Images.Any())
     {
-        <ul class="bxslider">
-
-            @foreach (var image in @Model.newsItem.Images)
-            {
-
-                var imagePath = System.IO.Path.Combine(Model.uploadsFolder, image.FileId + image.Extension);
-                var fullImagePath = Model.wwwRootPath + imagePath;
-                
-                if (System.IO.File.Exists(fullImagePath))
-                {
-                    pic = imagePath;
-                    <li>
-                        <img src="~@pic" alt="picture"  asp-append-version="true"/>
-                    </li>
-                }
-            }
-        </ul>
+        <image-link model="@Model" wrap-tag="ul" class="bxslider"></image-link>
     }
     else
     {
         <ul>
             <li>
-            <img src="~@pic" alt="picture" />
+            @*<img src="~@pic" alt="picture" />*@
             <li>
         </ul>
     }
-
 }
 
 <div class="box1">
@@ -42,7 +24,7 @@
         <p>@Model.newsItem.Body</p>
     </div>
     <div class="clear"></div>
-    <span style="font-size: 13px;">@Html.ActionLink("<<< Back to News", "List", null, new { style = "color: #EB7F1A" })</span>
+    <span style="font-size: 13px;"><a asp-controller="News" asp-action="List" style="color: #EB7F1A"><<< Back to News</a></span>
 </div>
 
 

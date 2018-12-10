@@ -9,48 +9,37 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Protocols;
+using MongoBlog.Core;
 using MongoBlog.Repository;
 using NewsBlogCoreMongo.Models;
 
 namespace M101DotNet.WebApp.Controllers
 {
-  // [Authorize(Roles = "Administrator, Moderator")]
+    // [Authorize(Roles = "Administrator, Moderator")]
     public class NewsItemsController : Controller
     {
-
         private readonly IBlogRepository _blogRepository;
+        private readonly IHostingEnvironment _env;
+        private readonly IImageService _imageService;
         private IConfiguration _configuration { get; }
-        private IHostingEnvironment _env;
+
+
+        public NewsItemsController(IBlogRepository blogRepository, IConfiguration configuration,
+            IHostingEnvironment env, IImageService imageService)
+        {
+            _blogRepository = blogRepository;
+            _configuration = configuration;
+            _imageService = imageService;
+            _env = env;
+        }
 
 
         public ActionResult List()
         {
             return View();
-        }
-
-
-        public NewsItemsController(IBlogRepository blogRepository, IConfiguration configuration, IHostingEnvironment env)
-        {
-            _blogRepository = blogRepository;
-            _configuration = configuration;
-            _env = env;
-        }
-
-
-        public async Task<ActionResult> Index()
-        {
-            var news = await _blogRepository.GetNews();
-            var newsViewModel = news.Select(x => new NewsItemViewModel()
-            {
-                newsItem = x,
-                uploadsFolder = _configuration.GetSection("UploadsFolder").Value,
-                blankImageName = _configuration.GetSection("BlankImageName").Value,
-                wwwRootPath = _env.WebRootPath
-
-            });
-            return View(newsViewModel);
         }
 
 
@@ -60,17 +49,19 @@ namespace M101DotNet.WebApp.Controllers
             {
                 return BadRequest();
             }
+
             var newsItem = await _blogRepository.FindNewsItem(id);
-            
+
             if (newsItem == null)
             {
                 return NotFound();
             }
+
             return View(newsItem);
         }
 
 
-       public ActionResult Create()
+        public ActionResult Create()
         {
             PopulateCategoriesDropDownList();
             return View();
@@ -79,58 +70,38 @@ namespace M101DotNet.WebApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async  Task<IActionResult> Create([Bind("Id,Headline,Body,CreatedAtUtc,Category")]
-            NewsItem newsItem, IList<IFormFile> files)
+        public async Task<IActionResult> Create([Bind("Id,Headline,Body,CreatedAtUtc,Category")]
+            NewsItem newsItem, IFormCollection files)
         {
             try
             {
-                var imagesList = new List<Image>();
-
                 if (ModelState.IsValid)
-
                 {
-
-                    if (files.Count(file => file != null) > 0)
+                    if (files.Files.Any(x => x != null))
                     {
+                        var imagesList = new List<Image>();
                         var uploadDir = _configuration.GetSection("UploadsFolder").Value;
-                        var absolutePath = _env.WebRootPath + uploadDir;
+                        var uploadsFolderPath = Path.Combine(_env.WebRootPath + uploadDir);
 
-                        if (!Directory.Exists(absolutePath))
+                        foreach (var file in files.Files)
                         {
-                            Directory.CreateDirectory(absolutePath);
+                            var image = await _imageService.UploadPhoto(file, uploadsFolderPath);
+                            imagesList.Add(image);
                         }
 
-                        foreach (var file in files)
-                        {
-
-                            var imageName = Path.GetFileName(file.FileName);
-
-                            var newImage = new Image
-                            {
-                                FileId = Guid.NewGuid().ToString(),
-                                OriginalFileName = imageName,
-                                Extension = Path.GetExtension(imageName)
-
-                            };
-
-                            imagesList.Add(newImage);
-                            var imagePath = Path.Combine(absolutePath, newImage.FileId + newImage.Extension);
-                            
-                            using (var fileStream = new FileStream(imagePath, FileMode.Create)) {
-                                await file.CopyToAsync(fileStream);
-                            }                         
-                           
-                        }
+                        newsItem.Images = imagesList;
                     }
-                    newsItem.Images = imagesList;
+
                     await _blogRepository.InsertNewsItemAsync(newsItem);
                     return RedirectToAction("List");
                 }
             }
             catch
             {
-                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                ModelState.AddModelError("",
+                    "Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
+
             PopulateCategoriesDropDownList(newsItem.Category);
             return View(newsItem);
         }
@@ -142,24 +113,17 @@ namespace M101DotNet.WebApp.Controllers
             {
                 return BadRequest();
             }
-            
+
             var newsItem = await _blogRepository.FindNewsItem(id);
-            
+
             if (newsItem == null)
             {
                 return NotFound();
             }
-            PopulateCategoriesDropDownList(newsItem.Category);
-            
-            var model = new NewsItemViewModel()
-            {
-                newsItem = newsItem,
-                uploadsFolder = _configuration.GetSection("UploadsFolder").Value,
-                blankImageName = _configuration.GetSection("BlankImageName").Value,
-                wwwRootPath = _env.WebRootPath
 
-            };
-            return View(model);
+            PopulateCategoriesDropDownList(newsItem.Category);
+
+            return View(GenerateNewsItemViewModel(newsItem));
         }
 
 
@@ -172,7 +136,6 @@ namespace M101DotNet.WebApp.Controllers
             {
                 if (ModelState.IsValid)
                 {
-
                     if (files.Count(file => file != null) > 0)
                     {
                         var uploadDir = _configuration.GetSection("UploadsFolder").Value;
@@ -181,7 +144,6 @@ namespace M101DotNet.WebApp.Controllers
                         {
                             foreach (var file in files)
                             {
-
                                 var imageName = Path.GetFileName(file.FileName);
 
                                 var newImage = new Image
@@ -189,7 +151,6 @@ namespace M101DotNet.WebApp.Controllers
                                     FileId = Guid.NewGuid().ToString(),
                                     OriginalFileName = imageName,
                                     Extension = Path.GetExtension(imageName)
-
                                 };
 
                                 imagesList.Add(newImage);
@@ -201,8 +162,8 @@ namespace M101DotNet.WebApp.Controllers
                                 }
                             }
                         }
-
                     }
+
                     newsItem.Images = imagesList;
                     await _blogRepository.UpdateNewsItemAsync(newsItem);
                     return RedirectToAction("List");
@@ -210,8 +171,10 @@ namespace M101DotNet.WebApp.Controllers
             }
             catch
             {
-                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                ModelState.AddModelError("",
+                    "Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
+
             PopulateCategoriesDropDownList(newsItem.Category);
             return View(newsItem);
         }
@@ -222,18 +185,18 @@ namespace M101DotNet.WebApp.Controllers
         {
             if (String.IsNullOrEmpty(id))
             {
-                Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new { Result = "Error" });
+                Response.StatusCode = (int) HttpStatusCode.BadRequest;
+                return Json(new {Result = "Error"});
             }
+
             try
             {
-
                 Image image = await _blogRepository.GetImage(id);
-                
+
                 if (image == null)
                 {
-                    Response.StatusCode = (int)HttpStatusCode.NotFound;
-                    return Json(new { Result = "Error" });
+                    Response.StatusCode = (int) HttpStatusCode.NotFound;
+                    return Json(new {Result = "Error"});
                 }
 
                 await _blogRepository.DeleteImage(image.FileId);
@@ -246,15 +209,16 @@ namespace M101DotNet.WebApp.Controllers
                 {
                     System.IO.File.Delete(absolutePath);
                 }
-                return Json(new { Result = "OK" });
+
+                return Json(new {Result = "OK"});
             }
             catch (Exception ex)
             {
-                return Json(new { Result = "ERROR", Message = ex.Message });
+                return Json(new {Result = "ERROR", Message = ex.Message});
             }
         }
 
-         public FileResult Download(String p, String d)
+        public FileResult Download(String p, String d)
         {
             var uploadDir = _configuration.GetSection("UploadsFolder").Value;
             var absolutePath = _env.WebRootPath;
@@ -263,30 +227,20 @@ namespace M101DotNet.WebApp.Controllers
         }
 
 
-
         public async Task<ActionResult> Delete(string id)
         {
             if (id == null)
             {
                 return BadRequest();
             }
+
             var newsItem = await _blogRepository.FindNewsItem(id);
             if (newsItem == null)
             {
                 return NotFound();
             }
-            
-            NewsItemViewModel model = new NewsItemViewModel()
-            {
-                newsItem = newsItem,
-                uploadsFolder = _configuration.GetSection("UploadsFolder").Value,
-                blankImageName = _configuration.GetSection("BlankImageName").Value,
-                wwwRootPath = _env.WebRootPath
 
-            };
-            
-            
-            return View(model);
+            return View(GenerateNewsItemViewModel(newsItem));
         }
 
 
@@ -300,20 +254,30 @@ namespace M101DotNet.WebApp.Controllers
             }
             catch
             {
-                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
-                return RedirectToAction("Delete", new { id = id });
+                ModelState.AddModelError("",
+                    "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                return RedirectToAction("Delete", new {id = id});
             }
 
             return RedirectToAction("List");
         }
 
 
-        private async void  PopulateCategoriesDropDownList(object selectedCategory = null)
+        private async void PopulateCategoriesDropDownList(object selectedCategory = null)
         {
             var categoriesQuery = await _blogRepository.GetExistingCategories();
             ViewData["Category"] = new SelectList(categoriesQuery, "Name", "Name", selectedCategory);
         }
 
-
+        private NewsItemViewModel GenerateNewsItemViewModel(NewsItem item)
+        {
+            return new NewsItemViewModel()
+            {
+                newsItem = item,
+                uploadsFolder = _configuration.GetSection("UploadsFolder").Value,
+                blankImageName = _configuration.GetSection("BlankImageName").Value,
+                wwwRootPath = _env.WebRootPath
+            };
+        }
     }
 }

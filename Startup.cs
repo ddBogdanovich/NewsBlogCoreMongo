@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MongoBlog.Core;
 using MongoBlog.Models;
 using MongoBlog.Repository;
 
@@ -37,6 +38,8 @@ namespace MongoBlog
             });
             
             services.AddOptions();
+            services.AddTransient<IImageService, ImageService>();
+            services.AddTransient<IImageStorage, FileSystemImageStorage>();
             services.AddSingleton<IBlogRepository, BlogRepository>();
             
             services.Configure<Settings>(options =>
