@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "69dbfb415951aa5095002b45ae19f9c1445d2a10"
+    "signature": "d642d9a4c343564ad61e9aff087a6e086fe75ca1"
   },
   "compilationOptions": {
     "defines": [
@@ -25,14 +25,9 @@
       "NewsBlogCoreMongo/1.0.0": {
         "dependencies": {
           "AspNetCore.Identity.Mongo": "3.1.5",
-          "AutoMapper": "8.0.0",
           "LigerShark.WebOptimizer.Core": "1.0.215",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
-          "Microsoft.Owin": "4.0.0",
-          "Microsoft.Owin.Host.SystemWeb": "4.0.0",
-          "Microsoft.Owin.Security": "4.0.0",
-          "Microsoft.Owin.Security.Cookies": "4.0.0",
           "MongoDB.Driver": "2.7.2"
         },
         "runtime": {
@@ -61,21 +56,6 @@
         },
         "compile": {
           "lib/netcoreapp2.0/AspNetCore.Identity.Mongo.dll": {}
-        }
-      },
-      "AutoMapper/8.0.0": {
-        "dependencies": {
-          "Microsoft.CSharp": "4.5.0",
-          "System.Reflection.Emit": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/AutoMapper.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/AutoMapper.dll": {}
         }
       },
       "DnsClient/1.0.7": {
@@ -343,66 +323,6 @@
       },
       "Microsoft.NETCore.Platforms/2.1.0": {},
       "Microsoft.NETCore.Targets/2.1.0": {},
-      "Microsoft.Owin/4.0.0": {
-        "dependencies": {
-          "Owin": "1.0.0"
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Owin.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.0.4677.103"
-          }
-        },
-        "compile": {
-          "lib/net451/Microsoft.Owin.dll": {}
-        }
-      },
-      "Microsoft.Owin.Host.SystemWeb/4.0.0": {
-        "dependencies": {
-          "Microsoft.Owin": "4.0.0",
-          "Owin": "1.0.0"
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.0.4677.103"
-          }
-        },
-        "compile": {
-          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {}
-        }
-      },
-      "Microsoft.Owin.Security/4.0.0": {
-        "dependencies": {
-          "Microsoft.Owin": "4.0.0",
-          "Owin": "1.0.0"
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Owin.Security.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.0.4677.103"
-          }
-        },
-        "compile": {
-          "lib/net451/Microsoft.Owin.Security.dll": {}
-        }
-      },
-      "Microsoft.Owin.Security.Cookies/4.0.0": {
-        "dependencies": {
-          "Microsoft.Owin": "4.0.0",
-          "Microsoft.Owin.Security": "4.0.0",
-          "Owin": "1.0.0"
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Owin.Security.Cookies.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.0.4677.103"
-          }
-        },
-        "compile": {
-          "lib/net451/Microsoft.Owin.Security.Cookies.dll": {}
-        }
-      },
       "Microsoft.Win32.Primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.0",
@@ -486,17 +406,6 @@
         },
         "compile": {
           "lib/netstandard1.3/NUglify.dll": {}
-        }
-      },
-      "Owin/1.0.0": {
-        "runtime": {
-          "lib/net40/Owin.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        },
-        "compile": {
-          "lib/net40/Owin.dll": {}
         }
       },
       "runtime.native.System.Net.Security/4.0.1": {
@@ -3705,13 +3614,6 @@
       "path": "aspnetcore.identity.mongo/3.1.5",
       "hashPath": "aspnetcore.identity.mongo.3.1.5.nupkg.sha512"
     },
-    "AutoMapper/8.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-kcbje0Y71XkvzPn8k6OROZGOn2SKaWimon3Bu1WUTVoV5GTJVym+k+zQuKApyyFVRfk7bisumj/qUX4xIIXS+Q==",
-      "path": "automapper/8.0.0",
-      "hashPath": "automapper.8.0.0.nupkg.sha512"
-    },
     "DnsClient/1.0.7": {
       "type": "package",
       "serviceable": true,
@@ -3796,34 +3698,6 @@
       "path": "microsoft.netcore.targets/2.1.0",
       "hashPath": "microsoft.netcore.targets.2.1.0.nupkg.sha512"
     },
-    "Microsoft.Owin/4.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Nmvy2V2WiRHTnSs65REVaYHZrsXjXFS1MxwYqGrS6YjjajazEmQ1+dQWZiyO3dCOhnh6PhNfsGBCxbim36sjAg==",
-      "path": "microsoft.owin/4.0.0",
-      "hashPath": "microsoft.owin.4.0.0.nupkg.sha512"
-    },
-    "Microsoft.Owin.Host.SystemWeb/4.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-zMC+qMoTmG9J1SsJPyWJTggIFlyPg29Sx2UBtlVYP71A2tIhYBroyFO5I1YUnPGjruJPVWVsRbg7w12g/9ZQDQ==",
-      "path": "microsoft.owin.host.systemweb/4.0.0",
-      "hashPath": "microsoft.owin.host.systemweb.4.0.0.nupkg.sha512"
-    },
-    "Microsoft.Owin.Security/4.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-iBRDbrED+93WXiOiNGtCW+GBmnhj/0seF6jJJBb/BzVhRa9rbKtti5k1iYOY8wsKCqLfhmBdTsVQueU+QodRDw==",
-      "path": "microsoft.owin.security/4.0.0",
-      "hashPath": "microsoft.owin.security.4.0.0.nupkg.sha512"
-    },
-    "Microsoft.Owin.Security.Cookies/4.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-IFg2MF72Lzz7xGdoXq1ewei3S+7KGQZ/1JmWa3fe/997h5OpStuOe86+2GUj/UipObaECU5L38LGjYvCw7QimQ==",
-      "path": "microsoft.owin.security.cookies/4.0.0",
-      "hashPath": "microsoft.owin.security.cookies.4.0.0.nupkg.sha512"
-    },
     "Microsoft.Win32.Primitives/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -3865,13 +3739,6 @@
       "sha512": "sha512-3zk0u8S1U1jYcj89xQI1tv1ZfTyy1b+anEVvavxHRLxFhB3WUftzKEIHn1DlNJF0Fhro+H0OcnfGFcuk3VC2gA==",
       "path": "nuglify/1.5.10",
       "hashPath": "nuglify.1.5.10.nupkg.sha512"
-    },
-    "Owin/1.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-S87+AKxSxfhXRzIQfm6WBxfGbnzECLG8bmVp3lRiwjeYG9YBJ0AXd+2Xn7I7aqwwj0j4erSpX6H9OhXy+qQ7tw==",
-      "path": "owin/1.0.0",
-      "hashPath": "owin.1.0.0.nupkg.sha512"
     },
     "runtime.native.System.Net.Security/4.0.1": {
       "type": "package",

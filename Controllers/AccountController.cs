@@ -1,113 +1,104 @@
-/*using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
-using MongoDB.Driver;
-using M101DotNet.WebApp.Models;
-using M101DotNet.WebApp.Models.Account;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-
 namespace M101DotNet.WebApp.Controllers
 {
-    [AllowAnonymous]
+    using System.Threading.Tasks;
+    using Models;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+    using NewsBlogCoreMongo.Models.AccountViewModels;
+
+
+    // [Authorize(Roles = "Administrator, Moderator")]
     public class AccountController : Controller
     {
-        [HttpGet]
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+
+
+        public AccountController(
+            UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager
+        )
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+        }
+
+
+        [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            var model = new LoginModel
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
+
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        {
+            if (!ModelState.IsValid)
             {
-                ReturnUrl = returnUrl
-            };
+                return View(model);
+            }
+
+            try
+            {
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe,
+                    lockoutOnFailure: false);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("List", "News");
+                }
+
+                ModelState.AddModelError("", "Invalid login attempt.");
+                return View(model);
+            }
+            catch
+            {
+                ModelState.AddModelError("", "Invalid login attempt.");
+                return View(model);
+            }
+        }
+
+        [AllowAnonymous]
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<ActionResult> Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser() {UserName = model.UserName, Email = model.Email};
+                var result = await _userManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(user, "User");
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("List", "News");
+                }
+
+                AddErrors(result);
+            }
+
 
             return View(model);
         }
 
-        [HttpPost]
-        public async Task<ActionResult> Login(LoginModel model)
+
+        private void AddErrors(IdentityResult result)
         {
-            if (!ModelState.IsValid)
+            foreach (var error in result.Errors)
             {
-                return View(model);
-            }*/
-
-            //  var blogContext = new BlogContext();
-            //   var user = await blogContext.Users.Find(x => x.Email == model.Email).SingleOrDefaultAsync();
-            //if (user == null)
-            // {
-            //   ModelState.AddModelError("Email", "Email address has not been registered.");
-            //   return View(model);
-            //}
-
-           // var claims = new ClaimsIdentity(new[]
-               // {
-              //      new Claim(ClaimTypes.Name, user.Name),
-            //        new Claim(ClaimTypes.Email, user.Email)
-            //    },
-          //      "ApplicationCookie");
-//
-        //    var claimsIdentity = new ClaimsIdentity(
-        //        claims, CookieAuthenticationDefaults.AuthenticationScheme);
-           // var context = Request.GetOwinContext();
-         //   var authManager = Request.HttpContext.Authentication;
-           // authManager.SignInAsync(identity);
-
-
-/*            return Redirect(GetRedirectUrl(model.ReturnUrl));
-        }
-
-        [HttpPost]
-        public ActionResult Logout()
-        {
-            var authManager = Request.HttpContext.Authentication;
-           // var authManager = context.Authentication;
-
-            authManager.SignOutAsync("ApplicationCookie");
-            return RedirectToAction("Index", "Home");
-        }
-
-        [HttpGet]
-        public ActionResult Register()
-        {
-            return View(new RegisterModel());
-        }
-
-        [HttpPost]
-        public async Task<ActionResult> Register(RegisterModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
+                ModelState.AddModelError("", error.Description);
             }
-
-            //   var blogContext = new BlogContext();
-            //   var user = new User
-            //     {
-            //         Name = model.Name,
-            //         Email = model.Email
-            //    };
-
-            //    await blogContext.Users.InsertOneAsync(user);
-            return RedirectToAction("Index", "Home");
-        }
-
-        private string GetRedirectUrl(string returnUrl)
-        {
-            if (string.IsNullOrEmpty(returnUrl) || !Url.IsLocalUrl(returnUrl))
-            {
-                return Url.Action("index", "home");
-            }
-
-            return returnUrl;
-        }
-        
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult LogOff()
-        {
-          //  AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return  RedirectToAction("List", "News");
         }
     }
-}*/
+}

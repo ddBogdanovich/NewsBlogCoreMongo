@@ -86,7 +86,7 @@ using MongoBlog.HtmlHelpers;
             WriteLiteral("\n                    </td>\n                    <td>\n                        ");
             EndContext();
             BeginContext(465, 300, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b348eae29df45d28a89faaa13858191", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1519270809eb40948f6a46eede03413d", async() => {
                 BeginContext(517, 241, true);
                 WriteLiteral("\n\n                            <div class=\"form-actions no-color\">\n                                <input type=\"submit\" value=\"Delete\" class=\"btn btn-danger\" style=\"float: inherit\"/>\n                            </div>\n                        ");
                 EndContext();
@@ -113,7 +113,7 @@ using MongoBlog.HtmlHelpers;
             WriteLiteral("\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n\n    <div class=\"clear\"></div>\n    <span style=\"font-size: 13px;\">");
             EndContext();
             BeginContext(927, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cea35eade005486db37a08f37629eb18", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4fe3c28247684a9ca28bdeeccdc2c5dc", async() => {
                 BeginContext(998, 16, true);
                 WriteLiteral("<<< Back to List");
                 EndContext();

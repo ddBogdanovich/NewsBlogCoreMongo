@@ -4,9 +4,6 @@
     <e p="$USER_HOME$/.Rider2018.2/system/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/.Rider2018.2/system/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_NewsBlogCoreMongo.-109874049.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
-      <e p="Automapper" t="Include">
-        <e p="AutomapperProfile.cs" t="Include" />
-      </e>
       <e p="Components" t="Include">
         <e p="CategoryEditListViewComponent.cs" t="Include" />
         <e p="CategoryListViewComponent.cs" t="Include" />
@@ -17,6 +14,7 @@
         <e p="AccountController.cs" t="Include" />
         <e p="CategoryController.cs" t="Include" />
         <e p="CultureController.cs" t="Include" />
+        <e p="ManageController.cs" t="Include" />
         <e p="NewsController.cs" t="Include" />
         <e p="NewsItemsController.cs" t="Include" />
       </e>
@@ -31,6 +29,11 @@
         <e p="PagingHelper.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
+        <e p="AccountViewModels" t="Include">
+          <e p="LoginViewModel.cs" t="Include" />
+          <e p="RegisterViewModel.cs" t="Include" />
+        </e>
+        <e p="ApplicationUser.cs" t="Include" />
         <e p="BlogContext.cs" t="Include" />
         <e p="Image.cs" t="Include" />
         <e p="NewsCategory.cs" t="Include" />
@@ -39,7 +42,6 @@
         <e p="NewsListViewModel.cs" t="Include" />
         <e p="PagingInfo.cs" t="Include" />
         <e p="Settings.cs" t="Include" />
-        <e p="User.cs" t="Include" />
       </e>
       <e p="NewsBlogCoreMongo.csproj" t="IncludeRecursive" />
       <e p="NewsBlogCoreMongo.sln" t="IncludeFlat" />

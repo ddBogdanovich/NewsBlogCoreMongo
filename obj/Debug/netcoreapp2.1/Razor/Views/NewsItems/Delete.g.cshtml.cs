@@ -99,7 +99,7 @@ using MongoBlog.HtmlHelpers;
             WriteLiteral(";\r\n                <hr>\r\n\r\n                ");
             EndContext();
             BeginContext(598, 105, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("image-link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1822d098589042d2b25f470a3f171756", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("image-link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "675d34a510014388932ad2df23db135e", async() => {
             }
             );
             __MongoBlog_HtmlHelpers_ImageLinkTagHelper = CreateTagHelper<global::MongoBlog.HtmlHelpers.ImageLinkTagHelper>();
@@ -124,7 +124,7 @@ __MongoBlog_HtmlHelpers_ImageLinkTagHelper.model = Model;
             WriteLiteral("\r\n\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(760, 47, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "54a8b8028b2c4857857bd61dcf94cb33", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc51ff0c70634467aab366ee400f1ee0", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.LabelTagHelper>();
@@ -147,7 +147,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(862, 259, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a08de05751204985951fc3080889f444", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c4270fda1fdc4e25b3f8de7e5528e211", async() => {
                 BeginContext(902, 212, true);
                 WriteLiteral("\r\n                    <div class=\"form-actions no-color\">\r\n                        <input type=\"submit\" value=\"Delete\" class=\"btn btn-danger\" style=\"float: inherit\"/>\r\n                    </div>\r\n                ");
                 EndContext();
@@ -173,7 +173,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
             WriteLiteral("\r\n            </td>\r\n        </tr>\r\n\r\n\r\n    </table>\r\n\r\n\r\n    <div class=\"clear\"></div>\r\n\r\n    <span style=\"font-size: 13px;\">\r\n        ");
             EndContext();
             BeginContext(1257, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4841e6f8c07b4f55aa24b883d0872be1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a40669d29498460b8eabee846c3ecd49", async() => {
                 BeginContext(1328, 16, true);
                 WriteLiteral("<<< Back to List");
                 EndContext();

@@ -1,23 +1,20 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Mime;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore.Internal;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Protocols;
-using MongoBlog.Core;
-using MongoBlog.Repository;
-using NewsBlogCoreMongo.Models;
-
 namespace M101DotNet.WebApp.Controllers
 {
+    
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Net;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Rendering;
+    using Microsoft.Extensions.Configuration;
+    using MongoBlog.Core;
+    using MongoBlog.Repository;
+    using NewsBlogCoreMongo.Models;
     // [Authorize(Roles = "Administrator, Moderator")]
     public class NewsItemsController : Controller
     {

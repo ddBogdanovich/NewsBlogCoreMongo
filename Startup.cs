@@ -1,4 +1,5 @@
 ﻿using AspNetCore.Identity.Mongo;
+using AspNetCore.Identity.Mongo.Model;
 using M101DotNet.WebApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -51,6 +52,18 @@ namespace MongoBlog
             services
                 .AddLocalization(options => options.ResourcesPath = "Resources");
             
+            
+            services.AddIdentityMongoDbProvider<ApplicationUser, MongoRole>(identityOptions =>
+            {
+                identityOptions.Password.RequiredLength = 6;
+                identityOptions.Password.RequireLowercase = true;
+                identityOptions.Password.RequireUppercase = true;
+                identityOptions.Password.RequireNonAlphanumeric = true;
+                identityOptions.Password.RequireDigit = true;
+            }, options =>
+            {
+                options.ConnectionString = "mongodb://127.0.0.1:27017/blog";
+            });
             
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)

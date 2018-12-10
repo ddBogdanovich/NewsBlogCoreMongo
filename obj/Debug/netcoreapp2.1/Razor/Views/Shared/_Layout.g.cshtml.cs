@@ -59,7 +59,7 @@ using MongoBlog.HtmlHelpers;
             WriteLiteral("\n<!DOCTYPE HTML>\n<html>\n");
             EndContext();
             BeginContext(24, 531, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c73787b708e64b4f928209f9ca5ee582", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07ed2844f4b24bfa9960baee081303b7", async() => {
                 BeginContext(30, 518, true);
                 WriteLiteral(@"      
     <link rel=""stylesheet"" href=""/bundles/content.css"" />      
@@ -88,7 +88,7 @@ using MongoBlog.HtmlHelpers;
             WriteLiteral("\n\n");
             EndContext();
             BeginContext(557, 703, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0aa65208f8764562923ae6db57b296f5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "31e852fb1e6e4475bcc77d7167a6e6b0", async() => {
                 BeginContext(563, 1, true);
                 WriteLiteral("\n");
                 EndContext();

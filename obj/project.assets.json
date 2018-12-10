@@ -16,19 +16,6 @@
           "lib/netcoreapp2.0/AspNetCore.Identity.Mongo.dll": {}
         }
       },
-      "AutoMapper/8.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.CSharp": "4.5.0",
-          "System.Reflection.Emit": "4.3.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/AutoMapper.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/AutoMapper.dll": {}
-        }
-      },
       "DnsClient/1.0.7": {
         "type": "package",
         "dependencies": {
@@ -2657,58 +2644,6 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.Owin/4.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Owin": "1.0.0"
-        },
-        "compile": {
-          "lib/net451/Microsoft.Owin.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Owin.dll": {}
-        }
-      },
-      "Microsoft.Owin.Host.SystemWeb/4.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Owin": "4.0.0",
-          "Owin": "1.0.0"
-        },
-        "compile": {
-          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {}
-        }
-      },
-      "Microsoft.Owin.Security/4.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Owin": "4.0.0",
-          "Owin": "1.0.0"
-        },
-        "compile": {
-          "lib/net451/Microsoft.Owin.Security.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Owin.Security.dll": {}
-        }
-      },
-      "Microsoft.Owin.Security.Cookies/4.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Owin": "4.0.0",
-          "Microsoft.Owin.Security": "4.0.0",
-          "Owin": "1.0.0"
-        },
-        "compile": {
-          "lib/net451/Microsoft.Owin.Security.Cookies.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Owin.Security.Cookies.dll": {}
-        }
-      },
       "Microsoft.Win32.Primitives/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2843,15 +2778,6 @@
         },
         "runtime": {
           "lib/netstandard1.3/NUglify.dll": {}
-        }
-      },
-      "Owin/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Owin.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Owin.dll": {}
         }
       },
       "Remotion.Linq/2.2.0": {
@@ -4925,22 +4851,6 @@
         "aspnetcore.identity.mongo.3.1.5.nupkg.sha512",
         "aspnetcore.identity.mongo.nuspec",
         "lib/netcoreapp2.0/AspNetCore.Identity.Mongo.dll"
-      ]
-    },
-    "AutoMapper/8.0.0": {
-      "sha512": "kcbje0Y71XkvzPn8k6OROZGOn2SKaWimon3Bu1WUTVoV5GTJVym+k+zQuKApyyFVRfk7bisumj/qUX4xIIXS+Q==",
-      "type": "package",
-      "path": "automapper/8.0.0",
-      "files": [
-        ".signature.p7s",
-        "automapper.8.0.0.nupkg.sha512",
-        "automapper.nuspec",
-        "lib/net461/AutoMapper.dll",
-        "lib/net461/AutoMapper.pdb",
-        "lib/net461/AutoMapper.xml",
-        "lib/netstandard2.0/AutoMapper.dll",
-        "lib/netstandard2.0/AutoMapper.pdb",
-        "lib/netstandard2.0/AutoMapper.xml"
       ]
     },
     "DnsClient/1.0.7": {
@@ -7375,54 +7285,6 @@
         "version.txt"
       ]
     },
-    "Microsoft.Owin/4.0.0": {
-      "sha512": "Nmvy2V2WiRHTnSs65REVaYHZrsXjXFS1MxwYqGrS6YjjajazEmQ1+dQWZiyO3dCOhnh6PhNfsGBCxbim36sjAg==",
-      "type": "package",
-      "path": "microsoft.owin/4.0.0",
-      "files": [
-        ".signature.p7s",
-        "lib/net451/Microsoft.Owin.XML",
-        "lib/net451/Microsoft.Owin.dll",
-        "microsoft.owin.4.0.0.nupkg.sha512",
-        "microsoft.owin.nuspec"
-      ]
-    },
-    "Microsoft.Owin.Host.SystemWeb/4.0.0": {
-      "sha512": "zMC+qMoTmG9J1SsJPyWJTggIFlyPg29Sx2UBtlVYP71A2tIhYBroyFO5I1YUnPGjruJPVWVsRbg7w12g/9ZQDQ==",
-      "type": "package",
-      "path": "microsoft.owin.host.systemweb/4.0.0",
-      "files": [
-        ".signature.p7s",
-        "lib/net451/Microsoft.Owin.Host.SystemWeb.dll",
-        "lib/net451/Microsoft.Owin.Host.SystemWeb.xml",
-        "microsoft.owin.host.systemweb.4.0.0.nupkg.sha512",
-        "microsoft.owin.host.systemweb.nuspec"
-      ]
-    },
-    "Microsoft.Owin.Security/4.0.0": {
-      "sha512": "iBRDbrED+93WXiOiNGtCW+GBmnhj/0seF6jJJBb/BzVhRa9rbKtti5k1iYOY8wsKCqLfhmBdTsVQueU+QodRDw==",
-      "type": "package",
-      "path": "microsoft.owin.security/4.0.0",
-      "files": [
-        ".signature.p7s",
-        "lib/net451/Microsoft.Owin.Security.XML",
-        "lib/net451/Microsoft.Owin.Security.dll",
-        "microsoft.owin.security.4.0.0.nupkg.sha512",
-        "microsoft.owin.security.nuspec"
-      ]
-    },
-    "Microsoft.Owin.Security.Cookies/4.0.0": {
-      "sha512": "IFg2MF72Lzz7xGdoXq1ewei3S+7KGQZ/1JmWa3fe/997h5OpStuOe86+2GUj/UipObaECU5L38LGjYvCw7QimQ==",
-      "type": "package",
-      "path": "microsoft.owin.security.cookies/4.0.0",
-      "files": [
-        ".signature.p7s",
-        "lib/net451/Microsoft.Owin.Security.Cookies.dll",
-        "lib/net451/Microsoft.Owin.Security.Cookies.xml",
-        "microsoft.owin.security.cookies.4.0.0.nupkg.sha512",
-        "microsoft.owin.security.cookies.nuspec"
-      ]
-    },
     "Microsoft.Win32.Primitives/4.3.0": {
       "sha512": "9ZQKCWxH7Ijp9BfahvL2Zyf1cJIk8XYLF6Yjzr2yi0b2cOut/HQ31qf1ThHAgCc3WiZMdnWcfJCgN82/0UunxA==",
       "type": "package",
@@ -7725,17 +7587,6 @@
         "lib/netstandard1.3/NUglify.xml",
         "nuglify.1.5.10.nupkg.sha512",
         "nuglify.nuspec"
-      ]
-    },
-    "Owin/1.0.0": {
-      "sha512": "S87+AKxSxfhXRzIQfm6WBxfGbnzECLG8bmVp3lRiwjeYG9YBJ0AXd+2Xn7I7aqwwj0j4erSpX6H9OhXy+qQ7tw==",
-      "type": "package",
-      "path": "owin/1.0.0",
-      "files": [
-        ".signature.p7s",
-        "lib/net40/Owin.dll",
-        "owin.1.0.0.nupkg.sha512",
-        "owin.nuspec"
       ]
     },
     "Remotion.Linq/2.2.0": {
@@ -12898,14 +12749,9 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "AspNetCore.Identity.Mongo >= 3.1.5",
-      "AutoMapper >= 8.0.0",
       "LigerShark.WebOptimizer.Core >= 1.0.215",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
-      "Microsoft.Owin >= 4.0.0",
-      "Microsoft.Owin.Host.SystemWeb >= 4.0.0",
-      "Microsoft.Owin.Security >= 4.0.0",
-      "Microsoft.Owin.Security.Cookies >= 4.0.0",
       "MongoDB.Driver >= 2.7.2"
     ]
   },
@@ -12952,10 +12798,6 @@
             "target": "Package",
             "version": "[3.1.5, )"
           },
-          "AutoMapper": {
-            "target": "Package",
-            "version": "[8.0.0, )"
-          },
           "LigerShark.WebOptimizer.Core": {
             "target": "Package",
             "version": "[1.0.215, )"
@@ -12972,22 +12814,6 @@
             "version": "[2.1.0, )",
             "autoReferenced": true
           },
-          "Microsoft.Owin": {
-            "target": "Package",
-            "version": "[4.0.0, )"
-          },
-          "Microsoft.Owin.Host.SystemWeb": {
-            "target": "Package",
-            "version": "[4.0.0, )"
-          },
-          "Microsoft.Owin.Security": {
-            "target": "Package",
-            "version": "[4.0.0, )"
-          },
-          "Microsoft.Owin.Security.Cookies": {
-            "target": "Package",
-            "version": "[4.0.0, )"
-          },
           "MongoDB.Driver": {
             "target": "Package",
             "version": "[2.7.2, )"
@@ -13000,57 +12826,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Owin 4.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.Owin",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.1"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Owin.Host.SystemWeb 4.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.Owin.Host.SystemWeb",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.1"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Owin.Security 4.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.Owin.Security",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.1"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Owin.Security.Cookies 4.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.Owin.Security.Cookies",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.1"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Owin 1.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Owin",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.1"
-      ]
-    }
-  ]
+  }
 }
