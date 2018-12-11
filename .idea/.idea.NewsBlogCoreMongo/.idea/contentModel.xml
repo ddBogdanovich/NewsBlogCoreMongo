@@ -30,8 +30,10 @@
       </e>
       <e p="Models" t="Include">
         <e p="AccountViewModels" t="Include">
+          <e p="ForgotPasswordViewModel.cs" t="Include" />
           <e p="LoginViewModel.cs" t="Include" />
           <e p="RegisterViewModel.cs" t="Include" />
+          <e p="ResetPasswordViewModel.cs" t="Include" />
         </e>
         <e p="ApplicationUser.cs" t="Include" />
         <e p="BlogContext.cs" t="Include" />
@@ -65,8 +67,12 @@
       <e p="Startup.cs" t="Include" />
       <e p="Views" t="Include">
         <e p="Account" t="Include">
+          <e p="ForgotPassword.cshtml" t="Include" />
+          <e p="ForgotPasswordConfirmation.cshtml" t="Include" />
           <e p="Login.cshtml" t="Include" />
           <e p="Register.cshtml" t="Include" />
+          <e p="ResetPassword.cshtml" t="Include" />
+          <e p="ResetPasswordConfirmation.cshtml" t="Include" />
         </e>
         <e p="Category" t="Include">
           <e p="Create.cshtml" t="Include" />
@@ -75,6 +81,12 @@
           <e p="Main.cshtml" t="Include" />
         </e>
         <e p="Culture" t="Include" />
+        <e p="Manage" t="Include">
+          <e p="Delete.cshtml" t="Include" />
+          <e p="Edit.cshtml" t="Include" />
+          <e p="Roles.cshtml" t="Include" />
+          <e p="Users.cshtml" t="Include" />
+        </e>
         <e p="News" t="Include">
           <e p="Contact.cshtml" t="Include" />
           <e p="DemoPage.cshtml" t="Include" />

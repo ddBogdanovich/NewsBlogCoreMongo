@@ -1,0 +1,97 @@
+@model M101DotNet.WebApp.Models.ApplicationUser
+
+
+@if (ViewData["message"] != null)
+{
+    <div class="alert alert-success">@ViewData["message"]</div>
+}
+
+@Html.ValidationSummary()
+
+
+<div class="wrap">
+    <div class="main">
+        <div class="section group">
+            <div class="col span_2_of_3">
+
+                <div class="contact-form">
+                    <h3>Edit @Model.UserName Profile</h3>
+
+                    @using (Html.BeginForm("Update", "Manage", null, FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        @Html.HiddenFor(model => model.Id)
+                        <div class="row">
+                            <h4>@Html.LabelFor(model => model.UserName)</h4>
+                            <span style="font-size: medium">@Html.EditorFor(model => model.UserName)</span>
+                            <span>@Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })</span>
+                        </div>
+
+                        <div class="row">
+                            <h4>@Html.LabelFor(model => model.Email)</h4>
+                            <span style="font-size: medium">@Html.EditorFor(model => model.Email)</span>
+                            <span>@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })</span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <span><input type="submit" style="position: relative" value="Update"></span>
+                        </div>
+
+                    }
+
+
+                    <hr>
+                    <h3>Change Password</h3>
+                    @using (Html.BeginForm("ChangePassword", "Manage", null, FormMethod.Post))
+                    {
+                        @Html.HiddenFor(model => model.Id)
+
+                        <div class="row">
+                            <h4><label for="oldpassword">Old Password</label></h4>
+                            <input style="font-size: medium" id="oldpassword" name="oldpassword" type="password" class="form-control">
+                        </div>
+
+                        <div class="row">
+                            <h4><label for="newpassword">New Password</label></h4>
+                            <input style="font-size: medium" id="newpassword" name="newpassword" type="password" class="form-control">
+                        </div>
+
+
+                        <div class="form-group">
+                            <span><input type="submit" style="position: relative" value="Change password"></span>
+                        </div>
+                    }
+
+
+                    <hr>
+                    <h3>Roles</h3>
+                    <h5>Current role: @ViewBag.CurrentRole</h5>
+
+                    @using (Html.BeginForm("UpdateUsersRole", "Manage", null, FormMethod.Post))
+                    {
+                        @Html.HiddenFor(model => model.Id)
+
+
+                        <div class="row">
+                            <div class="col-md-3" style="padding: 0px;">
+                                @Html.DropDownList("Role", ((List<string>)ViewBag.Roles).Select(m => new SelectListItem { Text = m, Value = m }), new { @class = "form-control", style = "background-color: inherit" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span><input type="submit" style="position: relative" value="Change role"></span>
+                        </div>
+                    }
+
+                    <div class="clear"></div>
+                    <span style="font-size: 13px;">@Html.ActionLink("<<< Back to List", "List", "NewsItems", null, new { style = "color: #EB7F1A" })</span>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -33,7 +33,7 @@ namespace MongoBlog
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
              
-            services.AddIdentityMongoDbProvider<ApplicationUser>(options =>
+            services.AddIdentityMongoDbProvider<ApplicationUser, MongoRole>(options =>
             {
                 options.ConnectionString = "mongodb://127.0.0.1:27017/blog";
             });

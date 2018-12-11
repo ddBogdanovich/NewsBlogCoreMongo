@@ -1,3 +1,7 @@
+using System.Linq;
+using System.Runtime.CompilerServices;
+using AspNetCore.Identity.Mongo.Model;
+
 namespace M101DotNet.WebApp.Controllers
 {
     using System.Threading.Tasks;
@@ -10,6 +14,7 @@ namespace M101DotNet.WebApp.Controllers
     public class ManageController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<MongoRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
        // private RoleManager<App> _roleManager;
 
@@ -19,46 +24,46 @@ namespace M101DotNet.WebApp.Controllers
 
         public ManageController(
             UserManager<ApplicationUser> userManager, 
-            SignInManager<ApplicationUser> signInManager
-            //BlogRoleManager roleManager
+            SignInManager<ApplicationUser> signInManager,
+            RoleManager<MongoRole> roleManager
             )
         {
             _userManager = userManager;
             _signInManager = signInManager;
-           // BlRoleManager = roleManager;
+            _roleManager = roleManager;
         }
 
 
-        /*#region Roles
+        #region Roles
  
 
         [Authorize(Roles = "Administrator, Moderator")]
         public ActionResult Roles()
         {
-            ViewBag.Roles = BlRoleManager.Roles.ToList();
+            ViewBag.Roles = _roleManager.Roles.ToList();
             return View("Roles");
         }
 
      
         [Authorize(Roles = "Administrator")]
         [HttpPost]
-        public ActionResult UpdateUsersRole(string id, string role)
+        public async Task UpdateUsersRole(string id, string role)
         {
-            var roles = BlRoleManager.Roles.Select(m => m.Name).ToList();
+            var roles = _roleManager.Roles.Select(m => m.Name).ToList();
             if (!string.IsNullOrEmpty(role) && roles.Contains(role))
             {
 
-                var user = UserManager.FindById(id);
+                var user = await _userManager.FindByIdAsync(id);
 
                 if (user == null)
                 {
                     ModelState.AddModelError("", "Invalid User ID");
                     return Index();
                 }
-                
-                var currentUsersRole = UserManager.GetRoles(user.Id).FirstOrDefault();
-                UserManager.RemoveFromRole(user.Id, currentUsersRole);
-                var result = UserManager.AddToRole(user.Id, role);
+
+                var currentUsersRole = await _userManager.GetRolesAsync(user)?.Result?.FirstOrDefault();
+                await _userManager.RemoveFromRoleAsync(user, currentUsersRole);
+                var result = await _userManager.AddToRoleAsync(user, role);
 
                 if (!result.Succeeded)
                 {
@@ -78,7 +83,7 @@ namespace M101DotNet.WebApp.Controllers
 
 
 
-        #endregion*/
+        #endregion
         //[Authorize(Roles = "Administrator, Moderator")]
         public async Task<ActionResult> Index()
         {
