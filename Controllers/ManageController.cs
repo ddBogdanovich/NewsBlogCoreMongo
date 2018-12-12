@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Runtime.CompilerServices;
 using AspNetCore.Identity.Mongo.Model;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace M101DotNet.WebApp.Controllers
 {
@@ -17,10 +18,6 @@ namespace M101DotNet.WebApp.Controllers
         private readonly RoleManager<MongoRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public ManageController()
-        {
-        }
-
         public ManageController(
             UserManager<ApplicationUser> userManager, 
             SignInManager<ApplicationUser> signInManager,
@@ -30,19 +27,12 @@ namespace M101DotNet.WebApp.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+         
         }
 
+        
 
         #region Roles
- 
-
-        [Authorize(Roles = "Administrator, Moderator")]
-        public ActionResult Roles()
-        {
-            ViewBag.Roles = _roleManager.Roles.ToList();
-            return View("Roles");
-        }
-
      
         [Authorize(Roles = "Administrator")]
         [HttpPost]
@@ -82,18 +72,9 @@ namespace M101DotNet.WebApp.Controllers
 
 
 
-        #endregion
-        //[Authorize(Roles = "Administrator, Moderator")]
-        public async Task<IActionResult> Index()
-        {
-            ViewBag.Users = await _userManager.Users.ToArrayAsync();
-
-            return View("Users");
-        }
-
+        #endregion    
         
-        
-        [Authorize(Roles = "Administrator")]
+        /*[Authorize(Roles = "Administrator")]*/
         public async Task<IActionResult> Edit(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
@@ -101,11 +82,11 @@ namespace M101DotNet.WebApp.Controllers
             {
                 return Redirect("~/Manage");
             }
-            var roles =  _roleManager.Roles.Select(m => m.Name).ToList();
+            var roles =  _roleManager.Roles.ToList();
             var currentUsersRole = _userManager.GetRolesAsync(user).Result.FirstOrDefault();
 
-            ViewBag.CurrentRole = currentUsersRole;
-            ViewBag.Roles = roles;
+            ViewBag.CurrentRole = currentUsersRole;            
+            ViewBag.Roles = new SelectList(roles, "Name", "Name", currentUsersRole);;
             return View("Edit", user);
         }
 

@@ -18,6 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Models\ManageViewModels" />
       <Folder Include="Views\Culture" />
       <Folder Include="wwwroot\bundles" />
     </ItemGroup>

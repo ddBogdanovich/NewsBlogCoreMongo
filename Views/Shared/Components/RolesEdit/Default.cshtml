@@ -3,14 +3,12 @@
     Layout = null;
 }
 
-
-
 @if (ViewData["message"] != null)
 {
     <div class="alert alert-success">@ViewData["message"]</div>
 }
 
-@Html.ValidationSummary()
+<div asp-validation-summary="All" class="danger"></div>
 
 
 <hr>
@@ -31,7 +29,7 @@
                 {
                     <tr>
                         <td>@role.Name</td>
-                        <td>@role.Description</td>
+                        <td>@role.NormalizedName</td>
                     </tr>
                 }
                 </tbody>

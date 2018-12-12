@@ -160,5 +160,5 @@
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Account/ResetPasswordConfirmation.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Manage/Delete.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Manage/Edit.g.cshtml.cs
-/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Manage/Roles.g.cshtml.cs
-/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Manage/Users.g.cshtml.cs
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Components/UsersEdit/Default.g.cshtml.cs
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Components/RolesEdit/Default.g.cshtml.cs

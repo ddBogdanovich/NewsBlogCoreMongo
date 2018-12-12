@@ -9,6 +9,8 @@
         <e p="CategoryListViewComponent.cs" t="Include" />
         <e p="NewsItemEditListViewComponent.cs" t="Include" />
         <e p="NewsItemViewComponent.cs" t="Include" />
+        <e p="RolesEditViewComponent.cs" t="Include" />
+        <e p="UsersEditViewComponent.cs" t="Include" />
       </e>
       <e p="Controllers" t="Include">
         <e p="AccountController.cs" t="Include" />
@@ -44,6 +46,7 @@
         <e p="ApplicationUser.cs" t="Include" />
         <e p="BlogContext.cs" t="Include" />
         <e p="Image.cs" t="Include" />
+        <e p="ManageViewModels" t="Include" />
         <e p="NewsCategory.cs" t="Include" />
         <e p="NewsItem.cs" t="Include" />
         <e p="NewsItemViewModel.cs" t="Include" />
@@ -90,8 +93,6 @@
         <e p="Manage" t="Include">
           <e p="Delete.cshtml" t="Include" />
           <e p="Edit.cshtml" t="Include" />
-          <e p="Roles.cshtml" t="Include" />
-          <e p="Users.cshtml" t="Include" />
         </e>
         <e p="News" t="Include">
           <e p="Contact.cshtml" t="Include" />
@@ -118,6 +119,12 @@
               <e p="Default.cshtml" t="Include" />
             </e>
             <e p="NewsItemEditList" t="Include">
+              <e p="Default.cshtml" t="Include" />
+            </e>
+            <e p="RolesEdit" t="Include">
+              <e p="Default.cshtml" t="Include" />
+            </e>
+            <e p="UsersEdit" t="Include">
               <e p="Default.cshtml" t="Include" />
             </e>
           </e>
