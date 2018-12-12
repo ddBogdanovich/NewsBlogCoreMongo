@@ -1,5 +1,6 @@
 ﻿using AspNetCore.Identity.Mongo;
 using AspNetCore.Identity.Mongo.Model;
+using Example.CustomUser.Services;
 using M101DotNet.WebApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,15 +34,16 @@ namespace MongoBlog
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
              
-            services.AddIdentityMongoDbProvider<ApplicationUser, MongoRole>(options =>
+/*            services.AddIdentityMongoDbProvider<ApplicationUser, MongoRole>(options =>
             {
                 options.ConnectionString = "mongodb://127.0.0.1:27017/blog";
-            });
+            });*/
             
             services.AddOptions();
             services.AddTransient<IImageService, ImageService>();
             services.AddTransient<IImageStorage, FileSystemImageStorage>();
             services.AddSingleton<IBlogRepository, BlogRepository>();
+            services.AddTransient<IEmailSender, EmailSender>();
             
             services.Configure<Settings>(options =>
             {
@@ -134,6 +136,7 @@ namespace MongoBlog
             app.UseCookiePolicy();
             app.UseWebOptimizer();
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(name: "Error", template: "Error",

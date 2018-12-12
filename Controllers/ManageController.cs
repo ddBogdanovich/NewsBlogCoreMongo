@@ -16,7 +16,6 @@ namespace M101DotNet.WebApp.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<MongoRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-       // private RoleManager<App> _roleManager;
 
         public ManageController()
         {
@@ -47,7 +46,7 @@ namespace M101DotNet.WebApp.Controllers
      
         [Authorize(Roles = "Administrator")]
         [HttpPost]
-        public async Task UpdateUsersRole(string id, string role)
+        public async Task<IActionResult> UpdateUsersRole(string id, string role)
         {
             var roles = _roleManager.Roles.Select(m => m.Name).ToList();
             if (!string.IsNullOrEmpty(role) && roles.Contains(role))
@@ -58,10 +57,10 @@ namespace M101DotNet.WebApp.Controllers
                 if (user == null)
                 {
                     ModelState.AddModelError("", "Invalid User ID");
-                    return Index();
+                    return RedirectToAction("Index");
                 }
 
-                var currentUsersRole = await _userManager.GetRolesAsync(user)?.Result?.FirstOrDefault();
+                var currentUsersRole = _userManager.GetRolesAsync(user).Result.FirstOrDefault();
                 await _userManager.RemoveFromRoleAsync(user, currentUsersRole);
                 var result = await _userManager.AddToRoleAsync(user, role);
 
@@ -69,7 +68,7 @@ namespace M101DotNet.WebApp.Controllers
                 {
                     foreach (var error in result.Errors)
                     {
-                        ModelState.AddModelError("", error);
+                        ModelState.AddModelError("", error.Description);
                     }
                 }
                 else
@@ -78,14 +77,14 @@ namespace M101DotNet.WebApp.Controllers
                 }
             }
 
-            return Edit(id);
+            return RedirectToAction("Edit", id);
         }
 
 
 
         #endregion
         //[Authorize(Roles = "Administrator, Moderator")]
-        public async Task<ActionResult> Index()
+        public async Task<IActionResult> Index()
         {
             ViewBag.Users = await _userManager.Users.ToArrayAsync();
 
@@ -94,33 +93,33 @@ namespace M101DotNet.WebApp.Controllers
 
         
         
-/*        [Authorize(Roles = "Administrator")]
-        public ActionResult Edit(string id)
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> Edit(string id)
         {
-            var user = UserManager.FindById(id);
+            var user = await _userManager.FindByIdAsync(id);
             if (user == null)
             {
                 return Redirect("~/Manage");
             }
-            var roles = BlRoleManager.Roles.Select(m => m.Name).ToList();
-            var currentUsersRole = _userManager.GetRoles(user.Id).FirstOrDefault();
+            var roles =  _roleManager.Roles.Select(m => m.Name).ToList();
+            var currentUsersRole = _userManager.GetRolesAsync(user).Result.FirstOrDefault();
 
             ViewBag.CurrentRole = currentUsersRole;
             ViewBag.Roles = roles;
             return View("Edit", user);
-        }*/
+        }
 
       
 
         [Authorize(Roles = "Administrator")]
-        public ActionResult Delete(string id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
             {
                 return BadRequest();
             }
 
-            var user = _userManager.FindByIdAsync(id);
+            var user = await _userManager.FindByIdAsync(id);
             if (user != null)
             {
                 return View(user);
@@ -137,7 +136,7 @@ namespace M101DotNet.WebApp.Controllers
         [Authorize(Roles = "Administrator")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             if (id != null)
             {
@@ -161,13 +160,13 @@ namespace M101DotNet.WebApp.Controllers
 
         [Authorize(Roles = "Administrator")]
         [HttpPost]
-        public async Task<ActionResult> Update(ApplicationUser model)
+        public async Task<IActionResult> Update(ApplicationUser model)
         {
             var user = await _userManager.FindByIdAsync(model.Id);
             if (user == null)
             {
                 ModelState.AddModelError("", "Invalid User ID");
-                return Index();
+                return RedirectToAction("Index");
             }
 
             user.UserName = model.UserName;
@@ -178,7 +177,7 @@ namespace M101DotNet.WebApp.Controllers
             {
                 foreach (var error in result.Errors)
                 {
-                    ModelState.AddModelError("", error);
+                    ModelState.AddModelError("", error.Description);
                 }
             }
             else
@@ -186,13 +185,13 @@ namespace M101DotNet.WebApp.Controllers
                 ViewData["message"] = "Update Successful";
             }
 
-            return Edit(model.Id);
+            return RedirectToAction("Edit", model.Id);
         }
 
         
         [Authorize(Roles = "Administrator")]
         [HttpPost]
-        public async Task<ActionResult> ChangePassword(string id, string oldpassword, string newpassword)
+        public async Task<IActionResult> ChangePassword(string id, string oldpassword, string newpassword)
         {
             var user = await _userManager.FindByIdAsync(id);
             var result = await _userManager.ChangePasswordAsync(user, oldpassword, newpassword);
@@ -208,7 +207,7 @@ namespace M101DotNet.WebApp.Controllers
                 ViewData["message"] = "Password changed Successful";
             }
 
-            return Edit(id);
+            return RedirectToAction("Edit", id);
         }
 
 
@@ -228,7 +227,7 @@ namespace M101DotNet.WebApp.Controllers
         {
             foreach (var error in result.Errors)
             {
-                ModelState.AddModelError("", error);
+                ModelState.AddModelError("", error.Description);
             }
         }
 

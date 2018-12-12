@@ -154,3 +154,11 @@
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.csproj.CopyComplete
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Components/NewsItemEditList/Default.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Components/CategoryEditList/Default.g.cshtml.cs
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Account/ForgotPassword.g.cshtml.cs
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Account/ForgotPasswordConfirmation.g.cshtml.cs
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Account/ResetPassword.g.cshtml.cs
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Account/ResetPasswordConfirmation.g.cshtml.cs
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Manage/Delete.g.cshtml.cs
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Manage/Edit.g.cshtml.cs
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Manage/Roles.g.cshtml.cs
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Manage/Users.g.cshtml.cs

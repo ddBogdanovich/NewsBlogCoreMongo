@@ -6,7 +6,6 @@ namespace NewsBlogCoreMongo.Models.AccountViewModels
     {
         
         [Display(Name = "UserName", ResourceType = typeof(Resources.Resource))]
-        [Required(ErrorMessageResourceType = typeof(Resources.Resource), ErrorMessageResourceName = "UserNameReuqired")]
         public string UserName { get; set; }
         
         

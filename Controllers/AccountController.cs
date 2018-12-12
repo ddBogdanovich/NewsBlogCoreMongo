@@ -1,3 +1,7 @@
+using System;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using MongoBlog.Extensions;
+
 namespace M101DotNet.WebApp.Controllers
 {
     using System.Threading.Tasks;
@@ -13,15 +17,18 @@ namespace M101DotNet.WebApp.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly Example.CustomUser.Services.IEmailSender _emailSender;
 
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager
+            SignInManager<ApplicationUser> signInManager,
+            Example.CustomUser.Services.IEmailSender emailSender
         )
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _emailSender = emailSender;
         }
 
 
@@ -36,7 +43,7 @@ namespace M101DotNet.WebApp.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
@@ -71,7 +78,7 @@ namespace M101DotNet.WebApp.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +101,7 @@ namespace M101DotNet.WebApp.Controllers
         
         
         [AllowAnonymous]
-        public ActionResult ForgotPassword()
+        public IActionResult ForgotPassword()
         {
             return View();
         }
@@ -102,7 +109,7 @@ namespace M101DotNet.WebApp.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -114,9 +121,10 @@ namespace M101DotNet.WebApp.Controllers
                     return View("ForgotPasswordConfirmation");
                 }
                 
-                string code = await _userManager.GeneratePasswordResetTokenAsync(user.Id);
-                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-              //  await _userManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                string code = await _userManager.GeneratePasswordResetTokenAsync(user);
+                var callbackUrl = Url.ResetPasswordCallbackLink(user.Id, code, Request.Scheme);
+                await _emailSender.SendEmailAsync(model.Email, "Reset Password",
+                    $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
                 return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
@@ -125,14 +133,14 @@ namespace M101DotNet.WebApp.Controllers
         }
         
         [AllowAnonymous]
-        public ActionResult ForgotPasswordConfirmation()
+        public IActionResult ForgotPasswordConfirmation()
         {
             return View();
         }
         
         
         [AllowAnonymous]
-        public ActionResult ResetPassword(string code)
+        public IActionResult ResetPassword(string code)
         {
             return code == null ? View("Error") : View();
         }
@@ -146,6 +154,22 @@ namespace M101DotNet.WebApp.Controllers
             }
         }
         
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> ConfirmEmail(string userId, string code)
+        {
+            if (userId == null || code == null)
+            {
+                return RedirectToAction(nameof(NewsController.List), "News");
+            }
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                throw new ApplicationException($"Unable to load user with ID '{userId}'.");
+            }
+            var result = await _userManager.ConfirmEmailAsync(user, code);
+            return View(result.Succeeded ? "ConfirmEmail" : "Error");
+        }
         
     }
 }
