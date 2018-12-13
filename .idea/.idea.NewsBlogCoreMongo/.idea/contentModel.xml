@@ -66,15 +66,14 @@
         <e p="IBlogRepository.cs" t="Include" />
       </e>
       <e p="Resources" t="Include">
-        <e p="Views" t="Include">
-          <e p="Account" t="Include">
-            <e p="Login.en.Designer.cs" t="Include" />
-            <e p="Login.en.resx" t="Include" />
-            <e p="Login.ru.Designer.cs" t="Include" />
-            <e p="Login.ru.resx" t="Include" />
-          </e>
+        <e p="MongoBlog" t="Include">
+          <e p="SharedResources.en.Designer.cs" t="Include" />
+          <e p="SharedResources.en.resx" t="Include" />
+          <e p="SharedResources.ru.Designer.cs" t="Include" />
+          <e p="SharedResources.ru.resx" t="Include" />
         </e>
       </e>
+      <e p="SharedResources.cs" t="Include" />
       <e p="Startup.cs" t="Include" />
       <e p="Views" t="Include">
         <e p="Account" t="Include">

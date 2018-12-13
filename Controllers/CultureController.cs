@@ -1,41 +1,26 @@
-using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Routing;
-
 namespace M101DotNet.WebApp.Controllers
 {
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Localization;
+    using Microsoft.AspNetCore.Mvc;
+    using System;
+
     public class CultureController : Controller
     {
-        
-        private readonly List<string> cultures = new List<string>() { "ru", "en" };
-
-        public ActionResult ChangeCulture(string lang)
+        public IActionResult Index()
         {
-            string returnUrl = Request.Headers["Referer"].ToString();
-            var cookieOptions = new CookieOptions();
-             
-            
-            if (!cultures.Contains(lang))
-            {
-                lang = "en";
-            }
-            
-/*            string cookie = Request.Cookies["lang"];
-            if (cookie != null)
-            {  
-                Response.Cookies.Append("lang", lang, cookieOptions); 
-            }  
-            else
-            {   */   
-                 Response.Cookies.Delete("lang"); 
-                cookieOptions.HttpOnly = false;
-                cookieOptions.Expires = DateTime.Now.AddYears(1);
-                Response.Cookies.Append("lang", lang, cookieOptions);
-          //  }
-   
-            return Redirect(returnUrl);
+            return View();
+        }
+
+        public IActionResult ChangeCulture(string lang, string returnUrl)
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(lang)),
+                new CookieOptions {Expires = DateTimeOffset.UtcNow.AddYears(1)}
+            );
+
+            return LocalRedirect(returnUrl);
         }
     }
 }

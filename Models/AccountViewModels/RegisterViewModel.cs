@@ -5,7 +5,7 @@ namespace NewsBlogCoreMongo.Models.AccountViewModels
     public class RegisterViewModel
     {
         
-        [Display(Name = "UserName", ResourceType = typeof(Resources.Resource))]
+        //[Display(Name = "UserName", ResourceType = typeof(Resources.Resource))]
         public string UserName { get; set; }
         
         

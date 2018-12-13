@@ -1,5 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.Extensions.Localization;
+using MongoBlog;
 using MongoBlog.Extensions;
 
 namespace M101DotNet.WebApp.Controllers

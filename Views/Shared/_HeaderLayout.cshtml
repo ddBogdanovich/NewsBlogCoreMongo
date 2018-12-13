@@ -1,6 +1,6 @@
 @using Microsoft.AspNetCore.Mvc.Localization
-@using NewsBlogCoreMongo.Models
 @inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<SharedResources> SharedLocalizer
 
 <div class="header">
     <div class="header_top" style="margin-bottom: 15px;">
@@ -15,10 +15,10 @@
 
                 <div class="menu">
                     <ul class="menu bounce">
-                        <li><a asp-action="List" asp-controller="News">@Localizer["Home"]</a></li>
-                        <li><a asp-action="Demo" asp-controller="News">@Localizer["About"]</a></li>
-                        <li><a asp-action="Demo" asp-controller="News">@Localizer["Support"]</a></li>
-                        <li><a asp-action="Contact" asp-controller="News">@Localizer["Contact"]</a></li>
+                        <li><a asp-action="List" asp-controller="News">@SharedLocalizer["Home"]</a></li>
+                        <li><a asp-action="Demo" asp-controller="News">@SharedLocalizer["About"]</a></li>
+                        <li><a asp-action="Demo" asp-controller="News">@SharedLocalizer["Support"]</a></li>
+                        <li><a asp-action="Contact" asp-controller="News">@SharedLocalizer["Contact"]</a></li>
 
                       @*@if (User.IsInRole("Administrator") || User.IsInRole("Moderator"))
                         {*@

@@ -12,6 +12,9 @@
     	  <Version>1.0.215</Version>
     	</PackageReference>
         <PackageReference Include="Microsoft.AspNetCore.App" />
+        <PackageReference Include="Microsoft.Extensions.Localization">
+          <Version>2.1.1</Version>
+        </PackageReference>
         <PackageReference Include="MongoDB.Driver">
           <Version>2.7.2</Version>
         </PackageReference>
