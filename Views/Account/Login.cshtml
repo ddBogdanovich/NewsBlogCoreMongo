@@ -1,9 +1,12 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
 @model NewsBlogCoreMongo.Models.AccountViewModels.LoginViewModel
 
 <div class="wrap_login">
     <div class="main">
         <div class="contact-form">
-            <h3>"Sign in"</h3>
+            <h3>@Localizer["SignIn"]</h3>
 
             <section id="loginForm">
 
@@ -29,8 +32,9 @@
 
                     <div class="form-group">
 
-                        <input type="submit" value="Login" style="position: relative"/>                      
-                        <p><span>"OR" @Html.ActionLink("Register", "Register")</span></p>                                      
+                        <input type="submit" value="@Localizer["LoginBtn"]" style="position: relative"/>                      
+                        <p><span>@Localizer["OR"] 
+                            <a asp-controller="Account" asp-action="Register">@Localizer["Register"]</a></span></p>                                      
                     </div>      
                 </form>
             </section>        
@@ -45,3 +49,5 @@
 @section Scripts {
     <script src="/bundles/jqval.js"></script>
 }
+
+

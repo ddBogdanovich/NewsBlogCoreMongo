@@ -101,8 +101,6 @@
 /home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/Razor/Views/Category/Index.g.cshtml.cs
 /home/dd/NewsBlogCoreMongoDb/obj/Debug/netcoreapp2.1/Razor/Views/Category/Main.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.csprojAssemblyReference.cache
-/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.Resources.Shared.Resource.resources
-/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.Resources.Shared.Resource.ru.resources
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.csproj.GenerateResource.cache
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.csproj.CoreCompileInputs.cache
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.RazorAssemblyInfo.cache
@@ -162,3 +160,8 @@
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Manage/Edit.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Components/UsersEdit/Default.g.cshtml.cs
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Components/RolesEdit/Default.g.cshtml.cs
+/home/dd/NewsBlogASPCoreMongo/bin/Debug/netcoreapp2.1/en/NewsBlogCoreMongo.resources.dll
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.Resources.Views.Account.Login.en.resources
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.Resources.Views.Account.Login.ru.resources
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/en/NewsBlogCoreMongo.resources.cs
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/en/NewsBlogCoreMongo.resources.dll

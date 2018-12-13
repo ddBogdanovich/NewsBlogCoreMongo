@@ -1,14 +1,16 @@
-using System;
-using System.Threading.Tasks;
-using System.Linq.Expressions;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using MongoBlog.Repository;
-using NewsBlogCoreMongo.Models;
-using Microsoft.Extensions.Configuration;
-
 namespace M101DotNet.WebApp.Controllers
 {
+    using System;
+    using System.Threading.Tasks;
+    using System.Linq.Expressions;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Mvc;
+    using MongoBlog.Repository;
+    using NewsBlogCoreMongo.Models;
+    using Microsoft.Extensions.Configuration;
+
+    [Authorize]
     public class NewsController : Controller
     {
         private readonly IBlogRepository _blogRepository;

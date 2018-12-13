@@ -1,10 +1,12 @@
-﻿using AspNetCore.Identity.Mongo;
+﻿using System.Globalization;
+using AspNetCore.Identity.Mongo;
 using AspNetCore.Identity.Mongo.Model;
 using Example.CustomUser.Services;
 using M101DotNet.WebApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
@@ -67,9 +69,11 @@ namespace MongoBlog
                 options.ConnectionString = "mongodb://127.0.0.1:27017/blog";
             });
             
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
             services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
-                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
+                .AddViewLocalization()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             
             services.AddWebOptimizer(pipeline =>
             {
@@ -130,7 +134,22 @@ namespace MongoBlog
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+            
+            app.UseDeveloperExceptionPage();
+ 
+            var supportedCultures = new[]
+            {
+                new CultureInfo("en"),
+                new CultureInfo("ru"),
+            };
 
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("ru"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            });
+            
             app.UseHttpsRedirection();
 
             app.UseCookiePolicy();

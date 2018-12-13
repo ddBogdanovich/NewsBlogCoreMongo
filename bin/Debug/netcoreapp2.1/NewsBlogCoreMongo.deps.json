@@ -34,6 +34,9 @@
           "NewsBlogCoreMongo.dll": {}
         },
         "resources": {
+          "en/NewsBlogCoreMongo.resources.dll": {
+            "locale": "en"
+          },
           "ru/NewsBlogCoreMongo.resources.dll": {
             "locale": "ru"
           }
