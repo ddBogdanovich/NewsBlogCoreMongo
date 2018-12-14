@@ -61,6 +61,12 @@ namespace MongoBlog
                 options.ConnectionString = "mongodb://127.0.0.1:27017/blog";
             });
             
+            services.AddAuthentication().AddFacebook(facebookOptions =>  
+            {  
+                facebookOptions.AppId = "2219173204994225";  
+                facebookOptions.AppSecret = "6ada7f3ea02b8bcf571c204302cffbcf";  
+            });  
+            
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 
             services.AddMvc()
@@ -137,6 +143,7 @@ namespace MongoBlog
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseHttpsRedirection();
             }
             else
             {

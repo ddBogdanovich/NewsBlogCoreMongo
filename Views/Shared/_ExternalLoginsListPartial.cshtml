@@ -1,8 +1,16 @@
+@using M101DotNet.WebApp.Models
+@using Microsoft.AspNetCore.Http.Authentication
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+@using System.Threading.Tasks
 @model NewsBlogCoreMongo.Models.AccountViewModels.ExternalLoginListViewModel
 
+@inject SignInManager<ApplicationUser> SignInManager
+
 @{
-    /*var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();*/
-    @*if (loginProviders.Count() == 0)
+    var loginProviders =  SignInManager.GetExternalAuthenticationSchemesAsync().Result.ToList();
+    if (loginProviders.Count() == 0)
     {
         <div>
             <p>
@@ -10,23 +18,22 @@
                 for details on setting up this ASP.NET application to support logging in via external services.
             </p>
         </div>
-    }*@
-/*    else
+    }
+    else
     {
-        @*using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl }))
+        using (Html.BeginForm("ExternalLogin", "Account", new { @Model.ReturnUrl }))
         {
-            @Html.AntiForgeryToken()
             
             <p>
-                @foreach (AuthenticationDescription p in loginProviders)
+                @foreach (var p in loginProviders)
                 {
                                         
                     <button type="submit"
-                            class="zocial @p.AuthenticationType.ToLower()"
-                            id="@p.AuthenticationType" name="provider"
-                            value="@p.AuthenticationType"
-                            title="Log in using your @p.Caption account">
-                        @Resources.Resource.SingInWith @p.AuthenticationType
+                            class="zocial facebook"
+                            id="facebook" name="provider"
+                            value="facebook"
+                            title="Log in using your Facebook account">
+                             @SharedLocalizer["SingInWith"] facebook
                     </button>
 
                 }
@@ -34,8 +41,8 @@
 
             </p>
          
-        }*@
-    }*/
+        }
+    }
 }
 
 
