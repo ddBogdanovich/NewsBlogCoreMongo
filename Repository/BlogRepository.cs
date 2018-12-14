@@ -69,7 +69,7 @@ namespace MongoBlog.Repository
 
         public async Task DeleteNewsItem(string id)
         {
-            var result = _context.News.DeleteOneAsync(x => x.Id == id);
+            var result = await _context.News.DeleteOneAsync(x => x.Id == id);
         }
 
         public async Task UpdateNewsItemAsync(NewsItem item)
@@ -86,7 +86,7 @@ namespace MongoBlog.Repository
             var result = await _context.News.Find(filter).SingleOrDefaultAsync();
 
 
-            var a = result.Images.FirstOrDefault(x => x.FileId == id);
+            var a =  result.Images.FirstOrDefault(x => x.FileId == id);
 
             return a;
         }

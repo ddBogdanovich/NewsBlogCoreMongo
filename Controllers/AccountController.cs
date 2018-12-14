@@ -70,7 +70,17 @@ namespace M101DotNet.WebApp.Controllers
                 return View(model);
             }
         }
-
+        
+        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("List", "News");
+        }
+                
+       
         [AllowAnonymous]
         public ActionResult Register()
         {

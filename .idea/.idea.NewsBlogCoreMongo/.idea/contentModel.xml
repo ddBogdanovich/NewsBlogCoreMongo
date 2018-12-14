@@ -38,6 +38,7 @@
       </e>
       <e p="Models" t="Include">
         <e p="AccountViewModels" t="Include">
+          <e p="ExternalLoginListViewModel.cs" t="Include" />
           <e p="ForgotPasswordViewModel.cs" t="Include" />
           <e p="LoginViewModel.cs" t="Include" />
           <e p="RegisterViewModel.cs" t="Include" />
@@ -131,6 +132,7 @@
           </e>
           <e p="Error.cshtml" t="Include" />
           <e p="_AdminLayout.cshtml" t="Include" />
+          <e p="_ExternalLoginsListPartial.cshtml" t="Include" />
           <e p="_HeaderLayout.cshtml" t="Include" />
           <e p="_LangLinks.cshtml" t="Include" />
           <e p="_Layout.cshtml" t="Include" />

@@ -65,7 +65,10 @@ namespace MongoBlog
 
             services.AddMvc()
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.SubFolder, options => options.ResourcesPath = "Resources")
-                .AddDataAnnotationsLocalization()
+                .AddDataAnnotationsLocalization(options => {
+                    options.DataAnnotationLocalizerProvider = (type, factory) =>
+                        factory.Create(typeof(SharedResources));  
+                })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             
             services.Configure<RequestLocalizationOptions>(options =>

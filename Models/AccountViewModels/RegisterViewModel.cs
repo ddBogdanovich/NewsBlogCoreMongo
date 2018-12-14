@@ -1,28 +1,27 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace NewsBlogCoreMongo.Models.AccountViewModels
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class RegisterViewModel
     {
-        
-        //[Display(Name = "UserName", ResourceType = typeof(Resources.Resource))]
+        [Display(Name = "UserName")] 
+        [Required(ErrorMessage = "UserNameReuqired")]
         public string UserName { get; set; }
-        
-        
-        [Required]
-        [EmailAddress]
+
         [Display(Name = "Email")]
+        [Required(ErrorMessage = "EmailRequired")]
+        [EmailAddress(ErrorMessage =  "InvalidEmail")]
         public string Email { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
-        [DataType(DataType.Password)]
         [Display(Name = "Password")]
+        [Required(ErrorMessage = "PasswordRequired")]
+        [StringLength(100, ErrorMessage = "PasswordLength", MinimumLength = 6)]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "ConfirmPassword")]
+        [Compare("Password", ErrorMessage = "PasswordCompare")]
         public string ConfirmPassword { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 @using Microsoft.AspNetCore.Mvc.Localization
-@inject IViewLocalizer Localizer
+@using NewsBlogCoreMongo.Models.AccountViewModels
 @inject IHtmlLocalizer<SharedResources> SharedLocalizer
 
 <div class="header">
@@ -15,15 +15,25 @@
 
                 <div class="menu">
                     <ul class="menu bounce">
-                        <li><a asp-action="List" asp-controller="News">@SharedLocalizer["Home"]</a></li>
-                        <li><a asp-action="Demo" asp-controller="News">@SharedLocalizer["About"]</a></li>
-                        <li><a asp-action="Demo" asp-controller="News">@SharedLocalizer["Support"]</a></li>
-                        <li><a asp-action="Contact" asp-controller="News">@SharedLocalizer["Contact"]</a></li>
+                        <li>
+                            <a asp-action="List" asp-controller="News">@SharedLocalizer["Home"]</a>
+                        </li>
+                        <li>
+                            <a asp-action="Demo" asp-controller="News">@SharedLocalizer["About"]</a>
+                        </li>
+                        <li>
+                            <a asp-action="Demo" asp-controller="News">@SharedLocalizer["Support"]</a>
+                        </li>
+                        <li>
+                            <a asp-action="Contact" asp-controller="News">@SharedLocalizer["Contact"]</a>
+                        </li>
 
-                      @*@if (User.IsInRole("Administrator") || User.IsInRole("Moderator"))
-                        {*@
-                            <li><a asp-action="List" asp-controller="NewsItems">Admin Tools</a></li>
-                        @*}*@
+                        @if (User.IsInRole("Administrator") || User.IsInRole("Moderator"))
+                        {
+                            <li>
+                                <a asp-action="List" asp-controller="NewsItems">Admin Tools</a>
+                            </li>
+                        }
                     </ul>
                 </div>
                 <div class="clear"></div>
@@ -35,28 +45,26 @@
                 <div class="social-icons">
                     @{ await Html.RenderPartialAsync("_LangLinks");}
 
-                    @*@if (Request.IsAuthenticated)
+                    @if (User.Identity.IsAuthenticated)
                     {
-                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-                        {
-                            @Html.AntiForgeryToken()
+                        <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" role="form" class="navbar-right">
 
                             <span style="font-weight: bold; margin-top: 20px"> </span>
                             <h5 style="display: inline">Hello, @User.Identity.Name </h5>
                             <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-sm btn-danger">Log off</a>
                             <hr>
-                        }
+                        </form>
                     }
                     else
                     {
-                        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-                    }*@
+                        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel {ReturnUrl = ViewBag.ReturnUrl})
+                    }
                     <div class="clear"></div>
 
 
                 </div>
 
-                </div>
+            </div>
 
             <div class="clear"></div>
         </div>

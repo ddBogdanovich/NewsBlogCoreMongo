@@ -1,12 +1,12 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace NewsBlogCoreMongo.Models.AccountViewModels
 {
+    using System.ComponentModel.DataAnnotations;
+    
     public class ForgotPasswordViewModel
     {
-      //  [Display(Name = "Email", ResourceType = typeof(Resources.Resource))]
-       // [Required(ErrorMessageResourceType = typeof(Resources.Resource), ErrorMessageResourceName = "EmailRequired")]
-      //  [EmailAddress(ErrorMessageResourceType = typeof(Resources.Resource), ErrorMessageResourceName = "InvalidEmail")]
+        [Display(Name = "Email")]
+        [Required(ErrorMessage = "EmailRequired")]
+        [EmailAddress(ErrorMessage = "InvalidEmail")]
         public string Email { get; set; }
     }
 }
