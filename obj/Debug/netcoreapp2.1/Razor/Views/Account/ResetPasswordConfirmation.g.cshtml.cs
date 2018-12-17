@@ -105,7 +105,7 @@ using Microsoft.AspNetCore.Mvc.Localization;
             WriteLiteral(" ");
             EndContext();
             BeginContext(479, 95, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2df7ae01230e49c282db34fde1cfe5e4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9ecde862b2054df4a5a61cd56cd9e6ee", async() => {
                 BeginContext(542, 28, false);
 #line 16 "/home/dd/NewsBlogASPCoreMongo/Views/Account/ResetPasswordConfirmation.cshtml"
                                                                                                                                               Write(SharedLocalizer["ClickHere"]);

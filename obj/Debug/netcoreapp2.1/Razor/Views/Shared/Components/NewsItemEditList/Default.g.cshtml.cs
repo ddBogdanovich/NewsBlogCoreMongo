@@ -76,7 +76,7 @@ using MongoBlog.HtmlHelpers;
             WriteLiteral("\n<hr>\n<p class=\"btn-create-new\">\n    ");
             EndContext();
             BeginContext(125, 98, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8af2d467da544463a9c46cdf2445e882", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c6664c53d8dc45f887bea7b7c2843245", async() => {
                 BeginContext(206, 13, true);
                 WriteLiteral("Create New + ");
                 EndContext();
@@ -152,7 +152,7 @@ using MongoBlog.HtmlHelpers;
             WriteLiteral(";\n                <hr/>\n                ");
             EndContext();
             BeginContext(1046, 104, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("image-link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "292990260de0427e9c89dd1b5307d762", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("image-link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07280cc6a5f5419f9ee1d3e53e9da60e", async() => {
             }
             );
             __MongoBlog_HtmlHelpers_ImageLinkTagHelper = CreateTagHelper<global::MongoBlog.HtmlHelpers.ImageLinkTagHelper>();
@@ -187,7 +187,7 @@ __MongoBlog_HtmlHelpers_ImageLinkTagHelper.model = item;
             WriteLiteral("</label>\n            </td>\n            <td>\n                <p class=\"btn-create-new\">\n                    ");
             EndContext();
             BeginContext(1356, 120, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "901144ef5a1349f5b2fcb96493b71c99", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b8693da1c4b54a2ca10c7f596d684049", async() => {
                 BeginContext(1468, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -225,7 +225,7 @@ __MongoBlog_HtmlHelpers_ImageLinkTagHelper.model = item;
             WriteLiteral("\n                </p>\n                ");
             EndContext();
             BeginContext(1514, 123, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bc971e73eb844e8abba93480e672c44", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "615283aaed8c43c7b65a4c71421fc833", async() => {
                 BeginContext(1627, 6, true);
                 WriteLiteral("Delete");
                 EndContext();

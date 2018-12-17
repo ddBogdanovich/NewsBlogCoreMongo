@@ -61,7 +61,7 @@ using MongoBlog.HtmlHelpers;
             WriteLiteral("\n<div class=\"box1\">\n    <h3 style=\"font-weight: bolder\">");
             EndContext();
             BeginContext(106, 108, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37e27b4f66824cb781990dc01f08d3f4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f6f6efbf7b614251a98bdc46bb736a3d", async() => {
                 BeginContext(187, 23, false);
 #line 4 "/home/dd/NewsBlogASPCoreMongo/Views/Shared/Components/NewsItem/Default.cshtml"
                                                                                                                Write(Model.newsItem.Headline);
@@ -112,12 +112,12 @@ using MongoBlog.HtmlHelpers;
             WriteLiteral("</span>\n    <br>\n    <div class=\"view\">\n\n        ");
             EndContext();
             BeginContext(363, 146, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75fe59a38e0f43e89894604a7920a582", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad7190d6352a48bf82295cb7d29b5262", async() => {
                 BeginContext(443, 13, true);
                 WriteLiteral("\n            ");
                 EndContext();
                 BeginContext(456, 40, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("image-link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2321130158b94cb8b711e755c79523e6", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("image-link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bad308d840a7442aab53463e5c596247", async() => {
                 }
                 );
                 __MongoBlog_HtmlHelpers_ImageLinkTagHelper = CreateTagHelper<global::MongoBlog.HtmlHelpers.ImageLinkTagHelper>();
@@ -182,7 +182,7 @@ __MongoBlog_HtmlHelpers_ImageLinkTagHelper.model = Model;
             WriteLiteral("...\n        <p>\n            <span style=\"font-size: 13px\">\n                ");
             EndContext();
             BeginContext(660, 104, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e2bfdec62fed4b08ae759f26bb337b78", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e887701b7b24336bf3a6903d1d19bf1", async() => {
                 BeginContext(740, 20, true);
                 WriteLiteral("Continue reading >>>");
                 EndContext();

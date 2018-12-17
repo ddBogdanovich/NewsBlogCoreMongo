@@ -18,7 +18,7 @@ namespace M101DotNet.WebApp.Controllers
     using NewsBlogCoreMongo.Models;
     
     
-    [Authorize(Roles = "Administrator, Moderator")]
+    //[Authorize(Roles = "Administrator, Moderator")]
     public class NewsItemsController : Controller
     {
         private readonly IBlogRepository _blogRepository;

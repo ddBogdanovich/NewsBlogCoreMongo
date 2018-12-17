@@ -1,3 +1,7 @@
+@using System.Security.Claims
+@using AspNetCore.Identity.Mongo.Model
+@using M101DotNet.WebApp.Models
+@using Microsoft.AspNetCore.Identity
 @using Microsoft.AspNetCore.Mvc.Localization
 @using NewsBlogCoreMongo.Models.AccountViewModels
 @inject IHtmlLocalizer<SharedResources> SharedLocalizer
@@ -27,13 +31,17 @@
                         <li>
                             <a asp-action="Contact" asp-controller="News">@SharedLocalizer["Contact"]</a>
                         </li>
-
-                        @if (User.IsInRole("Administrator") || User.IsInRole("Moderator"))
+                        
+   
+                        @if (this.User.IsInRole("Administrator") || this.User.IsInRole("Moderator"))
                         {
                             <li>
                                 <a asp-action="List" asp-controller="NewsItems">Admin Tools</a>
                             </li>
                         }
+                        <li>
+                            <a asp-action="List" asp-controller="NewsItems">Admin Tools</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="clear"></div>

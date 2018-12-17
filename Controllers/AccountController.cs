@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace M101DotNet.WebApp.Controllers
 {
     using System.Threading.Tasks;
@@ -49,8 +51,12 @@ namespace M101DotNet.WebApp.Controllers
 
             try
             {
-                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe,
+                var user = await _userManager.FindByEmailAsync(model.Email);
+                var result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe,
                     lockoutOnFailure: false);
+                var a = user.Roles;
+                Debug.Write(a);
+                
                 if (result.Succeeded)
                 {
                     return RedirectToAction("List", "News");
@@ -117,6 +123,7 @@ namespace M101DotNet.WebApp.Controllers
             if (!identityResult.Succeeded) return BadRequest();
 
             await _signInManager.SignInAsync(user, false);
+            
 
             if (returnUrl == null)
                 return RedirectToAction("List", "News");
@@ -221,6 +228,7 @@ namespace M101DotNet.WebApp.Controllers
             }
             
             var user = await _userManager.FindByEmailAsync(model.Email);
+
             if (user == null)
             {
                 return RedirectToAction(nameof(ResetPasswordConfirmation));

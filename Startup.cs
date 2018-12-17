@@ -31,11 +31,6 @@ namespace MongoBlog
         public void ConfigureServices(IServiceCollection services)
         {
             
-/*            services.AddIdentityMongoDbProvider<ApplicationUser, MongoRole>(options =>
-            {
-                options.ConnectionString = "mongodb://127.0.0.1:27017/blog";
-            });*/
-            
             services.AddOptions();
             services.AddTransient<IImageService, ImageService>();
             services.AddTransient<IImageStorage, FileSystemImageStorage>();
@@ -119,19 +114,19 @@ namespace MongoBlog
                 
                 
                 pipeline.AddCssBundle("/bundles/jsElements.css",
-                    "css_/jsElementsCss/daterangepicker.css",
-                    "css_/jsElementsCss/bootstrap-fileinput/css/fileinput.css"
+                    "Content/jsElementsCss/daterangepicker.css",
+                    "Content/jsElementsCss/bootstrap-fileinput/css/fileinput.css"
                 );     
                 
                 
 
                 pipeline.AddCssBundle("/bundles/content.css",
-                    "css_/bootstrap.css",
-                    "css_/zocial.css",
-                    "css_/style.css",
-                    "css_/Site.css",
-                    "css_/jquery.fancybox.css",
-                    "css_/jquery.bxslider.css"
+                    "Content/bootstrap.css",
+                    "Content/zocial.css",
+                    "Content/style.css",
+                    "Content/Site.css",
+                    "Content/jquery.fancybox.css",
+                    "Content/jquery.bxslider.css"
                 );
             });
             
