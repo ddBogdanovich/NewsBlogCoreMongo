@@ -81,7 +81,7 @@ using NewsBlogCoreMongo.Models.AccountViewModels;
             WriteLiteral("\r\n<div class=\"header\">\r\n    <div class=\"header_top\" style=\"margin-bottom: 15px;\">\r\n        <div class=\"wrap\">\r\n            <div class=\"header-top-left\">\r\n                <div class=\"logo\">\r\n                    ");
             EndContext();
             BeginContext(364, 147, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b8449e11a3b435f93e58ac2d5c97b48", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "527450d2c6564864b067da738bada80e", async() => {
                 BeginContext(407, 100, true);
                 WriteLiteral("\r\n                        <h1>NEWS</h1>\r\n                        <h2>Blog</h2>\r\n                    ");
                 EndContext();
@@ -105,7 +105,7 @@ using NewsBlogCoreMongo.Models.AccountViewModels;
             WriteLiteral("\r\n                </div>\r\n\r\n                <div class=\"menu\">\r\n                    <ul class=\"menu bounce\">\r\n                        <li>\r\n                            ");
             EndContext();
             BeginContext(679, 71, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57fa1eb1af854e27a6a3a334678848cc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e99eacb8477b4a9c9ad13c0ab77bae69", async() => {
                 BeginContext(723, 23, false);
 #line 19 "/home/dd/NewsBlogASPCoreMongo/Views/Shared/_HeaderLayout.cshtml"
                                                                   Write(SharedLocalizer["Home"]);
@@ -133,7 +133,7 @@ using NewsBlogCoreMongo.Models.AccountViewModels;
             WriteLiteral("\r\n                        </li>\r\n                        <li>\r\n                            ");
             EndContext();
             BeginContext(841, 72, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1545085a0f694db9821f810596cdb615", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d79d201b495948a98f53d1e42922a599", async() => {
                 BeginContext(885, 24, false);
 #line 22 "/home/dd/NewsBlogASPCoreMongo/Views/Shared/_HeaderLayout.cshtml"
                                                                   Write(SharedLocalizer["About"]);
@@ -161,7 +161,7 @@ using NewsBlogCoreMongo.Models.AccountViewModels;
             WriteLiteral("\r\n                        </li>\r\n                        <li>\r\n                            ");
             EndContext();
             BeginContext(1004, 74, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8535f8c1326c4d879ee42b42eeca411d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf3bbff5fb054a6e84acb10376e7dba3", async() => {
                 BeginContext(1048, 26, false);
 #line 25 "/home/dd/NewsBlogASPCoreMongo/Views/Shared/_HeaderLayout.cshtml"
                                                                   Write(SharedLocalizer["Support"]);
@@ -189,7 +189,7 @@ using NewsBlogCoreMongo.Models.AccountViewModels;
             WriteLiteral("\r\n                        </li>\r\n                        <li>\r\n                            ");
             EndContext();
             BeginContext(1169, 77, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e1fc27fd3b74045ae53c46fa1adacc4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "02aaa405b9e14f88af412c59ccc6dfc6", async() => {
                 BeginContext(1216, 26, false);
 #line 28 "/home/dd/NewsBlogASPCoreMongo/Views/Shared/_HeaderLayout.cshtml"
                                                                      Write(SharedLocalizer["Contact"]);
@@ -226,7 +226,7 @@ using NewsBlogCoreMongo.Models.AccountViewModels;
             WriteLiteral("                            <li>\r\n                                ");
             EndContext();
             BeginContext(1466, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b42ca7faa68f424eae3182edc4936600", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "81855dbf8db741948fd59643292892f3", async() => {
                 BeginContext(1514, 11, true);
                 WriteLiteral("Admin Tools");
                 EndContext();
@@ -275,7 +275,7 @@ using NewsBlogCoreMongo.Models.AccountViewModels;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(1977, 500, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "182c1fc3f38a4c6aa9c91bfed63e74e4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8327c6adb5274d0ca2d9c90d9fdba37e", async() => {
                 BeginContext(2091, 155, true);
                 WriteLiteral("\r\n\r\n                            <span style=\"font-weight: bold; margin-top: 20px\"> </span>\r\n                            <h5 style=\"display: inline\">Hello, ");
                 EndContext();

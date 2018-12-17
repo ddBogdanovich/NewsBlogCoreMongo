@@ -1,10 +1,3 @@
-using System;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.Extensions.Localization;
-using MongoBlog;
-using MongoBlog.Extensions;
-
 namespace M101DotNet.WebApp.Controllers
 {
     using System.Threading.Tasks;
@@ -13,9 +6,11 @@ namespace M101DotNet.WebApp.Controllers
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using NewsBlogCoreMongo.Models.AccountViewModels;
+    using System;
+    using System.Security.Claims;
+    using MongoBlog.Extensions;
 
-
-    [Authorize(Roles = "Administrator, Moderator")]
+    [Authorize]
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -26,8 +21,7 @@ namespace M101DotNet.WebApp.Controllers
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            Example.CustomUser.Services.IEmailSender emailSender
-        )
+            Example.CustomUser.Services.IEmailSender emailSender)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -71,19 +65,20 @@ namespace M101DotNet.WebApp.Controllers
                 return View(model);
             }
         }
-        
-        
+
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult ExternalLogin(string returnUrl = null)
         {
-            var redirectUrl = Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl });
+            var redirectUrl = Url.Action("ExternalLoginCallback", "Account", new {ReturnUrl = returnUrl});
             var properties = _signInManager.ConfigureExternalAuthenticationProperties("Facebook", redirectUrl);
             return Challenge(properties, "Facebook");
         }
-        
-          [AllowAnonymous]
+
+
+        [AllowAnonymous]
         public async Task<ActionResult> ExternalLoginCallback(string returnUrl = null, string serviceError = null)
         {
             if (serviceError != null)
@@ -128,7 +123,8 @@ namespace M101DotNet.WebApp.Controllers
 
             return Redirect(returnUrl);
         }
-        
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -136,8 +132,8 @@ namespace M101DotNet.WebApp.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("List", "News");
         }
-                
-       
+
+
         [AllowAnonymous]
         public ActionResult Register()
         {
@@ -163,17 +159,17 @@ namespace M101DotNet.WebApp.Controllers
 
                 AddErrors(result);
             }
-
-
+            
             return View(model);
         }
-        
-        
+
+
         [AllowAnonymous]
         public IActionResult ForgotPassword()
         {
             return View();
         }
+
         
         [HttpPost]
         [AllowAnonymous]
@@ -183,37 +179,70 @@ namespace M101DotNet.WebApp.Controllers
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByEmailAsync(model.Email);
-               
+
                 if (user == null)
                 {
-                    // Don't reveal that the user does not exist or is not confirmed
-                    return View("ForgotPasswordConfirmation");
+                    return RedirectToAction(nameof(ForgotPasswordConfirmation));
                 }
-                
-                string code = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+                var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var callbackUrl = Url.ResetPasswordCallbackLink(user.Id, code, Request.Scheme);
                 await _emailSender.SendEmailAsync(model.Email, "Reset Password",
                     $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
-                return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                return RedirectToAction("ForgotPasswordConfirmation");
             }
 
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
+ 
         
         [AllowAnonymous]
         public IActionResult ForgotPasswordConfirmation()
         {
             return View();
         }
-        
-        
+
+
         [AllowAnonymous]
         public IActionResult ResetPassword(string code)
         {
             return code == null ? View("Error") : View();
         }
 
+        
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                return RedirectToAction(nameof(ResetPasswordConfirmation));
+            }
+            
+            var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);
+            if (result.Succeeded)
+            {
+                return RedirectToAction(nameof(ResetPasswordConfirmation));
+            }
+            
+            AddErrors(result);
+            return View();
+        }
+        
+        
+        [AllowAnonymous]
+        public ActionResult ResetPasswordConfirmation()
+        {
+            return View();
+        }
+        
 
         private void AddErrors(IdentityResult result)
         {
@@ -222,6 +251,7 @@ namespace M101DotNet.WebApp.Controllers
                 ModelState.AddModelError("", error.Description);
             }
         }
+
         
         [HttpGet]
         [AllowAnonymous]
@@ -231,14 +261,15 @@ namespace M101DotNet.WebApp.Controllers
             {
                 return RedirectToAction(nameof(NewsController.List), "News");
             }
+
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
                 throw new ApplicationException($"Unable to load user with ID '{userId}'.");
             }
+
             var result = await _userManager.ConfirmEmailAsync(user, code);
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
-        
     }
 }

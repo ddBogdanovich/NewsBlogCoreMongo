@@ -1,7 +1,7 @@
-using System.Collections.Generic;
-
 namespace NewsBlogCoreMongo.Models
 {
+    using System.Collections.Generic;
+
     public class NewsListViewModel
     {
         public IEnumerable<NewsItem> News { get; set; }

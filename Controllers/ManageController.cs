@@ -1,8 +1,3 @@
-using System.Linq;
-using System.Runtime.CompilerServices;
-using AspNetCore.Identity.Mongo.Model;
-using Microsoft.AspNetCore.Mvc.Rendering;
-
 namespace M101DotNet.WebApp.Controllers
 {
     using System.Threading.Tasks;
@@ -10,8 +5,10 @@ namespace M101DotNet.WebApp.Controllers
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.EntityFrameworkCore;
-    
+    using System.Linq;
+    using AspNetCore.Identity.Mongo.Model;
+    using Microsoft.AspNetCore.Mvc.Rendering;
+
     public class ManageController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -19,21 +16,19 @@ namespace M101DotNet.WebApp.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
 
         public ManageController(
-            UserManager<ApplicationUser> userManager, 
+            UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             RoleManager<MongoRole> roleManager
-            )
+        )
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
-         
         }
 
-        
 
         #region Roles
-     
+
         [Authorize(Roles = "Administrator")]
         [HttpPost]
         public async Task<IActionResult> UpdateUsersRole(string id, string role)
@@ -41,7 +36,6 @@ namespace M101DotNet.WebApp.Controllers
             var roles = _roleManager.Roles.Select(m => m.Name).ToList();
             if (!string.IsNullOrEmpty(role) && roles.Contains(role))
             {
-
                 var user = await _userManager.FindByIdAsync(id);
 
                 if (user == null)
@@ -70,11 +64,9 @@ namespace M101DotNet.WebApp.Controllers
             return RedirectToAction("Edit", id);
         }
 
+        #endregion
 
-
-        #endregion    
-        
-        /*[Authorize(Roles = "Administrator")]*/
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
@@ -82,15 +74,16 @@ namespace M101DotNet.WebApp.Controllers
             {
                 return Redirect("~/Manage");
             }
-            var roles =  _roleManager.Roles.ToList();
+
+            var roles = _roleManager.Roles.ToList();
             var currentUsersRole = _userManager.GetRolesAsync(user).Result.FirstOrDefault();
 
-            ViewBag.CurrentRole = currentUsersRole;            
-            ViewBag.Roles = new SelectList(roles, "Name", "Name", currentUsersRole);;
+            ViewBag.CurrentRole = currentUsersRole;
+            ViewBag.Roles = new SelectList(roles, "Name", "Name", currentUsersRole);
+            ;
             return View("Edit", user);
         }
 
-      
 
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(string id)
@@ -109,8 +102,6 @@ namespace M101DotNet.WebApp.Controllers
             {
                 return NotFound();
             }
-
-
         }
 
 
@@ -127,12 +118,9 @@ namespace M101DotNet.WebApp.Controllers
                     var result = await _userManager.DeleteAsync(user);
                     if (result.Succeeded)
                     {
-
                         return RedirectToAction("List", "NewsItems");
                     }
-
                 }
-
             }
 
             return BadRequest();
@@ -169,7 +157,7 @@ namespace M101DotNet.WebApp.Controllers
             return RedirectToAction("Edit", model.Id);
         }
 
-        
+
         [Authorize(Roles = "Administrator")]
         [HttpPost]
         public async Task<IActionResult> ChangePassword(string id, string oldpassword, string newpassword)
@@ -190,59 +178,5 @@ namespace M101DotNet.WebApp.Controllers
 
             return RedirectToAction("Edit", id);
         }
-
-
-        #region Helpers
-        // Used for XSRF protection when adding external logins
-        private const string XsrfKey = "XsrfId";
-
-/*        private IAuthenticationManager AuthenticationManager
-        {
-            get
-            {
-                return HttpContext.GetOwinContext().Authentication;
-            }
-        }*/
-
-        private void AddErrors(IdentityResult result)
-        {
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError("", error.Description);
-            }
-        }
-
-/*        private bool HasPassword()
-        {
-            var user = UserManager.FindById(User.Identity.GetUserId());
-            if (user != null)
-            {
-                return user.PasswordHash != null;
-            }
-            return false;
-        }*/
-
-/*        private bool HasPhoneNumber()
-        {
-            var user = UserManager.FindById(User.Identity.GetUserId());
-            if (user != null)
-            {
-                return user.PhoneNumber != null;
-            }
-            return false;
-        }*/
-
-        public enum ManageMessageId
-        {
-            AddPhoneSuccess,
-            ChangePasswordSuccess,
-            SetTwoFactorSuccess,
-            SetPasswordSuccess,
-            RemoveLoginSuccess,
-            RemovePhoneSuccess,
-            Error
-        }
-
-        #endregion
     }
 }

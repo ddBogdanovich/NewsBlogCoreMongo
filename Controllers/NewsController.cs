@@ -37,7 +37,7 @@ namespace M101DotNet.WebApp.Controllers
                 filter = x => x.Category == category;
             }
             
-            NewsListViewModel model = new NewsListViewModel
+            var model = new NewsListViewModel
             {
                 News = await _blogRepository.GetNewsFiltered(page, Pagesize, category),
                   
@@ -68,14 +68,14 @@ namespace M101DotNet.WebApp.Controllers
                 return BadRequest();
             }
 
-            NewsItem newsItem = _blogRepository.FindNewsItem(id).Result;
+            var newsItem = _blogRepository.FindNewsItem(id).Result;
 
             if (newsItem == null)
             {
                 return NotFound();
             }
 
-            NewsItemViewModel model = new NewsItemViewModel()
+            var model = new NewsItemViewModel()
             {
                 newsItem = newsItem,
                 uploadsFolder = _configuration.GetSection("UploadsFolder").Value,
@@ -86,15 +86,11 @@ namespace M101DotNet.WebApp.Controllers
             
             return View(model);
         }
-        
-        
-        
-        
+               
+               
         public ActionResult Contact() 
         {
             return View();
-        }
-        
-        
+        }               
     }
 }

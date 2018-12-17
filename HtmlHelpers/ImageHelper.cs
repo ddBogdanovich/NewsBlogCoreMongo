@@ -1,14 +1,14 @@
-using System.IO;
-using System.Linq;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using NewsBlogCoreMongo.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Routing;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Microsoft.AspNetCore.Razor.TagHelpers;
-
 namespace MongoBlog.HtmlHelpers
 {
+    using System.IO;
+    using System.Linq;
+    using Microsoft.AspNetCore.Mvc.Rendering;
+    using NewsBlogCoreMongo.Models;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Routing;
+    using Microsoft.AspNetCore.Mvc.ViewFeatures;
+    using Microsoft.AspNetCore.Razor.TagHelpers;
+
     public class ImageLinkTagHelper : TagHelper
     {
         private IUrlHelperFactory urlHelperFactory;
@@ -20,14 +20,12 @@ namespace MongoBlog.HtmlHelpers
         }
 
         public NewsItemViewModel model { get; set; }
-        
+
         public string StyleAttribute { get; set; }
-        
+
         public string WrapTag { get; set; }
 
-        [ViewContext] 
-        [HtmlAttributeNotBound] 
-        public ViewContext ViewContext { get; set; }
+        [ViewContext] [HtmlAttributeNotBound] public ViewContext ViewContext { get; set; }
 
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
@@ -45,16 +43,16 @@ namespace MongoBlog.HtmlHelpers
             }
             else
             {
-                GenerateDivWrappedContent(output, urlHelper); 
-            }              
+                GenerateDivWrappedContent(output, urlHelper);
+            }
         }
 
+        
         private void GenerateDivWrappedContent(TagHelperOutput output, IUrlHelper urlHelper)
         {
             output.TagName = "div";
             foreach (var image in model.newsItem.Images)
             {
-
                 var imagePath = Path.Combine(model.uploadsFolder, image.FileId + image.Extension);
                 var fullImagePath = model.wwwRootPath + imagePath;
 
@@ -73,13 +71,13 @@ namespace MongoBlog.HtmlHelpers
                 }
             }
         }
-                        
+
+        
         private void GenerateUlWrappedContent(TagHelperOutput output, IUrlHelper urlHelper)
         {
             output.TagName = "ul";
             foreach (var image in model.newsItem.Images)
             {
-
                 var imagePath = Path.Combine(model.uploadsFolder, image.FileId + image.Extension);
                 var fullImagePath = model.wwwRootPath + imagePath;
 
@@ -99,7 +97,6 @@ namespace MongoBlog.HtmlHelpers
                     output.Content.AppendHtml(li);
                 }
             }
-            
         }
     }
 }

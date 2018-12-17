@@ -1,12 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
-using M101DotNet.WebApp.Models;
-using NewsBlogCoreMongo.Models;
-
 namespace MongoBlog.Repository
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq.Expressions;
+    using System.Threading.Tasks;
+    using NewsBlogCoreMongo.Models;
+
+    
     public interface IBlogRepository
     {
 

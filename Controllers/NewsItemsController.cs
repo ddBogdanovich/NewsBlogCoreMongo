@@ -12,10 +12,13 @@ namespace M101DotNet.WebApp.Controllers
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.Extensions.Configuration;
+    using Microsoft.AspNetCore.Authorization;
     using MongoBlog.Core;
     using MongoBlog.Repository;
     using NewsBlogCoreMongo.Models;
-    // [Authorize(Roles = "Administrator, Moderator")]
+    
+    
+    [Authorize(Roles = "Administrator, Moderator")]
     public class NewsItemsController : Controller
     {
         private readonly IBlogRepository _blogRepository;

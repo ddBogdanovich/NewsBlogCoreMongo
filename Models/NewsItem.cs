@@ -1,5 +1,3 @@
-
-
 namespace NewsBlogCoreMongo.Models
 {
     using System;

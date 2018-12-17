@@ -94,7 +94,7 @@ Write(await Component.InvokeAsync("NewsItem", p));
             WriteLiteral("\r\n<div class=\"page_links\">\r\n\r\n    ");
             EndContext();
             BeginContext(392, 116, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("page-link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "29823d3191214bb1be468b5ddcb1635a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("page-link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5857052c5aec488e8974eb31fe6849f6", async() => {
             }
             );
             __MongoBlog_HtmlHelpers_PageLinkTagHelper = CreateTagHelper<global::MongoBlog.HtmlHelpers.PageLinkTagHelper>();

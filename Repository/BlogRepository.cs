@@ -1,20 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
-using M101DotNet.WebApp.Models;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Microsoft.Extensions.Options;
-using MongoBlog.Models;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization;
-using MongoDB.Driver;
-using MongoDB.Driver.Linq;
-using NewsBlogCoreMongo.Models;
-
 namespace MongoBlog.Repository
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using System.Threading.Tasks;
+    using M101DotNet.WebApp.Models;
+    using Microsoft.Extensions.Options;
+    using MongoBlog.Models;
+    using MongoDB.Driver;
+    using MongoDB.Driver.Linq;
+    using NewsBlogCoreMongo.Models;
+    
     public class BlogRepository : IBlogRepository
     {
         private readonly BlogContext _context = null;
@@ -78,17 +75,15 @@ namespace MongoBlog.Repository
             await _context.News.ReplaceOneAsync(filter, item);
         }
 
+        
         public async Task<Image> GetImage(string id)
         {
             var filter = Builders<NewsItem>.Filter.Eq("Images.FileId", id);
-            // var projection = Builders<NewsItem>.Projection.Include("Images.$").Exclude("_id");
-
             var result = await _context.News.Find(filter).SingleOrDefaultAsync();
 
+            var image =  result.Images.FirstOrDefault(x => x.FileId == id);
 
-            var a =  result.Images.FirstOrDefault(x => x.FileId == id);
-
-            return a;
+            return image;
         }
 
 

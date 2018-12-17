@@ -7,11 +7,6 @@ namespace M101DotNet.WebApp.Controllers
 
     public class CultureController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         public IActionResult ChangeCulture(string lang, string returnUrl)
         {
             Response.Cookies.Append(

@@ -1,32 +1,30 @@
-using System;
-
 namespace NewsBlogCoreMongo.Models
 {
+    using System;
+
     public class PagingInfo
     {
         public long TotalItems { get; set; }
-        
+
         public int ItemsPerPage { get; set; }
-        
+
         public int CurrentPage { get; set; }
-        
-        public int TotalPages { get { return (int)Math.Ceiling((decimal)TotalItems / ItemsPerPage); } }
+
+        public int TotalPages
+        {
+            get { return (int) Math.Ceiling((decimal) TotalItems / ItemsPerPage); }
+        }
+
         
         public bool HasPreviousPage
         {
-            get
-            {
-                return (CurrentPage > 1);
-            }
+            get { return (CurrentPage > 1); }
         }
- 
+
+        
         public bool HasNextPage
         {
-            get
-            {
-                return (CurrentPage < TotalPages);
-            }
+            get { return (CurrentPage < TotalPages); }
         }
     }
-
-    }
+}
