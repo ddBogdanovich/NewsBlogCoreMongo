@@ -5,6 +5,7 @@
 @using Microsoft.AspNetCore.Mvc.Localization
 @using NewsBlogCoreMongo.Models.AccountViewModels
 @inject IHtmlLocalizer<SharedResources> SharedLocalizer
+@inject UserManager<ApplicationUser> UserManager
 
 <div class="header">
     <div class="header_top" style="margin-bottom: 15px;">
@@ -32,16 +33,16 @@
                             <a asp-action="Contact" asp-controller="News">@SharedLocalizer["Contact"]</a>
                         </li>
                         
-   
-                        @if (this.User.IsInRole("Administrator") || this.User.IsInRole("Moderator"))
-                        {
-                            <li>
-                                <a asp-action="List" asp-controller="NewsItems">Admin Tools</a>
-                            </li>
-                        }
-                        <li>
-                            <a asp-action="List" asp-controller="NewsItems">Admin Tools</a>
-                        </li>
+                        @{
+                            var a = await @UserManager.GetUserAsync(User);
+                            
+                            if (a != null && (await UserManager.IsInRoleAsync(a, "Administrator") || await UserManager.IsInRoleAsync(a, "Moderator")))
+                            {
+                                <li>
+                                    <a asp-action="List" asp-controller="NewsItems">Admin Tools</a>
+                                </li>
+                            }                            
+                           }                        
                     </ul>
                 </div>
                 <div class="clear"></div>
