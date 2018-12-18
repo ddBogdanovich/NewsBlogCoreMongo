@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b9734f7-7a98-4b15-82a4-1a3662541de4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.NewsBlogCoreMongo/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NewsBlogCoreMongo/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NewsBlogCoreMongo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NewsBlogCoreMongo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ManageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ManageController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/NewsItemsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/NewsItemsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Shared/_HeaderLayout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_HeaderLayout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HtmlHelpers/ImageHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HtmlHelpers/ImageHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/NewsItems/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/NewsItems/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/NewsItems/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/NewsItems/Edit.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.dll" afterDir="false" />
@@ -48,9 +52,7 @@
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LangLinks.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_LangLinks.g.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.g.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_ValidationScriptsPartial.g.cshtml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/WebOptimizerCache/'bundles'bootstrapBundle.min.js__fAPRN5CjanXBB0NH5mW0mxuqjqA.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/WebOptimizerCache/'bundles'content.css__dpcvOf6GJaQbKVaNRUKFDnc0NmE.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/WebOptimizerCache/'bundles'content.css__eVxd99T3IsHX0deqBV599JqiRuc.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/lib/Scripts/daterangeHelperSetup.js" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/lib/Scripts/daterangeHelperSetup.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,9 +138,9 @@
     <session id="-1322152042">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="27" />
+          <entry key="project.closed" value="30" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.20" value="2" />
@@ -152,55 +154,172 @@
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.45" value="1" />
-          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.9" value="7" />
-          <entry key="project.opened" value="29" />
+          <entry key="project.opened" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="4114" />
-          <entry key="cshtml" value="2748" />
+          <entry key="cs" value="4163" />
+          <entry key="cshtml" value="2760" />
           <entry key="css" value="1" />
+          <entry key="js" value="1" />
           <entry key="json" value="15" />
           <entry key="resx" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="4114" />
+          <entry key="C#" value="4163" />
           <entry key="CSS" value="1" />
           <entry key="JSON" value="15" />
-          <entry key="Razor" value="2748" />
+          <entry key="JavaScript" value="1" />
+          <entry key="Razor" value="2760" />
           <entry key="Resources" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="241" />
-          <entry key="cshtml" value="310" />
+          <entry key="cs" value="250" />
+          <entry key="cshtml" value="318" />
           <entry key="csproj" value="1" />
           <entry key="css" value="4" />
-          <entry key="js" value="2" />
+          <entry key="js" value="4" />
           <entry key="json" value="5" />
           <entry key="resx" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="241" />
+          <entry key="C#" value="250" />
           <entry key="CSS" value="4" />
           <entry key="Csproj" value="1" />
           <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="2" />
-          <entry key="Razor" value="310" />
+          <entry key="JavaScript" value="4" />
+          <entry key="Razor" value="318" />
           <entry key="Resources" value="19" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/News/List.cshtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="81" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
+              <folding>
+                <marker date="1544322566305" expanded="true" signature="51:129" ph="@..." />
+                <marker date="1544322566305" expanded="true" signature="132:343" ph="@..." />
+                <marker date="1544322566305" expanded="true" signature="162:343" ph="{...}" />
+                <marker date="1544322566305" expanded="true" signature="528:640" ph="&lt;div.../&gt;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HtmlHelpers/ImageHelper.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+              <folding>
+                <marker date="1545172214023" expanded="true" signature="31:3313" ph="{...}" />
+                <marker date="1545172214023" expanded="false" signature="44:337" ph="..." />
+                <marker date="1545172214023" expanded="true" signature="386:3311" ph="{...}" />
+                <marker date="1545172214023" expanded="true" signature="513:579" ph="{...}" />
+                <marker date="1545172214023" expanded="true" signature="929:1376" ph="{...}" />
+                <marker date="1545172214023" expanded="true" signature="994:1063" ph="{...}" />
+                <marker date="1545172214023" expanded="true" signature="1170:1259" ph="{...}" />
+                <marker date="1545172214023" expanded="true" signature="1276:1366" ph="{...}" />
+                <marker date="1545172214023" expanded="true" signature="1479:2285" ph="{...}" />
+                <marker date="1545172214023" expanded="true" signature="1582:2275" ph="{...}" />
+                <marker date="1545172214023" expanded="true" signature="1824:2261" ph="{...}" />
+                <marker date="1545172214023" expanded="true" signature="2080:2190" ph="{...}" />
+                <marker date="1545172214023" expanded="true" signature="2387:3305" ph="{...}" />
+                <marker date="1545172214023" expanded="true" signature="2489:3295" ph="{...}" />
+                <marker date="1545172214023" expanded="true" signature="2731:3281" ph="{...}" />
+                <marker date="1545172214023" expanded="true" signature="3051:3161" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Startup.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2115">
+              <caret line="157" column="30" selection-start-line="157" selection-start-column="16" selection-end-line="157" selection-end-column="30" />
+              <folding>
+                <marker date="1545088722394" expanded="false" signature="6:582" ph="..." />
+                <marker date="1545088722394" expanded="true" signature="630:7330" ph="{...}" />
+                <marker date="1545088722394" expanded="true" signature="689:752" ph="{...}" />
+                <marker date="1545088722394" expanded="true" signature="975:5242" ph="{...}" />
+                <marker date="1545088722394" expanded="true" signature="1374:1608" ph="{...}" />
+                <marker date="1545088722394" expanded="true" signature="1721:2076" ph="{...}" />
+                <marker date="1545088722394" expanded="true" signature="2088:2193" ph="{...}" />
+                <marker date="1545088722394" expanded="true" signature="2282:2456" ph="{...}" />
+                <marker date="1545088722394" expanded="true" signature="2781:2948" ph="{...}" />
+                <marker date="1545088722394" expanded="true" signature="3108:3508" ph="{...}" />
+                <marker date="1545088722394" expanded="true" signature="3185:3289" ph="{...}" />
+                <marker date="1545088722394" expanded="true" signature="3572:5217" ph="{...}" />
+                <marker date="1545088722394" expanded="true" signature="5430:7324" ph="{...}" />
+                <marker date="1545088722394" expanded="true" signature="5477:5597" ph="{...}" />
+                <marker date="1545088722394" expanded="true" signature="5614:5729" ph="{...}" />
+                <marker date="1545088722394" expanded="true" signature="6179:7312" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/Shared/Components/NewsItemEditList/Default.cshtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="35" column="40" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="40" />
+              <folding>
+                <marker date="1544391687811" expanded="true" signature="64:87" ph="@..." />
+                <marker date="1544391687811" expanded="true" signature="94:228" ph="&lt;p.../&gt;" />
+                <marker date="1544391687811" expanded="true" signature="230:1685" ph="&lt;table.../&gt;" />
+                <marker date="1544391687811" expanded="true" signature="303:671" ph="&lt;tr.../&gt;" />
+                <marker date="1544391687811" expanded="true" signature="317:438" ph="&lt;th.../&gt;" />
+                <marker date="1544391687811" expanded="true" signature="447:575" ph="&lt;th.../&gt;" />
+                <marker date="1544391687811" expanded="true" signature="584:661" ph="&lt;th.../&gt;" />
+                <marker date="1544391687811" expanded="true" signature="677:1675" ph="@..." />
+                <marker date="1544391687811" expanded="true" signature="705:1675" ph="{...}" />
+                <marker date="1544391687811" expanded="true" signature="847:1669" ph="&lt;tr.../&gt;" />
+                <marker date="1544391687811" expanded="true" signature="864:1181" ph="&lt;td.../&gt;" />
+                <marker date="1544391687811" expanded="true" signature="1194:1275" ph="&lt;td.../&gt;" />
+                <marker date="1544391687811" expanded="true" signature="1288:1655" ph="&lt;td.../&gt;" />
+                <marker date="1544391687811" expanded="true" signature="1309:1497" ph="&lt;p.../&gt;" />
+                <marker date="1544391687811" expanded="true" signature="1713:1817" ph="&lt;div.../&gt;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/Shared/Components/NewsItem/Default.cshtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="52" />
+              <folding>
+                <marker date="1544315255065" expanded="true" signature="74:228" ph="&lt;h3.../&gt;" />
+                <marker date="1544315255065" expanded="true" signature="335:521" ph="&lt;div.../&gt;" />
+                <marker date="1544315255065" expanded="true" signature="363:509" ph="&lt;a.../&gt;" />
+                <marker date="1544315255065" expanded="true" signature="526:820" ph="&lt;div.../&gt;" />
+                <marker date="1544315255065" expanded="true" signature="553:588" ph="&lt;p.../&gt;" />
+                <marker date="1544315255065" expanded="true" signature="597:797" ph="&lt;p.../&gt;" />
+                <marker date="1544315255065" expanded="true" signature="613:784" ph="&lt;span.../&gt;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -219,30 +338,43 @@
       <find>ExternalLoginListViewModel</find>
       <find>email</find>
       <find>ApplicationUser</find>
+      <find>Index</find>
+      <find>UseStaticFiles</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Controllers/ManageController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5C069570-324E-4624-8FE9-69E9573B1627/3d/b6814d46/Thread.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1B4DA17A-2884-45D0-B7BE-8208F6E40E28/4d/ce78e417/DefaultViewComponentInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/AccountViewModels/RegisterViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/AccountViewModels/LoginViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Shared/Components/CategoryEditList/Default.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5C069570-324E-4624-8FE9-69E9573B1627/82/5643057a/AsyncValueTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Components/CategoryEditListViewComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5C069570-324E-4624-8FE9-69E9573B1627/91/4ac7f3df/AsyncTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HtmlHelpers/ImageHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/703E2BB4-FD86-407A-A6C8-A21FDDB328A9/9a/bb8346b4/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/AccountViewModels/ForgotPasswordViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Account/ForgotPassword.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Extensions/UrlHelperExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Account/ForgotPasswordConfirmation.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Account/ResetPassword.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Components/NewsItemEditListViewComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/News/Contact.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/AccountViewModels/ResetPasswordViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/News/List.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Account/ResetPasswordConfirmation.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Shared/Components/NewsItemEditList/Default.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/News/DemoPage.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Manage/Delete.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/Shared/_AdminLayout.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Resources/MongoBlog/SharedResources.en.resx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Manage/Edit.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Controllers/CategoryController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/Shared/_LangLinks.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Resources/MongoBlog/SharedResources.en.Designer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Resources/MongoBlog/SharedResources.ru.resx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Resources/MongoBlog/SharedResources.ru.Designer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/Shared/_HeaderLayout.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/Shared/Components/NewsItem/Default.cshtml" root0="FORCE_HIGHLIGHTING" />
@@ -250,16 +382,12 @@
     <setting file="file://$PROJECT_DIR$/Views/Account/Login.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/Account/Register.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/Category/Main.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Components/RolesEditViewComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/Category/Delete.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Views/Account/ResetPasswordConfirmation.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Views/Shared/Components/RolesEdit/Default.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Models/AccountViewModels/ExternalLoginListViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/Category/Create.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/Category/Edit.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SharedResources.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/NewsItems/List.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/NewsItems/Delete.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Views/Account/ForgotPassword.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/NewsItems/Details.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/NewsItems/Create.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/NewsItems/Edit.cshtml" root0="FORCE_HIGHLIGHTING" />
@@ -271,49 +399,42 @@
     <setting file="file://$PROJECT_DIR$/Models/BlogContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Models/Settings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Models/PagingInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Models/AccountViewModels/ResetPasswordViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Models/AccountViewModels/ForgotPasswordViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Views/Account/ForgotPasswordConfirmation.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Repository/IBlogRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Components/NewsItemViewComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Models/Image.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HtmlHelpers/PagingHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/PhotoService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Repository/BlogRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/IImageService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/IImageStorage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Controllers/CultureController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/IEmailSender.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Components/UsersEditViewComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Components/RolesEditViewComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/EmailSender.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Views/Manage/Delete.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Views/Manage/Edit.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Extensions/UrlHelperExtensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SharedResources.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HtmlHelpers/ImageHelper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Views/Account/ResetPassword.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/IEmailSender.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Shared/Components/RolesEdit/Default.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/News/Details.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Components/NewsItemEditListViewComponent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Components/CategoryEditListViewComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Shared/Components/UsersEdit/Default.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/ManageController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Resources/MongoBlog/SharedResources.ru.resx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Resources/MongoBlog/SharedResources.ru.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Resources/MongoBlog/SharedResources.en.resx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Resources/MongoBlog/SharedResources.en.Designer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Controllers/NewsItemsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Controllers/NewsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Shared/_ExternalLoginsListPartial.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/AccountViewModels/ExternalLoginListViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/ApplicationUser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6E58AAE1-C47E-4408-8E61-20B715FF0805/f7/465d684a/CollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Components/CategoryListViewComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6E58AAE1-C47E-4408-8E61-20B715FF0805/9e/edc69962/Expression.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Views/Shared/Components/CategoryEditList/Default.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Views/Shared/Components/NewsItemEditList/Default.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/IImageStorage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/IImageService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Components/UsersEditViewComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1B4DA17A-2884-45D0-B7BE-8208F6E40E28/35/72af388f/Controller.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/FileSystemImageStorage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/PhotoService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Views/Shared/Components/UsersEdit/Default.cshtml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5C069570-324E-4624-8FE9-69E9573B1627/97/86e465b7/Type.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Models/AccountViewModels/LoginViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Models/AccountViewModels/RegisterViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/FileSystemImageStorage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1B4DA17A-2884-45D0-B7BE-8208F6E40E28/66/f6d6acd5/ViewDataDictionary.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Views/Shared/_ExternalLoginsListPartial.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Models/ApplicationUser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5C069570-324E-4624-8FE9-69E9573B1627/b8/b3946051/RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -348,12 +469,10 @@
         <option value="$PROJECT_DIR$/Views/Account/ForgotPasswordConfirmation.cshtml" />
         <option value="$PROJECT_DIR$/appsettings.json" />
         <option value="$PROJECT_DIR$/Controllers/CategoryController.cs" />
-        <option value="$PROJECT_DIR$/Controllers/ManageController.cs" />
         <option value="$PROJECT_DIR$/Controllers/NewsController.cs" />
         <option value="$PROJECT_DIR$/Core/EmailSender.cs" />
         <option value="$PROJECT_DIR$/Core/IImageStorage.cs" />
         <option value="$PROJECT_DIR$/Extensions/UrlHelperExtensions.cs" />
-        <option value="$PROJECT_DIR$/HtmlHelpers/ImageHelper.cs" />
         <option value="$PROJECT_DIR$/HtmlHelpers/PagingHelper.cs" />
         <option value="$PROJECT_DIR$/Models/BlogContext.cs" />
         <option value="$PROJECT_DIR$/Models/Image.cs" />
@@ -363,13 +482,15 @@
         <option value="$PROJECT_DIR$/Models/PagingInfo.cs" />
         <option value="$PROJECT_DIR$/Repository/BlogRepository.cs" />
         <option value="$PROJECT_DIR$/Repository/IBlogRepository.cs" />
+        <option value="$PROJECT_DIR$/Startup.cs" />
+        <option value="$PROJECT_DIR$/Controllers/AccountController.cs" />
+        <option value="$PROJECT_DIR$/Views/Shared/_HeaderLayout.cshtml" />
+        <option value="$PROJECT_DIR$/Controllers/NewsItemsController.cs" />
         <option value="$PROJECT_DIR$/wwwroot/lib/Scripts/daterangeHelperSetup.js" />
         <option value="$PROJECT_DIR$/Views/NewsItems/Create.cshtml" />
         <option value="$PROJECT_DIR$/Views/NewsItems/Edit.cshtml" />
-        <option value="$PROJECT_DIR$/Startup.cs" />
-        <option value="$PROJECT_DIR$/Controllers/AccountController.cs" />
-        <option value="$PROJECT_DIR$/Controllers/NewsItemsController.cs" />
-        <option value="$PROJECT_DIR$/Views/Shared/_HeaderLayout.cshtml" />
+        <option value="$PROJECT_DIR$/Controllers/ManageController.cs" />
+        <option value="$PROJECT_DIR$/HtmlHelpers/ImageHelper.cs" />
       </list>
     </option>
   </component>
@@ -398,6 +519,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -414,7 +536,7 @@
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
               <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Controllers" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="HtmlHelpers" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
@@ -422,12 +544,51 @@
               <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
             </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="NewsItems" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Shared" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Shared" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Components" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Shared" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Components" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="NewsItem" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="NewsBlogCoreMongo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Shared" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Components" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="NewsItemEditList" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -529,11 +690,14 @@
       <workItem from="1545085606090" duration="4101000" />
       <workItem from="1545121989128" duration="2995000" />
       <workItem from="1545125840811" duration="939000" />
+      <workItem from="1545167122006" duration="2668000" />
+      <workItem from="1545169942161" duration="2490000" />
+      <workItem from="1545172550086" duration="162000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204315000" />
+    <option name="totallyTimeSpent" value="209635000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -547,7 +711,7 @@
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="979" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24101713" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.249309" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -610,54 +774,10 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Views/Shared/_HeaderLayout.cshtml</url>
-          <line>37</line>
-          <properties documentPath="$PROJECT_DIR$/Views/Shared/_HeaderLayout.cshtml" initialLine="37">
-            <startOffsets>
-              <option value="-1" />
-            </startOffsets>
-            <endOffsets>
-              <option value="-1" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Core/IEmailSender.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/IImageService.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/IImageStorage.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Extensions/EmailSenderExtensions.cs" />
-    <entry file="file://$PROJECT_DIR$/Core/PhotoService.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Extensions/UrlHelperExtensions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HtmlHelpers/PagingHelper.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Models/AccountViewModels/ExternalLoginListViewModel.cs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -693,13 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Image.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -815,26 +928,8 @@
     <entry file="file://$PROJECT_DIR$/Views/News/DemoPage.cshtml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/News/List.cshtml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/News/Details.cshtml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HtmlHelpers/ImageHelper.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="74" column="8" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wwwroot/lib/Scripts/daterangeHelperSetup.js" />
-    <entry file="file://$PROJECT_DIR$/Views/NewsItems/Create.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="105" selection-start-line="105" selection-end-line="105" selection-end-column="64" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Models/ApplicationUser.cs">
       <provider selected="true" editor-type-id="text-editor" />
@@ -843,32 +938,7 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/NewsItems/Details.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1543976064692" expanded="true" signature="24:63" ph="&lt;head.../&gt;" />
-            <marker date="1543976064692" expanded="true" signature="64:98" ph="&lt;body.../&gt;" />
-            <marker date="1543976064692" expanded="true" signature="71:90" ph="&lt;div.../&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/NewsItems/Edit.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2175">
-          <caret line="145" column="64" selection-start-line="145" selection-start-column="64" selection-end-line="145" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/NewsItems/List.cshtml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Startup.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/AccountController.cs">
       <provider selected="true" editor-type-id="text-editor">
@@ -878,94 +948,173 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Models/NewsItemViewModel.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wwwroot/lib/Scripts/daterangeHelper.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wwwroot/lib/Scripts/daterangeHelperSetup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1543976064688" expanded="true" signature="34:229" ph="{...}" />
-            <marker date="1543976064688" expanded="true" signature="71:227" ph="{...}" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="20" column="67" lean-forward="true" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/NewsItemsController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="24" column="57" lean-forward="true" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
-          <folding>
-            <marker date="1545125981931" expanded="true" signature="82:9103" ph="{...}" />
-            <marker date="1545125981931" expanded="false" signature="100:544" ph="..." />
-            <marker date="1545125981931" expanded="true" signature="656:9101" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="1044:1220" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="1257:1304" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="1365:1680" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="1403:1468" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="1571:1634" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="1719:1812" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="2019:3252" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="2045:2934" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="2099:2920" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="2174:2775" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="2497:2698" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="2965:3143" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="3310:3716" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="3348:3413" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="3516:3579" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="3861:5869" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="3935:5551" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="3989:5537" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="4070:5342" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="4315:5320" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="4397:5294" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="4599:4849" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="5124:5264" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="5582:5760" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="5950:7063" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="6002:6154" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="6171:6917" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="6287:6453" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="6759:6852" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="6950:7053" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="7119:7415" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="7475:7816" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="7513:7578" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="7680:7743" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="7949:8386" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="7975:8055" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="8086:8330" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="8478:8681" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="8757:9095" ph="{...}" />
-            <marker date="1545125981931" expanded="true" signature="8823:9084" ph="{...}" />
-          </folding>
+        <state relative-caret-position="-210">
+          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/Shared/Components/UsersEdit/Default.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-135" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Components/UsersEditViewComponent.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Components/RolesEditViewComponent.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/ManageController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/NewsItems/Edit.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="47" column="134" selection-start-line="47" selection-start-column="134" selection-end-line="47" selection-end-column="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/NewsItems/Create.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="47" column="106" selection-start-line="47" selection-start-column="106" selection-end-line="47" selection-end-column="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/NewsItems/List.cshtml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Image.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/Shared/_HeaderLayout.cshtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="46" column="22" lean-forward="true" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+        <state relative-caret-position="150">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/News/List.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="81" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
           <folding>
-            <marker date="1545126177524" expanded="false" signature="7:232" ph="..." />
-            <marker date="1545126177524" expanded="true" signature="339:3345" ph="&lt;div.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="364:3338" ph="&lt;div.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="426:3293" ph="&lt;div.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="457:2169" ph="&lt;div.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="503:709" ph="&lt;div.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="542:686" ph="&lt;a.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="727:2108" ph="&lt;div.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="766:2085" ph="&lt;ul.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="815:949" ph="&lt;li.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="974:1109" ph="&lt;li.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="1134:1271" ph="&lt;li.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="1296:1436" ph="&lt;li.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="1486:2035" ph="@..." />
-            <marker date="1545126177524" expanded="true" signature="1743:1978" ph="{...}" />
-            <marker date="1545126177524" expanded="true" signature="1806:1948" ph="&lt;li.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="2184:3239" ph="&lt;div.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="2232:3219" ph="&lt;div.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="2349:3148" ph="@..." />
-            <marker date="1545126177524" expanded="true" signature="2384:2947" ph="{...}" />
-            <marker date="1545126177524" expanded="true" signature="2431:2925" ph="&lt;form.../&gt;" />
-            <marker date="1545126177524" expanded="true" signature="2972:3148" ph="{...}" />
+            <marker date="1544322566305" expanded="true" signature="51:129" ph="@..." />
+            <marker date="1544322566305" expanded="true" signature="132:343" ph="@..." />
+            <marker date="1544322566305" expanded="true" signature="162:343" ph="{...}" />
+            <marker date="1544322566305" expanded="true" signature="528:640" ph="&lt;div.../&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2115">
+          <caret line="157" column="30" selection-start-line="157" selection-start-column="16" selection-end-line="157" selection-end-column="30" />
+          <folding>
+            <marker date="1545088722394" expanded="false" signature="6:582" ph="..." />
+            <marker date="1545088722394" expanded="true" signature="630:7330" ph="{...}" />
+            <marker date="1545088722394" expanded="true" signature="689:752" ph="{...}" />
+            <marker date="1545088722394" expanded="true" signature="975:5242" ph="{...}" />
+            <marker date="1545088722394" expanded="true" signature="1374:1608" ph="{...}" />
+            <marker date="1545088722394" expanded="true" signature="1721:2076" ph="{...}" />
+            <marker date="1545088722394" expanded="true" signature="2088:2193" ph="{...}" />
+            <marker date="1545088722394" expanded="true" signature="2282:2456" ph="{...}" />
+            <marker date="1545088722394" expanded="true" signature="2781:2948" ph="{...}" />
+            <marker date="1545088722394" expanded="true" signature="3108:3508" ph="{...}" />
+            <marker date="1545088722394" expanded="true" signature="3185:3289" ph="{...}" />
+            <marker date="1545088722394" expanded="true" signature="3572:5217" ph="{...}" />
+            <marker date="1545088722394" expanded="true" signature="5430:7324" ph="{...}" />
+            <marker date="1545088722394" expanded="true" signature="5477:5597" ph="{...}" />
+            <marker date="1545088722394" expanded="true" signature="5614:5729" ph="{...}" />
+            <marker date="1545088722394" expanded="true" signature="6179:7312" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/Shared/Components/NewsItemEditList/Default.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="40" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="40" />
+          <folding>
+            <marker date="1544391687811" expanded="true" signature="64:87" ph="@..." />
+            <marker date="1544391687811" expanded="true" signature="94:228" ph="&lt;p.../&gt;" />
+            <marker date="1544391687811" expanded="true" signature="230:1685" ph="&lt;table.../&gt;" />
+            <marker date="1544391687811" expanded="true" signature="303:671" ph="&lt;tr.../&gt;" />
+            <marker date="1544391687811" expanded="true" signature="317:438" ph="&lt;th.../&gt;" />
+            <marker date="1544391687811" expanded="true" signature="447:575" ph="&lt;th.../&gt;" />
+            <marker date="1544391687811" expanded="true" signature="584:661" ph="&lt;th.../&gt;" />
+            <marker date="1544391687811" expanded="true" signature="677:1675" ph="@..." />
+            <marker date="1544391687811" expanded="true" signature="705:1675" ph="{...}" />
+            <marker date="1544391687811" expanded="true" signature="847:1669" ph="&lt;tr.../&gt;" />
+            <marker date="1544391687811" expanded="true" signature="864:1181" ph="&lt;td.../&gt;" />
+            <marker date="1544391687811" expanded="true" signature="1194:1275" ph="&lt;td.../&gt;" />
+            <marker date="1544391687811" expanded="true" signature="1288:1655" ph="&lt;td.../&gt;" />
+            <marker date="1544391687811" expanded="true" signature="1309:1497" ph="&lt;p.../&gt;" />
+            <marker date="1544391687811" expanded="true" signature="1713:1817" ph="&lt;div.../&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/Shared/Components/NewsItem/Default.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="52" />
+          <folding>
+            <marker date="1544315255065" expanded="true" signature="74:228" ph="&lt;h3.../&gt;" />
+            <marker date="1544315255065" expanded="true" signature="335:521" ph="&lt;div.../&gt;" />
+            <marker date="1544315255065" expanded="true" signature="363:509" ph="&lt;a.../&gt;" />
+            <marker date="1544315255065" expanded="true" signature="526:820" ph="&lt;div.../&gt;" />
+            <marker date="1544315255065" expanded="true" signature="553:588" ph="&lt;p.../&gt;" />
+            <marker date="1544315255065" expanded="true" signature="597:797" ph="&lt;p.../&gt;" />
+            <marker date="1544315255065" expanded="true" signature="613:784" ph="&lt;span.../&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HtmlHelpers/ImageHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+          <folding>
+            <marker date="1545172214023" expanded="true" signature="31:3313" ph="{...}" />
+            <marker date="1545172214023" expanded="false" signature="44:337" ph="..." />
+            <marker date="1545172214023" expanded="true" signature="386:3311" ph="{...}" />
+            <marker date="1545172214023" expanded="true" signature="513:579" ph="{...}" />
+            <marker date="1545172214023" expanded="true" signature="929:1376" ph="{...}" />
+            <marker date="1545172214023" expanded="true" signature="994:1063" ph="{...}" />
+            <marker date="1545172214023" expanded="true" signature="1170:1259" ph="{...}" />
+            <marker date="1545172214023" expanded="true" signature="1276:1366" ph="{...}" />
+            <marker date="1545172214023" expanded="true" signature="1479:2285" ph="{...}" />
+            <marker date="1545172214023" expanded="true" signature="1582:2275" ph="{...}" />
+            <marker date="1545172214023" expanded="true" signature="1824:2261" ph="{...}" />
+            <marker date="1545172214023" expanded="true" signature="2080:2190" ph="{...}" />
+            <marker date="1545172214023" expanded="true" signature="2387:3305" ph="{...}" />
+            <marker date="1545172214023" expanded="true" signature="2489:3295" ph="{...}" />
+            <marker date="1545172214023" expanded="true" signature="2731:3281" ph="{...}" />
+            <marker date="1545172214023" expanded="true" signature="3051:3161" ph="{...}" />
           </folding>
         </state>
       </provider>

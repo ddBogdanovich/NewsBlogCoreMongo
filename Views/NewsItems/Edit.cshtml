@@ -31,27 +31,26 @@
                                 <label asp-for="newsItem.Body"></label>
                             </span>
                             <span>
-                                <input asp-for="newsItem.Body"/>
+                                <textarea asp-for="newsItem.Body" rows="5" cols="40"></textarea>
                             </span>
                             <span asp-validation-for="newsItem.Body" class="text-danger"></span>
                         </div>
 
 
                         <div class="row">
-                            <hr>
+                            <hr/>
                             <div class="col-md-4">
                                 <span>
                                     <label asp-for="newsItem.CreatedAtUtc"></label>
                                 </span>
                                 @{ ViewContext.ClientValidationEnabled = false; }
                                 <span class="my-date-time">
-                                    <span>
-                                        <input asp-for="newsItem.CreatedAtUtc"/>
-                                    </span>
+                                    <input asp-for="newsItem.CreatedAtUtc" name="Created" type="datetime" class="text-box single-line"/>
                                 </span>
                                 @{ ViewContext.ClientValidationEnabled = true; }
                                 <span asp-validation-for="newsItem.CreatedAtUtc" class="text-danger"></span>
                             </div>
+
                         </div>
 
 

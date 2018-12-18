@@ -41,7 +41,7 @@ namespace M101DotNet.WebApp.Controllers
                 if (user == null)
                 {
                     ModelState.AddModelError("", "Invalid User ID");
-                    return RedirectToAction("Index");
+                    return ViewComponent("UsersEdit");
                 }
 
                 var currentUsersRole = _userManager.GetRolesAsync(user).Result.FirstOrDefault();
@@ -135,7 +135,7 @@ namespace M101DotNet.WebApp.Controllers
             if (user == null)
             {
                 ModelState.AddModelError("", "Invalid User ID");
-                return RedirectToAction("Index");
+                return ViewComponent("UsersEdit");
             }
 
             user.UserName = model.UserName;

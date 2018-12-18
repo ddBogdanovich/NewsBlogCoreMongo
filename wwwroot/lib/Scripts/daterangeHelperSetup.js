@@ -1,4 +1,3 @@
-<script type="text/javascript">
     $(document).ready(function () {
 
             $("#input-44").fileinput({
@@ -54,4 +53,3 @@
             });
         }
     )
-    </script>

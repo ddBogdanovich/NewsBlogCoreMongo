@@ -25,7 +25,9 @@ namespace MongoBlog.HtmlHelpers
 
         public string WrapTag { get; set; }
 
-        [ViewContext] [HtmlAttributeNotBound] public ViewContext ViewContext { get; set; }
+        [ViewContext] 
+        [HtmlAttributeNotBound] 
+        public ViewContext ViewContext { get; set; }
 
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
@@ -35,7 +37,7 @@ namespace MongoBlog.HtmlHelpers
                 output.SuppressOutput();
             }
 
-            IUrlHelper urlHelper = urlHelperFactory.GetUrlHelper(ViewContext);
+            var urlHelper = urlHelperFactory.GetUrlHelper(ViewContext);
 
             if (WrapTag == "ul")
             {
@@ -54,13 +56,13 @@ namespace MongoBlog.HtmlHelpers
             foreach (var image in model.newsItem.Images)
             {
                 var imagePath = Path.Combine(model.uploadsFolder, image.FileId + image.Extension);
-                var fullImagePath = model.wwwRootPath + imagePath;
+                var fullImagePath = Path.Combine(model.wwwRootPath, imagePath);
 
                 if (File.Exists(fullImagePath))
                 {
                     var img = new TagBuilder("img");
                     img.Attributes["alt"] = "picture";
-                    img.Attributes["src"] = urlHelper.Content("~" + imagePath);
+                    img.Attributes["src"] = "/" + imagePath;
 
                     if (!string.IsNullOrWhiteSpace(StyleAttribute))
                     {
@@ -79,14 +81,14 @@ namespace MongoBlog.HtmlHelpers
             foreach (var image in model.newsItem.Images)
             {
                 var imagePath = Path.Combine(model.uploadsFolder, image.FileId + image.Extension);
-                var fullImagePath = model.wwwRootPath + imagePath;
+                var fullImagePath = Path.Combine(model.wwwRootPath, imagePath);
 
                 if (File.Exists(fullImagePath))
                 {
                     var li = new TagBuilder("li");
                     var img = new TagBuilder("img");
                     img.Attributes["alt"] = "picture";
-                    img.Attributes["src"] = urlHelper.Content("~" + imagePath);
+                    img.Attributes["src"] = urlHelper.Content(imagePath);
 
                     if (!string.IsNullOrWhiteSpace(StyleAttribute))
                     {
