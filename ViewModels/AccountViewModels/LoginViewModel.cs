@@ -1,7 +1,7 @@
-namespace NewsBlogCoreMongo.Models.AccountViewModels
+namespace NewsBlogCoreMongo.ViewModels.AccountViewModels
 {
     using System.ComponentModel.DataAnnotations;
-
+    
     public class LoginViewModel
     {
         [Required(ErrorMessage = "EmailRequired")]        

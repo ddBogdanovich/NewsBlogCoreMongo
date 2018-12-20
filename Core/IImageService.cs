@@ -1,11 +1,13 @@
-namespace MongoBlog.Core
+namespace NewsBlogCoreMongo.Core
 {
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Http;
-    using NewsBlogCoreMongo.Models;
-
+    using Models;
+   
     public interface IImageService
     {
-        Task<Image> UploadPhoto(IFormFile file, string uploadsFolderPath);
+        Task<Image> UploadImage(IFormFile file, string uploadsFolderPath);
+
+        void DeleteImage(string filename);
     }
 }

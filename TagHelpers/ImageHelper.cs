@@ -1,10 +1,12 @@
-namespace MongoBlog.HtmlHelpers
+using Microsoft.EntityFrameworkCore.Internal;
+using NewsBlogCoreMongo.ViewModels;
+
+namespace NewsBlogCoreMongo.TagHelpers
 {
     using System.IO;
     using System.Linq;
-    using Microsoft.AspNetCore.Mvc.Rendering;
-    using NewsBlogCoreMongo.Models;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.Routing;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
     using Microsoft.AspNetCore.Razor.TagHelpers;
@@ -25,16 +27,15 @@ namespace MongoBlog.HtmlHelpers
 
         public string WrapTag { get; set; }
 
-        [ViewContext] 
-        [HtmlAttributeNotBound] 
-        public ViewContext ViewContext { get; set; }
+        [ViewContext] [HtmlAttributeNotBound] public ViewContext ViewContext { get; set; }
 
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            if (model.newsItem.Images?.Any() == false)
+            if (model.newsItem.Images == null || !model.newsItem.Images.Any())
             {
                 output.SuppressOutput();
+                return;
             }
 
             var urlHelper = urlHelperFactory.GetUrlHelper(ViewContext);
@@ -49,7 +50,7 @@ namespace MongoBlog.HtmlHelpers
             }
         }
 
-        
+
         private void GenerateDivWrappedContent(TagHelperOutput output, IUrlHelper urlHelper)
         {
             output.TagName = "div";
@@ -74,7 +75,7 @@ namespace MongoBlog.HtmlHelpers
             }
         }
 
-        
+
         private void GenerateUlWrappedContent(TagHelperOutput output, IUrlHelper urlHelper)
         {
             output.TagName = "ul";

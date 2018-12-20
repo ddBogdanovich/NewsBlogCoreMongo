@@ -1,15 +1,15 @@
-namespace MongoBlog.HtmlHelpers
+namespace NewsBlogCoreMongo.TagHelpers
 {
     using System.Collections.Generic;
     using System.Text.Encodings.Web;
-    using Microsoft.AspNetCore.Mvc.Rendering;
-    using NewsBlogCoreMongo.Models;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.Routing;
     using Microsoft.AspNetCore.Mvc.TagHelpers;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
     using Microsoft.AspNetCore.Razor.TagHelpers;
-
+    using NewsBlogCoreMongo.Core.Models;
+    
     public class PageLinkTagHelper : TagHelper
     {
         private IUrlHelperFactory urlHelperFactory;

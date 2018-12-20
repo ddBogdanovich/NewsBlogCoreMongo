@@ -14,17 +14,7 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #line 1 "/home/dd/NewsBlogASPCoreMongo/Views/_ViewImports.cshtml"
-using MongoBlog;
-
-#line default
-#line hidden
-#line 2 "/home/dd/NewsBlogASPCoreMongo/Views/_ViewImports.cshtml"
-using MongoBlog.Models;
-
-#line default
-#line hidden
-#line 3 "/home/dd/NewsBlogASPCoreMongo/Views/_ViewImports.cshtml"
-using MongoBlog.HtmlHelpers;
+using NewsBlogCoreMongo;
 
 #line default
 #line hidden
@@ -34,7 +24,7 @@ using Microsoft.AspNetCore.Mvc.Localization;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7bde7ad1d03a14f102fd5294edfe1ec6b65377e9", @"/Views/Account/ResetPasswordConfirmation.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cd488d45478e2cb930100d126b1602d0832f7310", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5179f34c49b4d9566bc1b40a2b77530c5176aecc", @"/Views/_ViewImports.cshtml")]
     public class Views_Account_ResetPasswordConfirmation : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Account", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -105,7 +95,7 @@ using Microsoft.AspNetCore.Mvc.Localization;
             WriteLiteral(" ");
             EndContext();
             BeginContext(479, 95, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "480d42a9fe23450daf2d80968240be97", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5c2c6916df88411186287dc5e59887d3", async() => {
                 BeginContext(542, 28, false);
 #line 16 "/home/dd/NewsBlogASPCoreMongo/Views/Account/ResetPasswordConfirmation.cshtml"
                                                                                                                                               Write(SharedLocalizer["ClickHere"]);

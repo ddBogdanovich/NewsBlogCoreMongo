@@ -24,7 +24,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Models\ManageViewModels" />
       <Folder Include="wwwroot\bundles" />
     </ItemGroup>
 

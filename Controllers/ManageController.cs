@@ -1,13 +1,14 @@
-namespace M101DotNet.WebApp.Controllers
+namespace NewsBlogCoreMongo.Controllers
 {
+    using System.Linq;
     using System.Threading.Tasks;
-    using Models;
+    using AspNetCore.Identity.Mongo.Model;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-    using System.Linq;
-    using AspNetCore.Identity.Mongo.Model;
     using Microsoft.AspNetCore.Mvc.Rendering;
+    using Auth;
+    
 
     public class ManageController : Controller
     {

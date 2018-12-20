@@ -1,17 +1,16 @@
-namespace MongoBlog.Repository
+namespace NewsBlogCoreMongo.Persistence
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Expressions;
     using System.Threading.Tasks;
-    using M101DotNet.WebApp.Models;
     using Microsoft.Extensions.Options;
-    using MongoBlog.Models;
     using MongoDB.Driver;
     using MongoDB.Driver.Linq;
-    using NewsBlogCoreMongo.Models;
-    
+    using NewsBlogCoreMongo.Core.Models;
+
+
     public class BlogRepository : IBlogRepository
     {
         private readonly BlogContext _context = null;
@@ -21,7 +20,6 @@ namespace MongoBlog.Repository
             _context = new BlogContext(settings);
         }
 
-        #region NewRepoMethods
 
         public Task<long> GetNewsCount(Expression<Func<NewsItem, bool>> filter)
         {
@@ -66,7 +64,7 @@ namespace MongoBlog.Repository
 
         public async Task DeleteNewsItem(string id)
         {
-            var result = await _context.News.DeleteOneAsync(x => x.Id == id);
+            await _context.News.DeleteOneAsync(x => x.Id == id);
         }
 
         public async Task UpdateNewsItemAsync(NewsItem item)
@@ -99,7 +97,6 @@ namespace MongoBlog.Repository
             await _context.News.UpdateOneAsync(filter1, pull);
         }
 
-        #endregion
 
         #region Categories
 
@@ -129,7 +126,7 @@ namespace MongoBlog.Repository
 
         public async Task DeleteCategoryItem(string id)
         {
-            var result = await _context.Categories.DeleteOneAsync(x => x.Id == id);
+            await _context.Categories.DeleteOneAsync(x => x.Id == id);
         }
 
 

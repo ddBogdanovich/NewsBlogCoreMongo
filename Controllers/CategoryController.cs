@@ -1,13 +1,11 @@
-using Microsoft.AspNetCore.Authorization;
-
-namespace M101DotNet.WebApp.Controllers
+namespace NewsBlogCoreMongo.Controllers
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using MongoBlog.Repository;
-    using NewsBlogCoreMongo.Models;
-
+    using Core.Models;
+    using Persistence; 
 
     public class CategoryController : Controller
     {

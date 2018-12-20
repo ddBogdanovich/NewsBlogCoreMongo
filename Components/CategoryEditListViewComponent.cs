@@ -1,7 +1,8 @@
-namespace MongoBlog.Components
+using NewsBlogCoreMongo.Persistence;
+
+namespace NewsBlogCoreMongo.Components
 {
     using Microsoft.AspNetCore.Mvc;
-    using Repository;
 
 
     public class CategoryEditListViewComponent : ViewComponent

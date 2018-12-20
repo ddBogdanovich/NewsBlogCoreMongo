@@ -1,15 +1,17 @@
-namespace M101DotNet.WebApp.Controllers
+namespace NewsBlogCoreMongo.Controllers
 {
     using System;
-    using System.Threading.Tasks;
     using System.Linq.Expressions;
+    using System.Threading.Tasks;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Mvc;
-    using MongoBlog.Repository;
-    using NewsBlogCoreMongo.Models;
     using Microsoft.Extensions.Configuration;
+    using Core.Models;
+    using Persistence;
+    using ViewModels;
 
+    
     [Authorize]
     public class NewsController : Controller
     {

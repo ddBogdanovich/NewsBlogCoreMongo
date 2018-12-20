@@ -1,7 +1,7 @@
-namespace NewsBlogCoreMongo.Models
+namespace NewsBlogCoreMongo.Core.Models
 {
     using System;
-
+    
     public class PagingInfo
     {
         public long TotalItems { get; set; }

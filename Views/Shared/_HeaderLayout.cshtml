@@ -1,9 +1,7 @@
-@using System.Security.Claims
-@using AspNetCore.Identity.Mongo.Model
-@using M101DotNet.WebApp.Models
 @using Microsoft.AspNetCore.Identity
 @using Microsoft.AspNetCore.Mvc.Localization
-@using NewsBlogCoreMongo.Models.AccountViewModels
+@using NewsBlogCoreMongo.Auth
+@using NewsBlogCoreMongo.ViewModels.AccountViewModels
 @inject IHtmlLocalizer<SharedResources> SharedLocalizer
 @inject UserManager<ApplicationUser> UserManager
 
@@ -65,8 +63,10 @@
                         </form>
                     }
                     else
-                    {
-                        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel {ReturnUrl = ViewBag.ReturnUrl})
+                    {                       
+                       
+                            await Html.RenderPartialAsync("_ExternalLoginsListPartial", new ExternalLoginListViewModel {ReturnUrl = ViewBag.ReturnUrl});
+                        
                     }
                     <div class="clear"></div>
 

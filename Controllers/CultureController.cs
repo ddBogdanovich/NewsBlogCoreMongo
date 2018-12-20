@@ -1,9 +1,9 @@
-namespace M101DotNet.WebApp.Controllers
+namespace NewsBlogCoreMongo.Controllers
 {
+    using System;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Localization;
     using Microsoft.AspNetCore.Mvc;
-    using System;
 
     public class CultureController : Controller
     {

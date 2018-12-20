@@ -1,10 +1,9 @@
-namespace MongoBlog.Components
+namespace NewsBlogCoreMongo.Components
 {
     using System.Linq;
     using AspNetCore.Identity.Mongo.Model;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-
     
     public class RolesEditViewComponent : ViewComponent
     {

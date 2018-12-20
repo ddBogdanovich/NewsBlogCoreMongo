@@ -1,4 +1,4 @@
-@model NewsBlogCoreMongo.Models.NewsListViewModel
+@model NewsBlogCoreMongo.ViewModels.NewsListViewModel
 
 @{
     ViewBag.Title = "List";
@@ -10,7 +10,7 @@
 {
     var resizedBody = p.Body.Split(' ').Take(150);
     p.Body = string.Join(" ", resizedBody);
-    @(await Component.InvokeAsync("NewsItem", p)) //change to renderpartial async
+    @await Component.InvokeAsync("NewsItem", p) //change to renderpartial async
 }
 
 <div class="page_links">

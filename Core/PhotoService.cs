@@ -1,10 +1,10 @@
-namespace MongoBlog.Core
+namespace NewsBlogCoreMongo.Core
 {
     using System.IO;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Http;
-    using NewsBlogCoreMongo.Models;
-
+    using Models;
+    
     public class ImageService : IImageService
     {
         private IImageStorage _imageStorage;
@@ -14,7 +14,7 @@ namespace MongoBlog.Core
             _imageStorage = imageStorage;
         }
 
-        public async Task<Image> UploadPhoto(IFormFile file, string uploadsFolderPath)
+        public async Task<Image> UploadImage(IFormFile file, string uploadsFolderPath)
         {
             var fileId = await _imageStorage.StoreImage(uploadsFolderPath, file);
             var imageName = Path.GetFileName(file.FileName);
@@ -27,6 +27,11 @@ namespace MongoBlog.Core
             };
 
             return newImage;
+        }
+
+        public void DeleteImage(string filename)
+        {
+            _imageStorage.DeleteImage(filename);
         }
     }
 }

@@ -1,29 +1,29 @@
-using System.Diagnostics;
-
-namespace M101DotNet.WebApp.Controllers
+namespace NewsBlogCoreMongo.Controllers
 {
+    using System;
+    using System.Diagnostics;
+    using System.Security.Claims;
     using System.Threading.Tasks;
-    using Models;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-    using NewsBlogCoreMongo.Models.AccountViewModels;
-    using System;
-    using System.Security.Claims;
-    using MongoBlog.Extensions;
+    using Core;
+    using Extensions;
+    using Auth;
+    using ViewModels.AccountViewModels;
 
     [Authorize]
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly Example.CustomUser.Services.IEmailSender _emailSender;
+        private readonly IEmailSender _emailSender;
 
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            Example.CustomUser.Services.IEmailSender emailSender)
+            IEmailSender emailSender)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -56,7 +56,7 @@ namespace M101DotNet.WebApp.Controllers
                     lockoutOnFailure: false);
                 var a = user.Roles;
                 Debug.Write(a);
-                
+
                 if (result.Succeeded)
                 {
                     return RedirectToAction("List", "News");
@@ -123,7 +123,7 @@ namespace M101DotNet.WebApp.Controllers
             if (!identityResult.Succeeded) return BadRequest();
 
             await _signInManager.SignInAsync(user, false);
-            
+
 
             if (returnUrl == null)
                 return RedirectToAction("List", "News");
@@ -166,7 +166,7 @@ namespace M101DotNet.WebApp.Controllers
 
                 AddErrors(result);
             }
-            
+
             return View(model);
         }
 
@@ -177,7 +177,7 @@ namespace M101DotNet.WebApp.Controllers
             return View();
         }
 
-        
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -201,8 +201,8 @@ namespace M101DotNet.WebApp.Controllers
 
             return View(model);
         }
- 
-        
+
+
         [AllowAnonymous]
         public IActionResult ForgotPasswordConfirmation()
         {
@@ -216,7 +216,7 @@ namespace M101DotNet.WebApp.Controllers
             return code == null ? View("Error") : View();
         }
 
-        
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -226,31 +226,31 @@ namespace M101DotNet.WebApp.Controllers
             {
                 return View(model);
             }
-            
+
             var user = await _userManager.FindByEmailAsync(model.Email);
 
             if (user == null)
             {
                 return RedirectToAction(nameof(ResetPasswordConfirmation));
             }
-            
+
             var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);
             if (result.Succeeded)
             {
                 return RedirectToAction(nameof(ResetPasswordConfirmation));
             }
-            
+
             AddErrors(result);
             return View();
         }
-        
-        
+
+
         [AllowAnonymous]
         public ActionResult ResetPasswordConfirmation()
         {
             return View();
         }
-        
+
 
         private void AddErrors(IdentityResult result)
         {
@@ -260,7 +260,7 @@ namespace M101DotNet.WebApp.Controllers
             }
         }
 
-        
+
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> ConfirmEmail(string userId, string code)

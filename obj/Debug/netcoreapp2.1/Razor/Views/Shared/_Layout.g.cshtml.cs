@@ -14,22 +14,12 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #line 1 "/home/dd/NewsBlogASPCoreMongo/Views/_ViewImports.cshtml"
-using MongoBlog;
-
-#line default
-#line hidden
-#line 2 "/home/dd/NewsBlogASPCoreMongo/Views/_ViewImports.cshtml"
-using MongoBlog.Models;
-
-#line default
-#line hidden
-#line 3 "/home/dd/NewsBlogASPCoreMongo/Views/_ViewImports.cshtml"
-using MongoBlog.HtmlHelpers;
+using NewsBlogCoreMongo;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ed757c50de79108acea9cd16870caee7872a1870", @"/Views/Shared/_Layout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cd488d45478e2cb930100d126b1602d0832f7310", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5179f34c49b4d9566bc1b40a2b77530c5176aecc", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__Layout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #line hidden
@@ -59,7 +49,7 @@ using MongoBlog.HtmlHelpers;
             WriteLiteral("\n<!DOCTYPE HTML>\n<html>\n");
             EndContext();
             BeginContext(24, 531, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d7ba1bf14a0b49c89b186a62cb173a85", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e739b85fb3243a3b804cb67dd74523e", async() => {
                 BeginContext(30, 518, true);
                 WriteLiteral(@"      
     <link rel=""stylesheet"" href=""/bundles/content.css"" />      
@@ -88,7 +78,7 @@ using MongoBlog.HtmlHelpers;
             WriteLiteral("\n\n");
             EndContext();
             BeginContext(557, 703, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c6f6b069ffae4748987dec482c1af0c4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915d5e7d63b243d8994ca527020bd641", async() => {
                 BeginContext(563, 1, true);
                 WriteLiteral("\n");
                 EndContext();

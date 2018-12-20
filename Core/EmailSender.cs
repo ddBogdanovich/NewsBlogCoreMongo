@@ -1,10 +1,10 @@
-namespace Example.CustomUser.Services
+namespace NewsBlogCoreMongo.Core
 {
-    using MimeKit;
+    using System.Threading.Tasks;
     using MailKit.Net.Smtp;
     using MailKit.Security;
-    using System.Threading.Tasks;
     using Microsoft.Extensions.Configuration;
+    using MimeKit;
 
     public class EmailSender : IEmailSender
     {

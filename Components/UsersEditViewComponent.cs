@@ -1,8 +1,8 @@
-namespace MongoBlog.Components
-{
+using NewsBlogCoreMongo.Auth;
 
+namespace NewsBlogCoreMongo.Components
+{
     using System.Linq;
-    using M101DotNet.WebApp.Models;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 

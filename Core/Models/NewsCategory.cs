@@ -1,9 +1,8 @@
-namespace NewsBlogCoreMongo.Models
+namespace NewsBlogCoreMongo.Core.Models
 {
     using MongoDB.Bson;
     using MongoDB.Bson.Serialization.Attributes;
-
-
+    
     public class NewsCategory
     {
         [BsonRepresentation(BsonType.ObjectId)]

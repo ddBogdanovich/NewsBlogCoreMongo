@@ -1,10 +1,10 @@
-namespace MongoBlog.Core
+namespace NewsBlogCoreMongo.Core
 {
     using System;
     using System.IO;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Http;
-
+    
     public class FileSystemImageStorage : IImageStorage
     {
         public async Task<string> StoreImage(string uploadsFolderPath, IFormFile file)
@@ -23,6 +23,15 @@ namespace MongoBlog.Core
             }
 
             return fileName;
+        }
+
+
+        public void DeleteImage(string filename)
+        {           
+            if (File.Exists(filename))
+            {
+                File.Delete(filename);
+            }
         }
     }
 }

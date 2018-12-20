@@ -1,4 +1,4 @@
-namespace NewsBlogCoreMongo.Models.AccountViewModels
+namespace NewsBlogCoreMongo.ViewModels.AccountViewModels
 {
     public class ExternalLoginListViewModel
     {

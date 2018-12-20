@@ -110,8 +110,8 @@
 /home/dd/NewsBlogASPCoreMongo/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.Views.dll
 /home/dd/NewsBlogASPCoreMongo/bin/Debug/netcoreapp2.1/NewsBlogCoreMongo.Views.pdb
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.csprojAssemblyReference.cache
-/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.Resources.MongoBlog.SharedResources.en.resources
-/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.Resources.MongoBlog.SharedResources.ru.resources
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.Resources.SharedResources.en.resources
+/home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.Resources.SharedResources.ru.resources
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.csproj.GenerateResource.cache
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.csproj.CoreCompileInputs.cache
 /home/dd/NewsBlogASPCoreMongo/obj/Debug/netcoreapp2.1/NewsBlogCoreMongo.RazorAssemblyInfo.cache

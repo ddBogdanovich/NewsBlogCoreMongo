@@ -1,14 +1,12 @@
-using System.Linq;
-using System.Threading.Tasks;
+using NewsBlogCoreMongo.Persistence;
+using NewsBlogCoreMongo.ViewModels;
 
-namespace MongoBlog.Components
+namespace NewsBlogCoreMongo.Components
 {
-    using Microsoft.AspNetCore.Mvc;
+    using System.Linq;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Configuration;
-    using Repository;
-    using NewsBlogCoreMongo.Models;
-
 
     public class NewsItemEditListViewComponent : ViewComponent
     {

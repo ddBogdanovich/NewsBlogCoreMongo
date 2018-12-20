@@ -1,10 +1,11 @@
-namespace MongoBlog.Components
-{
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.AspNetCore.Hosting;
-    using Microsoft.Extensions.Configuration;
-    using NewsBlogCoreMongo.Models;
+using NewsBlogCoreMongo.Core.Models;
+using NewsBlogCoreMongo.ViewModels;
 
+namespace NewsBlogCoreMongo.Components
+{
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Configuration;
 
     public class NewsItemViewComponent : ViewComponent
     {

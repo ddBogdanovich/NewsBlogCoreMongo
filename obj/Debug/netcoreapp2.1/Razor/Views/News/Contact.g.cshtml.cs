@@ -14,22 +14,12 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #line 1 "/home/dd/NewsBlogASPCoreMongo/Views/_ViewImports.cshtml"
-using MongoBlog;
-
-#line default
-#line hidden
-#line 2 "/home/dd/NewsBlogASPCoreMongo/Views/_ViewImports.cshtml"
-using MongoBlog.Models;
-
-#line default
-#line hidden
-#line 3 "/home/dd/NewsBlogASPCoreMongo/Views/_ViewImports.cshtml"
-using MongoBlog.HtmlHelpers;
+using NewsBlogCoreMongo;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"894c71518ac59ad2f9904d243c9ebacb07fed329", @"/Views/News/Contact.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cd488d45478e2cb930100d126b1602d0832f7310", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5179f34c49b4d9566bc1b40a2b77530c5176aecc", @"/Views/_ViewImports.cshtml")]
     public class Views_News_Contact : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #line hidden
@@ -87,7 +77,7 @@ using MongoBlog.HtmlHelpers;
                     ");
             EndContext();
             BeginContext(1964, 1544, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3e0a706c8b2f441ea609b27fd056e1df", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9b30634c35b42189d37e02e225f25bb", async() => {
                 BeginContext(1970, 1531, true);
                 WriteLiteral(@"
                         <div>

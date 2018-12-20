@@ -1,4 +1,4 @@
-namespace NewsBlogCoreMongo.Models
+namespace NewsBlogCoreMongo.Core.Models
 {
     using System;
     using System.Collections.Generic;

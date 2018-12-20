@@ -1,16 +1,14 @@
-@using M101DotNet.WebApp.Models
-@using Microsoft.AspNetCore.Http.Authentication
 @using Microsoft.AspNetCore.Identity
 @using Microsoft.Extensions.Localization
+@using NewsBlogCoreMongo.Auth
 @inject IStringLocalizer<SharedResources> SharedLocalizer
-@using System.Threading.Tasks
-@model NewsBlogCoreMongo.Models.AccountViewModels.ExternalLoginListViewModel
+@model NewsBlogCoreMongo.ViewModels.AccountViewModels.ExternalLoginListViewModel
 
 @inject SignInManager<ApplicationUser> SignInManager
 
 @{
     var loginProviders =  SignInManager.GetExternalAuthenticationSchemesAsync().Result.ToList();
-    if (loginProviders.Count() == 0)
+    if (!loginProviders.Any())
     {
         <div>
             <p>
@@ -26,8 +24,7 @@
             
             <p>
                 @foreach (var p in loginProviders)
-                {
-                                        
+                {                                       
                     <button type="submit"
                             class="zocial facebook"
                             id="facebook" name="provider"
@@ -37,8 +34,6 @@
                     </button>
 
                 }
-
-
             </p>
          
         }

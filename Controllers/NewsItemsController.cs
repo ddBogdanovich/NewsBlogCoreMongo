@@ -1,8 +1,5 @@
-
-
-namespace M101DotNet.WebApp.Controllers
+namespace NewsBlogCoreMongo.Controllers
 {
-    
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -13,15 +10,15 @@ namespace M101DotNet.WebApp.Controllers
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
+    using Microsoft.Extensions.Configuration;
     using Microsoft.AspNetCore.Authorization;
-    using Microsoft.Extensions.Configuration;  
-    using MongoBlog.Core;
-    using MongoBlog.Repository;
-    using NewsBlogCoreMongo.Models;
-    
-    
-    
-    //[Authorize(Roles = "Administrator, Moderator")]
+    using Core;
+    using Persistence;
+    using Core.Models;
+    using ViewModels;
+
+
+   // [Authorize(Roles = "Administrator, Moderator")]
     public class NewsItemsController : Controller
     {
         private readonly IBlogRepository _blogRepository;
@@ -88,7 +85,7 @@ namespace M101DotNet.WebApp.Controllers
 
                         foreach (var file in files.Files)
                         {
-                            var image = await _imageService.UploadPhoto(file, uploadsFolderPath);
+                            var image = await _imageService.UploadImage(file, uploadsFolderPath);
                             imagesList.Add(image);
                         }
 
@@ -106,7 +103,7 @@ namespace M101DotNet.WebApp.Controllers
             }
 
             PopulateCategoriesDropDownList(newsItem.Category);
-            return View(newsItem);
+            return View(GenerateNewsItemViewModel(newsItem));
         }
 
 
@@ -132,42 +129,27 @@ namespace M101DotNet.WebApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(NewsItem newsItem, IList<IFormFile> files)
+        public async Task<IActionResult> Edit(NewsItem newsItem, IFormCollection files)
         {
-            var imagesList = new List<Image>();
             try
             {
                 if (ModelState.IsValid)
                 {
-                    if (files.Count(file => file != null) > 0)
+                    if (files.Files.Any(x => x != null))
                     {
+                        var imagesList = new List<Image>();
                         var uploadDir = _configuration.GetSection("UploadsFolder").Value;
-                        var absolutePath = _env.WebRootPath + uploadDir;
-                        if (Directory.Exists(absolutePath))
+                        var uploadsFolderPath = Path.Combine(_env.WebRootPath + uploadDir);
+
+                        foreach (var file in files.Files)
                         {
-                            foreach (var file in files)
-                            {
-                                var imageName = Path.GetFileName(file.FileName);
-
-                                var newImage = new Image
-                                {
-                                    FileId = Guid.NewGuid().ToString(),
-                                    OriginalFileName = imageName,
-                                    Extension = Path.GetExtension(imageName)
-                                };
-
-                                imagesList.Add(newImage);
-                                var imagePath = Path.Combine(absolutePath, newImage.FileId + newImage.Extension);
-
-                                using (var fileStream = new FileStream(imagePath, FileMode.Create))
-                                {
-                                    await file.CopyToAsync(fileStream);
-                                }
-                            }
+                            var image = await _imageService.UploadImage(file, uploadsFolderPath);
+                            imagesList.Add(image);
                         }
+
+                        newsItem.Images = imagesList;
                     }
 
-                    newsItem.Images = imagesList;
                     await _blogRepository.UpdateNewsItemAsync(newsItem);
                     return RedirectToAction("List");
                 }
@@ -179,14 +161,14 @@ namespace M101DotNet.WebApp.Controllers
             }
 
             PopulateCategoriesDropDownList(newsItem.Category);
-            return View(newsItem);
+            return View(GenerateNewsItemViewModel(newsItem));
         }
 
 
         [HttpPost]
         public async Task<JsonResult> DeleteFile(string id)
         {
-            if (String.IsNullOrEmpty(id))
+            if (string.IsNullOrEmpty(id))
             {
                 Response.StatusCode = (int) HttpStatusCode.BadRequest;
                 return Json(new {Result = "Error"});
@@ -194,7 +176,7 @@ namespace M101DotNet.WebApp.Controllers
 
             try
             {
-                Image image = await _blogRepository.GetImage(id);
+                var image = await _blogRepository.GetImage(id);
 
                 if (image == null)
                 {
@@ -208,10 +190,7 @@ namespace M101DotNet.WebApp.Controllers
                 var uploadDir = _configuration.GetSection("UploadsFolder").Value;
                 var absolutePath = _env.WebRootPath + uploadDir + image.FileId + image.Extension;
 
-                if (System.IO.File.Exists(absolutePath))
-                {
-                    System.IO.File.Delete(absolutePath);
-                }
+                _imageService.DeleteImage(absolutePath);
 
                 return Json(new {Result = "OK"});
             }
@@ -221,7 +200,7 @@ namespace M101DotNet.WebApp.Controllers
             }
         }
 
-        public FileResult Download(String p, String d)
+        public FileResult Download(string p, string d)
         {
             var uploadDir = _configuration.GetSection("UploadsFolder").Value;
             var absolutePath = _env.WebRootPath;

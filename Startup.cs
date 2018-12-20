@@ -1,23 +1,22 @@
-﻿using System.Globalization;
-using AspNetCore.Identity.Mongo;
-using AspNetCore.Identity.Mongo.Model;
-using Example.CustomUser.Services;
-using M101DotNet.WebApp.Models;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
-using MongoBlog.Core;
-using MongoBlog.Models;
-using MongoBlog.Repository;
-
-namespace MongoBlog
+﻿namespace NewsBlogCoreMongo
 {
+    using System.Globalization;
+    using AspNetCore.Identity.Mongo;
+    using AspNetCore.Identity.Mongo.Model;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Localization;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Razor;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Options;
+    using Auth;
+    using Core;
+    using Core.Models;
+    using Persistence;
+    
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -119,7 +118,6 @@ namespace MongoBlog
                 );     
                 
                 
-
                 pipeline.AddCssBundle("/bundles/content.css",
                     "Content/bootstrap.css",
                     "Content/zocial.css",

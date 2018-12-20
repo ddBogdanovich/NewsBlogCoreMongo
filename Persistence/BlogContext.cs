@@ -1,11 +1,9 @@
-namespace M101DotNet.WebApp.Models
+namespace NewsBlogCoreMongo.Persistence
 {
     using Microsoft.Extensions.Options;
-    using MongoBlog.Models;
     using MongoDB.Driver;
-    using NewsBlogCoreMongo.Models;
-
-
+    using Core.Models;
+    
     public class BlogContext
     {
         public const string NEWS_COLLECTION_NAME = "news";

@@ -1,4 +1,4 @@
-namespace MongoBlog.Models
+namespace NewsBlogCoreMongo.Core.Models
 {
     public class Settings
     {

@@ -1,7 +1,7 @@
-using AspNetCore.Identity.Mongo.Model;
-
-namespace M101DotNet.WebApp.Models
+namespace NewsBlogCoreMongo.Auth
 {
+    using AspNetCore.Identity.Mongo.Model;
+
     // Add profile data for application users by adding properties to the ApplicationUser class
     public class ApplicationUser : MongoUser
     {
