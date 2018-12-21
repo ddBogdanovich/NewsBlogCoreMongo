@@ -32,9 +32,10 @@
                         </li>
                         
                         @{
-                            var a = await @UserManager.GetUserAsync(User);
+                            var user = await @UserManager.GetUserAsync(User);
                             
-                            if (a != null && (await UserManager.IsInRoleAsync(a, "Administrator") || await UserManager.IsInRoleAsync(a, "Moderator")))
+                            if (user != null && (await UserManager.IsInRoleAsync(user, "ADMINISTRATOR") || await UserManager.IsInRoleAsync(user, "MODERATOR")
+                            || user.Roles.Contains("ADMINISTRATOR")))
                             {
                                 <li>
                                     <a asp-action="List" asp-controller="NewsItems">Admin Tools</a>

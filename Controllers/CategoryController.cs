@@ -28,14 +28,14 @@ namespace NewsBlogCoreMongo.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator, Moderator")]
+        [Authorize(Roles = "ADMINISTRATOR, MODERATOR")]
         public ActionResult Create()
         {
             return View();
         }
 
 
-        [Authorize(Roles = "Administrator, Moderator")]
+        [Authorize(Roles = "ADMINISTRATOR, MODERATOR")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind("Id,Name")] NewsCategory newsCategory)
@@ -50,7 +50,7 @@ namespace NewsBlogCoreMongo.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator, Moderator")]
+        [Authorize(Roles = "ADMINISTRATOR, MODERATOR")]
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -68,7 +68,7 @@ namespace NewsBlogCoreMongo.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator, Moderator")]
+        [Authorize(Roles = "ADMINISTRATOR, MODERATOR")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind("Id,Name")] NewsCategory newsCategory)
@@ -83,7 +83,7 @@ namespace NewsBlogCoreMongo.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator, Moderator")]
+        [Authorize(Roles = "ADMINISTRATOR, MODERATOR")]
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -101,7 +101,7 @@ namespace NewsBlogCoreMongo.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator, Moderator")]
+        [Authorize(Roles = "ADMINISTRATOR, MODERATOR")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)

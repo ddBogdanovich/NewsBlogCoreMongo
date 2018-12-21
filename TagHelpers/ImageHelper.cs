@@ -1,6 +1,3 @@
-using Microsoft.EntityFrameworkCore.Internal;
-using NewsBlogCoreMongo.ViewModels;
-
 namespace NewsBlogCoreMongo.TagHelpers
 {
     using System.IO;
@@ -10,6 +7,8 @@ namespace NewsBlogCoreMongo.TagHelpers
     using Microsoft.AspNetCore.Mvc.Routing;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
     using Microsoft.AspNetCore.Razor.TagHelpers;
+    using ViewModels;
+
 
     public class ImageLinkTagHelper : TagHelper
     {
@@ -89,7 +88,7 @@ namespace NewsBlogCoreMongo.TagHelpers
                     var li = new TagBuilder("li");
                     var img = new TagBuilder("img");
                     img.Attributes["alt"] = "picture";
-                    img.Attributes["src"] = urlHelper.Content(imagePath);
+                    img.Attributes["src"] = "/" + imagePath;
 
                     if (!string.IsNullOrWhiteSpace(StyleAttribute))
                     {

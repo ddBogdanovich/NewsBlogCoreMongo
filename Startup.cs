@@ -61,6 +61,7 @@
                 facebookOptions.AppSecret = "6ada7f3ea02b8bcf571c204302cffbcf";  
             });  
             
+            
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 
             services.AddMvc()
@@ -71,6 +72,7 @@
                 })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             
+            services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
             services.Configure<RequestLocalizationOptions>(options =>
             {
                 var supportedCultures = new[]

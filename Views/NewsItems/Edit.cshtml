@@ -1,3 +1,4 @@
+@using NewsBlogCoreMongo.Core.Models
 @model NewsBlogCoreMongo.ViewModels.NewsItemViewModel
 
 <div class="wrap">
@@ -8,12 +9,12 @@
                 <div class="contact-form">
                     <h3>Edit News item</h3>
 
-                    <form asp-controller="NewsItems" asp-action="Edit" method="post" role="form">
+                    <form asp-controller="NewsItems" asp-action="Edit" method="post" role="form" enctype="multipart/form-data">
                         <hr/>
                         <div asp-validation-summary="All" class="text-danger"></div>
 
                         <input type="hidden" asp-for="newsItem.Id"/>
-
+                      
                         <div class="row">
                             <span>
                                 <label asp-for="newsItem.Headline"></label>
@@ -82,10 +83,10 @@
                                     foreach (var image in @Model.newsItem.Images)
                                     {
                                         var imagePath = System.IO.Path.Combine(@Model.uploadsFolder, image.FileId + image.Extension);
-                                        var fullImagePath = @Model.wwwRootPath + imagePath;
+                                        var fullImagePath = System.IO.Path.Combine(@Model.wwwRootPath, imagePath);
                                         if (System.IO.File.Exists(fullImagePath))
                                         {
-                                            var pic = "~" + imagePath;
+                                            var pic = "/" + imagePath;
                                             <div class="col-lg-3">
                                                 <a href="/NewsItems/Download/?p=@(image.FileId + image.Extension)&d=@image.OriginalFileName">
                                                     <img src="@Url.Content(@pic)" alt="picture" style="width: 200px; height: 150px;"/>
@@ -111,7 +112,7 @@
 
                             <label class="control-label">Select File</label>
                             <div class="col-md-12">
-                                <input id="input-44" name="files" type="file" multiple class="file-loading">
+                                <input type="file" id="input-44" name="files" multiple class="file-loading">
                                 <div id="errorBlock" class="help-block"></div>
                             </div>
                         </div>
@@ -142,5 +143,31 @@
 {
     <script src="/lib/Scripts/daterangeHelper.js"></script>
     <script src="/lib/Scripts/daterangeHelperSetup.js"></script>
+   <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('.deleteItem').click(function (e) {
+                e.preventDefault();
+                var $ctrl = $(this);
+                if (confirm('Do you really want to delete this file?')) {
+                    $.ajax({
+                        url: '@Url.Action("DeleteFile")',
+                        type: 'POST',
+                        data: { id: $(this).data('id') }
+                    }).done(function (data) {
+                        if (data.response == "OK") {
+                            $ctrl.closest('li').remove();
+                            $ctrl.closest('div').remove();
+                        } else if (data.response == "ERROR") {
+                            alert("ERROR OCCURED");
+                        }
+                    }).fail(function () {
+                        alert("There is something wrong. Please try again.");
+                    })
+                }
+            });
+        }
+    )
+    </script>
     <script src="/bundles/jqval.js"></script>
 }

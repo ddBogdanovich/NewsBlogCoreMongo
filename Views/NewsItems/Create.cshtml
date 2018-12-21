@@ -104,7 +104,35 @@
 {
     <script src="/lib/Scripts/daterangeHelper.js"></script>
     <script src="/lib/Scripts/daterangeHelperSetup.js"></script>
+   
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+                $('.deleteItem').click(function (e) {
+                    e.preventDefault();
+                    var $ctrl = $(this);
+                    if (confirm('Do you really want to delete this file?')) {
+                        $.ajax({
+                            url: '@Url.Action("DeleteFile")',
+                            type: 'POST',
+                            data: { id: $(this).data('id') }
+                        }).done(function (data) {
+                            if (data.response == "OK") {
+                                $ctrl.closest('li').remove();
+                                $ctrl.closest('div').remove();
+                            } else if (data.response == "ERROR") {
+                                alert("ERROR OCCURED");
+                            }
+                        }).fail(function () {
+                            alert("There is something wrong. Please try again.");
+                        })
+                    }
+                });
+            }
+        )
+    </script>
     <script src="/bundles/jqval.js"></script>
+    
 }
 
 

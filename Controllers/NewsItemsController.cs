@@ -18,7 +18,7 @@ namespace NewsBlogCoreMongo.Controllers
     using ViewModels;
 
 
-   // [Authorize(Roles = "Administrator, Moderator")]
+    [Authorize(Roles = "ADMINISTRATOR, MODERATOR")]
     public class NewsItemsController : Controller
     {
         private readonly IBlogRepository _blogRepository;
@@ -71,19 +71,19 @@ namespace NewsBlogCoreMongo.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Headline,Body,CreatedAtUtc,Category")]
-            NewsItem newsItem, IFormCollection files)
+            NewsItem newsItem, IFormFileCollection files)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    if (files.Files.Any(x => x != null))
+                    if (files.Any(x => x != null))
                     {
                         var imagesList = new List<Image>();
-                        var uploadDir = _configuration.GetSection("UploadsFolder").Value;
+                        var uploadDir = "/" + _configuration.GetSection("UploadsFolder").Value;
                         var uploadsFolderPath = Path.Combine(_env.WebRootPath + uploadDir);
 
-                        foreach (var file in files.Files)
+                        foreach (var file in files)
                         {
                             var image = await _imageService.UploadImage(file, uploadsFolderPath);
                             imagesList.Add(image);
@@ -129,26 +129,36 @@ namespace NewsBlogCoreMongo.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(NewsItem newsItem, IFormCollection files)
+        public async Task<IActionResult> Edit(NewsItem newsItem, IFormFileCollection files)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    if (files.Files.Any(x => x != null))
+                    var imagesList = new List<Image>();
+
+                    if (files.Any(x => x != null))
                     {
-                        var imagesList = new List<Image>();
-                        var uploadDir = _configuration.GetSection("UploadsFolder").Value;
+                        var uploadDir = "/" + _configuration.GetSection("UploadsFolder").Value;
                         var uploadsFolderPath = Path.Combine(_env.WebRootPath + uploadDir);
 
-                        foreach (var file in files.Files)
+                        foreach (var file in files)
                         {
                             var image = await _imageService.UploadImage(file, uploadsFolderPath);
                             imagesList.Add(image);
                         }
-
-                        newsItem.Images = imagesList;
                     }
+
+                    var foundNewsItem = await _blogRepository.FindNewsItem(newsItem.Id);
+
+                    if (foundNewsItem == null)
+                    {
+                        return NotFound();
+                    }
+
+                    newsItem.Images = foundNewsItem.Images ?? new List<Image>();
+                    newsItem.Images.AddRange(imagesList);
+
 
                     await _blogRepository.UpdateNewsItemAsync(newsItem);
                     return RedirectToAction("List");
@@ -187,16 +197,16 @@ namespace NewsBlogCoreMongo.Controllers
                 await _blogRepository.DeleteImage(image.FileId);
 
 
-                var uploadDir = _configuration.GetSection("UploadsFolder").Value;
+                var uploadDir = "/" + _configuration.GetSection("UploadsFolder").Value;
                 var absolutePath = _env.WebRootPath + uploadDir + image.FileId + image.Extension;
 
                 _imageService.DeleteImage(absolutePath);
 
-                return Json(new {Result = "OK"});
+                return Json(new {Response  = "OK"});
             }
             catch (Exception ex)
             {
-                return Json(new {Result = "ERROR", Message = ex.Message});
+                return Json(new {Response  = "ERROR"});
             }
         }
 

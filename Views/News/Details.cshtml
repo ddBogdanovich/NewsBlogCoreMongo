@@ -4,7 +4,7 @@
 <span>Created: @Model.newsItem.CreatedAtUtc.ToShortDateString()</span>
 
 @{
-    if (Model.newsItem.Images.Any())
+    if (Model.newsItem.Images != null && Model.newsItem.Images.Any())
     {
         <image-link model="@Model" wrap-tag="ul" class="bxslider"></image-link>
     }

@@ -30,7 +30,7 @@ namespace NewsBlogCoreMongo.Controllers
 
         #region Roles
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "ADMINISTRATOR")]
         [HttpPost]
         public async Task<IActionResult> UpdateUsersRole(string id, string role)
         {
@@ -45,7 +45,7 @@ namespace NewsBlogCoreMongo.Controllers
                     return ViewComponent("UsersEdit");
                 }
 
-                var currentUsersRole = _userManager.GetRolesAsync(user).Result.FirstOrDefault();
+                var currentUsersRole = user.Roles.FirstOrDefault();
                 await _userManager.RemoveFromRoleAsync(user, currentUsersRole);
                 var result = await _userManager.AddToRoleAsync(user, role);
 
@@ -62,12 +62,12 @@ namespace NewsBlogCoreMongo.Controllers
                 }
             }
 
-            return RedirectToAction("Edit", id);
+            return RedirectToAction("Edit","Manage", new {id = id});
         }
 
         #endregion
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "ADMINISTRATOR")]
         public async Task<IActionResult> Edit(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
@@ -81,12 +81,12 @@ namespace NewsBlogCoreMongo.Controllers
 
             ViewBag.CurrentRole = currentUsersRole;
             ViewBag.Roles = new SelectList(roles, "Name", "Name", currentUsersRole);
-            ;
+            
             return View("Edit", user);
         }
 
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "ADMINISTRATOR")]
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -106,7 +106,7 @@ namespace NewsBlogCoreMongo.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "ADMINISTRATOR")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
@@ -128,7 +128,7 @@ namespace NewsBlogCoreMongo.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "ADMINISTRATOR")]
         [HttpPost]
         public async Task<IActionResult> Update(ApplicationUser model)
         {
@@ -159,7 +159,7 @@ namespace NewsBlogCoreMongo.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "ADMINISTRATOR")]
         [HttpPost]
         public async Task<IActionResult> ChangePassword(string id, string oldpassword, string newpassword)
         {

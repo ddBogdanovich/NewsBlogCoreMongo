@@ -28,28 +28,4 @@
 
                 }
             });
-
-            $('.deleteItem').click(function (e) {
-                e.preventDefault();
-                var $ctrl = $(this);
-                if (confirm('Do you really want to delete this file?')) {
-                    $.ajax({
-                        url: '@Url.Action("DeleteFile")',
-                        type: 'POST',
-                        data: { id: $(this).data('id') }
-                    }).done(function (data) {
-                        if (data.Result == "OK") {
-                            $ctrl.closest('li').remove();
-                            $ctrl.closest('div').remove();
-                        }
-                        else if (data.Result.Message) {
-                            alert(data.Result.Message);
-                        }
-                    }).fail(function () {
-                        alert("There is something wrong. Please try again.");
-                    })
-
-                }
-            });
-        }
-    )
+        });
